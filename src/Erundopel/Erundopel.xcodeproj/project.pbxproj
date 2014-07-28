@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84A3A83219862CBC003594C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83119862CBC003594C7 /* Foundation.framework */; };
+		84A3A83419862CBC003594C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83319862CBC003594C7 /* CoreGraphics.framework */; };
+		84A3A83619862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
+		84A3A83C19862CBC003594C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A83A19862CBC003594C7 /* InfoPlist.strings */; };
+		84A3A83E19862CBC003594C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A83D19862CBC003594C7 /* main.m */; };
+		84A3A84219862CBC003594C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A84119862CBC003594C7 /* AppDelegate.m */; };
+		84A3A84419862CBC003594C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A84319862CBC003594C7 /* Images.xcassets */; };
+		84A3A84B19862CBC003594C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A84A19862CBC003594C7 /* XCTest.framework */; };
+		84A3A84C19862CBC003594C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83119862CBC003594C7 /* Foundation.framework */; };
+		84A3A84D19862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
+		84A3A85519862CBC003594C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A85319862CBC003594C7 /* InfoPlist.strings */; };
+		84A3A85719862CBC003594C7 /* ErundopelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A85619862CBC003594C7 /* ErundopelTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84A3A84E19862CBC003594C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A3A82619862CBC003594C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A3A82D19862CBC003594C7;
+			remoteInfo = Erundopel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84A3A82E19862CBC003594C7 /* Erundopel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Erundopel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A3A83119862CBC003594C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84A3A83319862CBC003594C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84A3A83519862CBC003594C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84A3A83919862CBC003594C7 /* Erundopel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Erundopel-Info.plist"; sourceTree = "<group>"; };
+		84A3A83B19862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84A3A83D19862CBC003594C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84A3A83F19862CBC003594C7 /* Erundopel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Erundopel-Prefix.pch"; sourceTree = "<group>"; };
+		84A3A84019862CBC003594C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84A3A84119862CBC003594C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84A3A84319862CBC003594C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84A3A84919862CBC003594C7 /* ErundopelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErundopelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A3A84A19862CBC003594C7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		84A3A85219862CBC003594C7 /* ErundopelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ErundopelTests-Info.plist"; sourceTree = "<group>"; };
+		84A3A85419862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84A3A85619862CBC003594C7 /* ErundopelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErundopelTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84A3A82B19862CBC003594C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A3A83419862CBC003594C7 /* CoreGraphics.framework in Frameworks */,
+				84A3A83619862CBC003594C7 /* UIKit.framework in Frameworks */,
+				84A3A83219862CBC003594C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A3A84619862CBC003594C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A3A84B19862CBC003594C7 /* XCTest.framework in Frameworks */,
+				84A3A84D19862CBC003594C7 /* UIKit.framework in Frameworks */,
+				84A3A84C19862CBC003594C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84A3A82519862CBC003594C7 = {
+			isa = PBXGroup;
+			children = (
+				84A3A83719862CBC003594C7 /* Erundopel */,
+				84A3A85019862CBC003594C7 /* ErundopelTests */,
+				84A3A83019862CBC003594C7 /* Frameworks */,
+				84A3A82F19862CBC003594C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84A3A82F19862CBC003594C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84A3A82E19862CBC003594C7 /* Erundopel.app */,
+				84A3A84919862CBC003594C7 /* ErundopelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84A3A83019862CBC003594C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84A3A83119862CBC003594C7 /* Foundation.framework */,
+				84A3A83319862CBC003594C7 /* CoreGraphics.framework */,
+				84A3A83519862CBC003594C7 /* UIKit.framework */,
+				84A3A84A19862CBC003594C7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84A3A83719862CBC003594C7 /* Erundopel */ = {
+			isa = PBXGroup;
+			children = (
+				84A3A84019862CBC003594C7 /* AppDelegate.h */,
+				84A3A84119862CBC003594C7 /* AppDelegate.m */,
+				84A3A84319862CBC003594C7 /* Images.xcassets */,
+				84A3A83819862CBC003594C7 /* Supporting Files */,
+			);
+			path = Erundopel;
+			sourceTree = "<group>";
+		};
+		84A3A83819862CBC003594C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84A3A83919862CBC003594C7 /* Erundopel-Info.plist */,
+				84A3A83A19862CBC003594C7 /* InfoPlist.strings */,
+				84A3A83D19862CBC003594C7 /* main.m */,
+				84A3A83F19862CBC003594C7 /* Erundopel-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84A3A85019862CBC003594C7 /* ErundopelTests */ = {
+			isa = PBXGroup;
+			children = (
+				84A3A85619862CBC003594C7 /* ErundopelTests.m */,
+				84A3A85119862CBC003594C7 /* Supporting Files */,
+			);
+			path = ErundopelTests;
+			sourceTree = "<group>";
+		};
+		84A3A85119862CBC003594C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84A3A85219862CBC003594C7 /* ErundopelTests-Info.plist */,
+				84A3A85319862CBC003594C7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84A3A82D19862CBC003594C7 /* Erundopel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A3A85A19862CBC003594C7 /* Build configuration list for PBXNativeTarget "Erundopel" */;
+			buildPhases = (
+				84A3A82A19862CBC003594C7 /* Sources */,
+				84A3A82B19862CBC003594C7 /* Frameworks */,
+				84A3A82C19862CBC003594C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Erundopel;
+			productName = Erundopel;
+			productReference = 84A3A82E19862CBC003594C7 /* Erundopel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A3A84819862CBC003594C7 /* ErundopelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A3A85D19862CBC003594C7 /* Build configuration list for PBXNativeTarget "ErundopelTests" */;
+			buildPhases = (
+				84A3A84519862CBC003594C7 /* Sources */,
+				84A3A84619862CBC003594C7 /* Frameworks */,
+				84A3A84719862CBC003594C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A3A84F19862CBC003594C7 /* PBXTargetDependency */,
+			);
+			name = ErundopelTests;
+			productName = ErundopelTests;
+			productReference = 84A3A84919862CBC003594C7 /* ErundopelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84A3A82619862CBC003594C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Noveo Summer Internship";
+				TargetAttributes = {
+					84A3A84819862CBC003594C7 = {
+						TestTargetID = 84A3A82D19862CBC003594C7;
+					};
+				};
+			};
+			buildConfigurationList = 84A3A82919862CBC003594C7 /* Build configuration list for PBXProject "Erundopel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84A3A82519862CBC003594C7;
+			productRefGroup = 84A3A82F19862CBC003594C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A3A82D19862CBC003594C7 /* Erundopel */,
+				84A3A84819862CBC003594C7 /* ErundopelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84A3A82C19862CBC003594C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A3A83C19862CBC003594C7 /* InfoPlist.strings in Resources */,
+				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A3A84719862CBC003594C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A3A85519862CBC003594C7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84A3A82A19862CBC003594C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A3A84219862CBC003594C7 /* AppDelegate.m in Sources */,
+				84A3A83E19862CBC003594C7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A3A84519862CBC003594C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A3A85719862CBC003594C7 /* ErundopelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84A3A84F19862CBC003594C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A3A82D19862CBC003594C7 /* Erundopel */;
+			targetProxy = 84A3A84E19862CBC003594C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84A3A83A19862CBC003594C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A3A83B19862CBC003594C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		84A3A85319862CBC003594C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A3A85419862CBC003594C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84A3A85819862CBC003594C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A3A85919862CBC003594C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84A3A85B19862CBC003594C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Erundopel/Erundopel-Prefix.pch";
+				INFOPLIST_FILE = "Erundopel/Erundopel-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		84A3A85C19862CBC003594C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Erundopel/Erundopel-Prefix.pch";
+				INFOPLIST_FILE = "Erundopel/Erundopel-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		84A3A85E19862CBC003594C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Erundopel.app/Erundopel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Erundopel/Erundopel-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ErundopelTests/ErundopelTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		84A3A85F19862CBC003594C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Erundopel.app/Erundopel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Erundopel/Erundopel-Prefix.pch";
+				INFOPLIST_FILE = "ErundopelTests/ErundopelTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84A3A82919862CBC003594C7 /* Build configuration list for PBXProject "Erundopel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A3A85819862CBC003594C7 /* Debug */,
+				84A3A85919862CBC003594C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A3A85A19862CBC003594C7 /* Build configuration list for PBXNativeTarget "Erundopel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A3A85B19862CBC003594C7 /* Debug */,
+				84A3A85C19862CBC003594C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84A3A85D19862CBC003594C7 /* Build configuration list for PBXNativeTarget "ErundopelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A3A85E19862CBC003594C7 /* Debug */,
+				84A3A85F19862CBC003594C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84A3A82619862CBC003594C7 /* Project object */;
+}
