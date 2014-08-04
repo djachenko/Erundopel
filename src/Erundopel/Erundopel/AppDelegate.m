@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainMenuVC.h"
+#import "Database.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,11 @@
     self.window.rootViewController = [[MainMenuVC alloc] init];
 
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    Database *database = [[Database alloc] init];
+    
+    [database getAllCards];
+
     [self.window makeKeyAndVisible];
     return YES;
 }
