@@ -10,11 +10,11 @@
 
 @interface MainMenuVC ()
 
-@property (nonatomic, weak) IBOutlet UIButton *buttonNewGame;
-@property (nonatomic, weak) IBOutlet UIButton *buttonAddContent;
-@property (nonatomic, weak) IBOutlet UIButton *buttonSettings;
-@property (nonatomic, weak) IBOutlet UIButton *buttonHowToPlay;
-@property (nonatomic, weak) IBOutlet UIButton *buttonRecords;
+@property (nonatomic, strong) IBOutlet UIButton *buttonNewGame;
+@property (nonatomic, strong) IBOutlet UIButton *buttonAddContent;
+@property (nonatomic, strong) IBOutlet UIButton *buttonSettings;
+@property (nonatomic, strong) IBOutlet UIButton *buttonHowToPlay;
+@property (nonatomic, strong) IBOutlet UIButton *buttonRecords;
 
 @end
 
