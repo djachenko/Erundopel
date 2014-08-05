@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuVC.h"
+#import "CardVC.h"
 
 @interface MainMenuVC ()
 
@@ -42,7 +43,19 @@
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
-    NSLog(@"New Game pressed");
+    Word *word = [[Word alloc] initWithText:@"Word"];
+    Meaning *right = [[Meaning alloc] initWithText:@"right meaning"];
+
+    Article *article = [[Article alloc] initWithWord:word meaning:right];
+
+    Meaning *false1 = [[Meaning alloc] initWithText:@"false meaning 1"];
+    Meaning *false2 = [[Meaning alloc] initWithText:@"false meaning 2"];
+
+    Card *card = [[Card alloc] initWithArticle:article falseMeaning:false1 falseMeaning:false2];
+
+    CardVC *cardVC = [[CardVC alloc] initWithCard:card];
+
+    [self.navigationController pushViewController:cardVC animated:YES];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
