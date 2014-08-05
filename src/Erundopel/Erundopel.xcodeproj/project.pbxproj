@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58603239484151DA98F44533 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603434B68371D83C6E4637 /* Word.m */; };
 		58603568E6C339BF960818D3 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860309F38FD78E64687C825 /* Meaning.m */; };
+		5860375F6FBE66D5B0540880 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034FF79580665684CD7D4 /* Card.m */; };
 		586039B96A113282FB62CD06 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860339BD57A18D43D8B240F /* Article.m */; };
 		84688911198B8172005BC906 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468890F198B8172005BC906 /* MainMenuVC.m */; };
 		84688912198B8172005BC906 /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84688910198B8172005BC906 /* MainMenuVC.xib */; };
@@ -46,8 +47,10 @@
 		5860311BB0FA2652E8300E4A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		5860339BD57A18D43D8B240F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		58603434B68371D83C6E4637 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		586034FF79580665684CD7D4 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		5860371B0F114CBFB92A035B /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
 		586037842C180713A70CBAB2 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		5860385B21C332BABCF61493 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		8468890E198B8172005BC906 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		8468890F198B8172005BC906 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		84688910198B8172005BC906 /* MainMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuVC.xib; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				586037842C180713A70CBAB2 /* Word.h */,
 				5860339BD57A18D43D8B240F /* Article.m */,
 				5860311BB0FA2652E8300E4A /* Article.h */,
+				586034FF79580665684CD7D4 /* Card.m */,
+				5860385B21C332BABCF61493 /* Card.h */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
 				58603239484151DA98F44533 /* Word.m in Sources */,
 				586039B96A113282FB62CD06 /* Article.m in Sources */,
+				5860375F6FBE66D5B0540880 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
