@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58603239484151DA98F44533 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603434B68371D83C6E4637 /* Word.m */; };
+		58603568E6C339BF960818D3 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860309F38FD78E64687C825 /* Meaning.m */; };
+		586039B96A113282FB62CD06 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860339BD57A18D43D8B240F /* Article.m */; };
 		84688911198B8172005BC906 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468890F198B8172005BC906 /* MainMenuVC.m */; };
 		84688912198B8172005BC906 /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84688910198B8172005BC906 /* MainMenuVC.xib */; };
 		84688914198B8F28005BC906 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 84688913198B8F28005BC906 /* black_line.png */; };
+		8478D30D198E4E4C005049E9 /* GameScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478D30B198E4E4C005049E9 /* GameScreenVC.m */; };
+		8478D30E198E4E4C005049E9 /* GameScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478D30C198E4E4C005049E9 /* GameScreenVC.xib */; };
+		8478D312198E4E9A005049E9 /* CardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478D310198E4E9A005049E9 /* CardVC.m */; };
+		8478D313198E4E9A005049E9 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478D311198E4E9A005049E9 /* CardVC.xib */; };
 		84A3A83219862CBC003594C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83119862CBC003594C7 /* Foundation.framework */; };
 		84A3A83419862CBC003594C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83319862CBC003594C7 /* CoreGraphics.framework */; };
 		84A3A83619862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
@@ -35,10 +42,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5860309F38FD78E64687C825 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meaning.m; sourceTree = "<group>"; };
+		5860311BB0FA2652E8300E4A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		5860339BD57A18D43D8B240F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		58603434B68371D83C6E4637 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		5860371B0F114CBFB92A035B /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
+		586037842C180713A70CBAB2 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		8468890E198B8172005BC906 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		8468890F198B8172005BC906 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		84688910198B8172005BC906 /* MainMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuVC.xib; sourceTree = "<group>"; };
 		84688913198B8F28005BC906 /* black_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_line.png; sourceTree = "<group>"; };
+		8478D30A198E4E4C005049E9 /* GameScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenVC.h; sourceTree = "<group>"; };
+		8478D30B198E4E4C005049E9 /* GameScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenVC.m; sourceTree = "<group>"; };
+		8478D30C198E4E4C005049E9 /* GameScreenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameScreenVC.xib; sourceTree = "<group>"; };
+		8478D30F198E4E9A005049E9 /* CardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardVC.h; sourceTree = "<group>"; };
+		8478D310198E4E9A005049E9 /* CardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardVC.m; sourceTree = "<group>"; };
+		8478D311198E4E9A005049E9 /* CardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
 		84A3A82E19862CBC003594C7 /* Erundopel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Erundopel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A3A83119862CBC003594C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84A3A83319862CBC003594C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				84688913198B8F28005BC906 /* black_line.png */,
+				8478D30A198E4E4C005049E9 /* GameScreenVC.h */,
+				8478D30F198E4E9A005049E9 /* CardVC.h */,
+				8478D310198E4E9A005049E9 /* CardVC.m */,
+				8478D311198E4E9A005049E9 /* CardVC.xib */,
+				8478D30B198E4E4C005049E9 /* GameScreenVC.m */,
+				8478D30C198E4E4C005049E9 /* GameScreenVC.xib */,
 				84A3A84019862CBC003594C7 /* AppDelegate.h */,
 				84A3A84119862CBC003594C7 /* AppDelegate.m */,
 				84A3A84319862CBC003594C7 /* Images.xcassets */,
@@ -122,6 +147,12 @@
 				8468890E198B8172005BC906 /* MainMenuVC.h */,
 				8468890F198B8172005BC906 /* MainMenuVC.m */,
 				84688910198B8172005BC906 /* MainMenuVC.xib */,
+				5860371B0F114CBFB92A035B /* Meaning.h */,
+				5860309F38FD78E64687C825 /* Meaning.m */,
+				58603434B68371D83C6E4637 /* Word.m */,
+				586037842C180713A70CBAB2 /* Word.h */,
+				5860339BD57A18D43D8B240F /* Article.m */,
+				5860311BB0FA2652E8300E4A /* Article.h */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -234,6 +265,8 @@
 				84688914198B8F28005BC906 /* black_line.png in Resources */,
 				84688912198B8172005BC906 /* MainMenuVC.xib in Resources */,
 				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
+				8478D313198E4E9A005049E9 /* CardVC.xib in Resources */,
+				8478D30E198E4E4C005049E9 /* GameScreenVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,9 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8478D30D198E4E4C005049E9 /* GameScreenVC.m in Sources */,
 				84A3A84219862CBC003594C7 /* AppDelegate.m in Sources */,
 				84688911198B8172005BC906 /* MainMenuVC.m in Sources */,
+				8478D312198E4E9A005049E9 /* CardVC.m in Sources */,
 				84A3A83E19862CBC003594C7 /* main.m in Sources */,
+				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
+				58603239484151DA98F44533 /* Word.m in Sources */,
+				586039B96A113282FB62CD06 /* Article.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
