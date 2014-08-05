@@ -8,6 +8,7 @@
 
 #import "MainMenuVC.h"
 #import "CardVC.h"
+#import "Database.h"
 
 @interface MainMenuVC ()
 
@@ -56,6 +57,9 @@
     CardVC *cardVC = [[CardVC alloc] initWithCard:card];
 
     [self.navigationController pushViewController:cardVC animated:YES];
+    
+    // test database
+    [[[Database alloc] init] getAllCards];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
