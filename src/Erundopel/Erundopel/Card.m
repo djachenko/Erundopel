@@ -5,4 +5,19 @@
 {
 
 }
+
+- (instancetype)initWithArticle:(Article *)article falseMeaning:(Meaning *)meaning1 falseMeaning:
+        (Meaning *)meaning2;
+{
+    self = [self init];
+
+    if (self) {
+        _word = article.word;
+
+        _meanings = @[article.meaning, meaning1, meaning2];
+    }
+
+    return self;
+}
+
 @end

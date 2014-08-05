@@ -9,4 +9,6 @@
 @property (nonatomic, strong, readonly) Word *word;
 @property (nonatomic, strong, readonly) Meaning *meaning;
 
+- (instancetype) initWithWord:(Word *)word meaning:(Meaning *)meaning;
+
 @end
