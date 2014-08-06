@@ -10,6 +10,7 @@
 
 @interface Database : NSObject
 
-- (NSArray *)getAllCards;
+- (NSArray *)getAllFixedCards;
+- (NSArray *)getAllMeanings;
 
 @end

@@ -44,22 +44,12 @@
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
-    Word *word = [[Word alloc] initWithText:@"Word"];
-    Meaning *right = [[Meaning alloc] initWithText:@"right meaning"];
-
-    Article *article = [[Article alloc] initWithWord:word meaning:right];
-
-    Meaning *false1 = [[Meaning alloc] initWithText:@"false meaning 1"];
-    Meaning *false2 = [[Meaning alloc] initWithText:@"false meaning 2"];
-
-    Card *card = [[Card alloc] initWithArticle:article falseMeaning:false1 falseMeaning:false2];
-
-    CardVC *cardVC = [[CardVC alloc] initWithCard:card];
+    Database *db = [[Database alloc] init];
+    NSArray *cards = [db getAllFixedCards];
+    
+    CardVC *cardVC = [[CardVC alloc] initWithCard:cards[0]];
 
     [self.navigationController pushViewController:cardVC animated:YES];
-    
-    // test database
-    [[[Database alloc] init] getAllCards];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {

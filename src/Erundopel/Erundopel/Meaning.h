@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Meaning : NSObject
+@interface Meaning : NSObject <NSCopying>
 
 @property (nonatomic, strong, readonly) NSString *text;
 
