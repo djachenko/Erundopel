@@ -12,6 +12,7 @@
 		5860374CB0E6BE50545F864F /* CardAnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860396C28A5F32727260464 /* CardAnswerVC.m */; };
 		5860375F6FBE66D5B0540880 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034FF79580665684CD7D4 /* Card.m */; };
 		586039B96A113282FB62CD06 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860339BD57A18D43D8B240F /* Article.m */; };
+		58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603FC5F627789E6E394D5A /* CardAnswerVC.xib */; };
 		84462ECC19937A280072D773 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECB19937A280072D773 /* Parse.framework */; };
 		84462ECE19937A5C0072D773 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECD19937A5C0072D773 /* AudioToolbox.framework */; };
 		84462ED019937A670072D773 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECF19937A670072D773 /* CFNetwork.framework */; };
@@ -33,10 +34,7 @@
 		84462EE719937B310072D773 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ED919937AA50072D773 /* Security.framework */; };
 		84462EE819937B310072D773 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462EDB19937AAE0072D773 /* StoreKit.framework */; };
 		84462EE919937B310072D773 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462EDD19937AB60072D773 /* SystemConfiguration.framework */; };
-		84688911198B8172005BC906 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468890F198B8172005BC906 /* MainMenuVC.m */; };
-		84688912198B8172005BC906 /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84688910198B8172005BC906 /* MainMenuVC.xib */; };
-		84688914198B8F28005BC906 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 84688913198B8F28005BC906 /* black_line.png */; };
-		58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603FC5F627789E6E394D5A /* CardAnswerVC.xib */; };
+		84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EEB1993A6CC0072D773 /* ParseManager.m */; };
 		84688911198B8172005BC906 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468890F198B8172005BC906 /* MainMenuVC.m */; };
 		84688912198B8172005BC906 /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84688910198B8172005BC906 /* MainMenuVC.xib */; };
 		84688914198B8F28005BC906 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 84688913198B8F28005BC906 /* black_line.png */; };
@@ -86,6 +84,9 @@
 		5860371B0F114CBFB92A035B /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
 		586037842C180713A70CBAB2 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		5860385B21C332BABCF61493 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		5860393905F73B344D397CF2 /* CardAnswerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAnswerVC.h; sourceTree = "<group>"; };
+		5860396C28A5F32727260464 /* CardAnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAnswerVC.m; sourceTree = "<group>"; };
+		58603FC5F627789E6E394D5A /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
 		84462ECB19937A280072D773 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		84462ECD19937A5C0072D773 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84462ECF19937A670072D773 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -96,9 +97,9 @@
 		84462ED919937AA50072D773 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		84462EDB19937AAE0072D773 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84462EDD19937AB60072D773 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5860393905F73B344D397CF2 /* CardAnswerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAnswerVC.h; sourceTree = "<group>"; };
-		5860396C28A5F32727260464 /* CardAnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAnswerVC.m; sourceTree = "<group>"; };
-		58603FC5F627789E6E394D5A /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
+		84462EEA1993A6CC0072D773 /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseManager.h; sourceTree = "<group>"; };
+		84462EEB1993A6CC0072D773 /* ParseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseManager.m; sourceTree = "<group>"; };
+		84462EED1993B0AE0072D773 /* ParseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseObject.h; sourceTree = "<group>"; };
 		8468890E198B8172005BC906 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		8468890F198B8172005BC906 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		84688910198B8172005BC906 /* MainMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuVC.xib; sourceTree = "<group>"; };
@@ -278,6 +279,9 @@
 				5860393905F73B344D397CF2 /* CardAnswerVC.h */,
 				5860396C28A5F32727260464 /* CardAnswerVC.m */,
 				5860316A9A8D09EF23F4AEB2 /* GameFinisher.h */,
+				84462EED1993B0AE0072D773 /* ParseObject.h */,
+				84462EEA1993A6CC0072D773 /* ParseManager.h */,
+				84462EEB1993A6CC0072D773 /* ParseManager.m */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -418,6 +422,7 @@
 				84F56EF3199208AB009102F0 /* GameVC.m in Sources */,
 				84A3A83E19862CBC003594C7 /* main.m in Sources */,
 				849940E2198FB2C20001C817 /* FMDatabase.m in Sources */,
+				84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */,
 				849940E4198FB2C20001C817 /* FMDatabasePool.m in Sources */,
 				849940E6198FB2C20001C817 /* FMResultSet.m in Sources */,
 				849940A5198FA5AF0001C817 /* Database.m in Sources */,

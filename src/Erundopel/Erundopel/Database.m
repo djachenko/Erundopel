@@ -69,6 +69,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
         // Languages (independent)
         [db executeUpdate:@"CREATE TABLE IF NOT EXISTS languages ("
             "id INTEGER PRIMARY KEY,"
+            "id_object TEXT,"
             "name TEXT"
             ")"
         ];
@@ -76,15 +77,17 @@ NSString *queryDropTable = @"DROP TABLE ?";
         // Meanings (depends on Languages)
         [db executeUpdate:@"CREATE TABLE IF NOT EXISTS meanings ("
             "id INTEGER PRIMARY KEY,"
+            "id_object TEXT,"
             "meaning TEXT,"
-            "id_language INTEGER,"
-            "FOREIGN KEY(id_language) REFERENCES languages(id)"
+            "id_language TEXT,"
+            "FOREIGN KEY(id_language) REFERENCES languages(id_object)"
             ")"
         ];
         
         // Words (depends on Languages and Meanings)
         [db executeUpdate:@"CREATE TABLE IF NOT EXISTS words ("
             "id INTEGER PRIMARY KEY,"
+            "id_object TEXT,"
             "word TEXT,"
             "id_language INTEGER,"
             "id_meaning INTEGER,"
@@ -96,6 +99,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
         // Cards (depends on Words)
         [db executeUpdate:@"CREATE TABLE IF NOT EXISTS cards ("
             "id INTEGER PRIMARY KEY,"
+            "id_object TEXT,"
             "id_word INTEGER,"
             "id_meaning_false_1 INTEGER,"
             "id_meaning_false_2 INTEGER,"
@@ -115,17 +119,11 @@ NSString *queryDropTable = @"DROP TABLE ?";
             ")"
         ];
     }];
-    [self fillWithTestContent];
+    //[self fillWithTestContent];
 }
 
 - (void)fillWithTestContent {
     [self.queue inDatabase:^(FMDatabase *db) {
-        // languages
-        [db executeUpdate:@"DELETE FROM languages"];
-        
-        [db executeUpdate:@"INSERT INTO languages (name) VALUES (?)", @"russian"];
-        [db executeUpdate:@"INSERT INTO languages (name) VALUES (?)", @"english"];
-        
         // meanings
         [db executeUpdate:@"DELETE FROM meanings"];
         
@@ -276,6 +274,20 @@ NSString *queryDropTable = @"DROP TABLE ?";
     forLanguage:(int)languageId {
     [self.queue inDatabase:^(FMDatabase *db) {
        // [db executeUpdate:@"INSERT INTO meanings, NAME, DEPT FROM COMPANY INNER JOIN DEPARTMENT
+    }];
+}
+
+-(void)insertLanguage:(NSString *)name withObjectId:(NSString *)objectId {
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:@"INSERT INTO languages (name, id_object) VALUES (?, ?)", name, objectId];
+    }];
+}
+
+- (void)insertMeaning:(NSString *)text
+    forLanguage:(NSString *)languageId
+    withObjectId:(NSString *)objectId {
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:@"INSERT INTO meanings (meaning, id_object, id_language) VALUES (?, ?, ?)", text, objectId, languageId];
     }];
 }
 

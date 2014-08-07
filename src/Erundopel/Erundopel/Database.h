@@ -13,4 +13,11 @@
 - (NSArray *)getAllFixedCards;
 - (NSArray *)getAllMeanings;
 
+- (void)insertLanguage:(NSString *)name
+    withObjectId:(NSString *)objectId;
+
+- (void)insertMeaning:(NSString *)text
+    forLanguage:(NSString *)languageId
+    withObjectId:(NSString *)objectId;
+
 @end

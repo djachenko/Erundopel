@@ -2,6 +2,7 @@
 #import "Database.h"
 #import "CardQuestionVC.h"
 #import "GameVC.h"
+#import "ParseManager.h"
 
 @interface MainMenuVC ()
 
@@ -41,6 +42,7 @@
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
+    [[[ParseManager alloc] init] downloadAll];
     NSLog(@"Add Content pressed");
 }
 
