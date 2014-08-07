@@ -1,14 +1,6 @@
-//
-//  CardVC.m
-//  Erundopel
-//
-//  Created by Admin on 03/08/14.
-//  Copyright (c) 2014 Noveo Summer Internship. All rights reserved.
-//
+#import "CardQuestionVC.h"
 
-#import "CardVC.h"
-
-@interface CardVC ()
+@interface CardQuestionVC ()
 
 @property (nonatomic, strong) IBOutlet UILabel *wordLabel;
 @property (nonatomic, strong) IBOutletCollection(UIButton) NSMutableArray *buttons;
@@ -16,15 +8,15 @@
 
 @end
 
-@implementation CardVC
+@implementation CardQuestionVC
 
 - (instancetype)initWithCard:(Card *)card
 {
     self = [self init];
 
     if (self) {
-        _origin = card;
         _buttons = [NSMutableArray arrayWithCapacity:3];
+        _origin = card;
     }
 
     return self;
@@ -43,9 +35,9 @@
 
 - (IBAction)meaningChosen:(UIButton *)sender
 {
-    int index = -1;
+    NSUInteger index = 4;
 
-    for (int i = 0; i < [self.buttons count]; i++) {
+    for (NSUInteger i = 0; i < [self.buttons count]; i++) {
         if (sender == self.buttons[i]) {
             index = i;
 
@@ -53,8 +45,7 @@
         }
     }
 
-    NSLog(@"Button %d pressed", index);
-    //Send index somewhere outside
+    [self.delegate chosenCorrectOption:index == self.origin.rightMeaningIndex];
 }
 
 @end
