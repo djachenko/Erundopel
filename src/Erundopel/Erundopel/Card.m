@@ -15,6 +15,7 @@
         _word = article.word;
 
         _meanings = @[article.meaning, meaning1, meaning2];
+        _rightMeaningIndex = 0;
     }
 
     return self;

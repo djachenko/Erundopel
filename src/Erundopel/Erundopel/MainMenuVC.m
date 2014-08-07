@@ -1,14 +1,7 @@
-//
-//  MainMenuVC.m
-//  Erundopel
-//
-//  Created by Admin on 01/08/14.
-//  Copyright (c) 2014 Noveo Summer Internship. All rights reserved.
-//
-
 #import "MainMenuVC.h"
-#import "CardVC.h"
 #import "Database.h"
+#import "CardQuestionVC.h"
+#import "GameVC.h"
 
 @interface MainMenuVC ()
 
@@ -44,12 +37,7 @@
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
-    Database *db = [[Database alloc] init];
-    NSArray *cards = [db getAllFixedCards];
-    
-    CardVC *cardVC = [[CardVC alloc] initWithCard:cards[0]];
-
-    [self.navigationController pushViewController:cardVC animated:YES];
+    [self.navigationController pushViewController:[[GameVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
