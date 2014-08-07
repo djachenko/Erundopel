@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "MainMenuVC.h"
+#import "Parse/Parse.h"
 
 @implementation AppDelegate
 
@@ -15,6 +16,12 @@
     self.window.rootViewController = navigationController;
 
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    // authorize app to Parse.com
+    [Parse setApplicationId:@"WmRYckJZWu9SaAEGu32YdDFHlBH2jjd0ziaWrYqR"
+        clientKey:@"SiijCQNsyaxMyOL6K43DgrkJQ5v4jY8cFVpgMorx"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
