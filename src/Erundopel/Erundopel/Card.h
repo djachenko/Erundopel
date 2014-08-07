@@ -9,7 +9,7 @@
 @property (nonatomic, strong, readonly) Word *word;
 
 @property (nonatomic, strong, readonly) NSArray * /*of Meaning **/meanings;
-@property (nonatomic) NSInteger rightMeaningIndex;
+@property (nonatomic) NSUInteger rightMeaningIndex;
 
 - (instancetype)initWithArticle:(Article *)article falseMeaning:(Meaning *)meaning1 falseMeaning:
         (Meaning *)meaning2;
