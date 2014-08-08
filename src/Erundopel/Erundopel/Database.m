@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 //
 //  Database.m
 //  Erundopel
@@ -60,12 +68,6 @@ NSString *queryDropTable = @"DROP TABLE ?";
 // only to be called from constructor
 - (void)createScheme {
     [self.queue inDatabase:^(FMDatabase *db) {
-//        [db executeUpdate:@"DROP TABLE languages"];
-//        [db executeUpdate:@"DROP TABLE meanings"];
-//        [db executeUpdate:@"DROP TABLE words"];
-//        [db executeUpdate:@"DROP TABLE cards"];
-//        [db executeUpdate:@"DROP TABLE meaning_popularity"];
-        
         // Languages (independent)
         [db executeUpdate:@"CREATE TABLE IF NOT EXISTS languages ("
             "id INTEGER PRIMARY KEY,"
@@ -89,10 +91,10 @@ NSString *queryDropTable = @"DROP TABLE ?";
             "id INTEGER PRIMARY KEY,"
             "id_object TEXT,"
             "word TEXT,"
-            "id_language INTEGER,"
-            "id_meaning INTEGER,"
-            "FOREIGN KEY(id_language) REFERENCES languages(id),"
-            "FOREIGN KEY(id_meaning) REFERENCES meanings(id)"
+            "id_language TEXT,"
+            "id_meaning TEXT,"
+            "FOREIGN KEY(id_language) REFERENCES languages(id_object),"
+            "FOREIGN KEY(id_meaning) REFERENCES meanings(id_object)"
             ")"
         ];
         
@@ -124,45 +126,59 @@ NSString *queryDropTable = @"DROP TABLE ?";
 
 - (void)fillWithTestContent {
     [self.queue inDatabase:^(FMDatabase *db) {
-        // meanings
-        [db executeUpdate:@"DELETE FROM meanings"];
-        
-        NSArray *meanings = @[
-            @"другое название ягоды голубики",
-            @"гладкоствольное, фитильное дульнозарядное ружьё",
-            @"неправильное определение",
-            @"определение от совсем другого слова",
-            @"вообще что-то странное и не к месту",
-            @"имперский звездолет класса \"планетарный разрушитель\"",
-            @"большой полосатый мух",
-            @"кто-то хитрый и большой"
-        ];
-        
-        for (NSString *meaning in meanings) {
-            [db executeUpdate:@"INSERT INTO meanings (meaning, id_language) VALUES (?, ?)", meaning, [NSNumber numberWithInt:1]];
-        }
-        
-        // words
-        [db executeUpdate:@"DELETE FROM words"];
-        
-        [db executeUpdate:@"INSERT INTO words (word, id_meaning, id_language) VALUES (?, ?, ?)", @"гонобобель", [NSNumber numberWithInt:1], [NSNumber numberWithInt:1]];
-        [db executeUpdate:@"INSERT INTO words (word, id_meaning, id_language) VALUES (?, ?, ?)", @"аркебуза", [NSNumber numberWithInt:2], [NSNumber numberWithInt:1]];
-        
-        // cards
-        [db executeUpdate:@"DELETE FROM cards"];
-        
-        [db executeUpdate:
-            @"INSERT INTO cards (id_word, id_meaning_false_1, id_meaning_false_2) VALUES (?, ?, ?)",
-            [NSNumber numberWithInt:1],
-            [NSNumber numberWithInt:5],
-            [NSNumber numberWithInt:6]];
-        [db executeUpdate:
-            @"INSERT INTO cards (id_word, id_meaning_false_1, id_meaning_false_2) VALUES (?, ?, ?)",
-            [NSNumber numberWithInt:2],
-            [NSNumber numberWithInt:7],
-            [NSNumber numberWithInt:8]];
+//        // meanings
+//        [db executeUpdate:@"DELETE FROM meanings"];
+//        
+//        NSArray *meanings = @[
+//            @"другое название ягоды голубики",
+//            @"гладкоствольное, фитильное дульнозарядное ружьё",
+//            @"неправильное определение",
+//            @"определение от совсем другого слова",
+//            @"вообще что-то странное и не к месту",
+//            @"имперский звездолет класса \"планетарный разрушитель\"",
+//            @"большой полосатый мух",
+//            @"кто-то хитрый и большой"
+//        ];
+//        
+//        for (NSString *meaning in meanings) {
+//            [db executeUpdate:@"INSERT INTO meanings (meaning, id_language) VALUES (?, ?)", meaning, [NSNumber numberWithInt:1]];
+//        }
+//        
+//        // cards
+//        [db executeUpdate:@"DELETE FROM cards"];
+//        
+//        [db executeUpdate:
+//            @"INSERT INTO cards (id_word, id_meaning_false_1, id_meaning_false_2) VALUES (?, ?, ?)",
+//            [NSNumber numberWithInt:1],
+//            [NSNumber numberWithInt:5],
+//            [NSNumber numberWithInt:6]];
+//        [db executeUpdate:
+//            @"INSERT INTO cards (id_word, id_meaning_false_1, id_meaning_false_2) VALUES (?, ?, ?)",
+//            [NSNumber numberWithInt:2],
+//            [NSNumber numberWithInt:7],
+//            [NSNumber numberWithInt:8]];
     }];
 
+}
+
+- (void)dropAllTables {
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:@"DROP TABLE languages"];
+        [db executeUpdate:@"DROP TABLE meanings"];
+        [db executeUpdate:@"DROP TABLE words"];
+        [db executeUpdate:@"DROP TABLE cards"];
+        [db executeUpdate:@"DROP TABLE meaning_popularity"];
+    }];
+}
+
+- (void)wipeAllTables {
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:@"DELETE FROM languages"];
+        [db executeUpdate:@"DELETE FROM meanings"];
+        [db executeUpdate:@"DELETE FROM words"];
+        [db executeUpdate:@"DELETE FROM cards"];
+        [db executeUpdate:@"DELETE FROM meaning_popularity"];
+    }];
 }
 
 
@@ -184,10 +200,12 @@ NSString *queryDropTable = @"DROP TABLE ?";
     }];
     
     for (NSDictionary *cardDict in cardsArray) {
-        Article *article = [self getArticleForWordById:[cardDict[@"id_word"] intValue]];
+        Article *article = [self getArticleForWordById:cardDict[@"id_word"]];
+        Meaning *meaning_false_1 = [self getMeaningById:cardDict[@"id_meaning_false_1"]];
+        Meaning *meaning_false_2 = [self getMeaningById:cardDict[@"id_meaning_false_2"]];
         NSArray *meanings = @[
-            [self getMeaningById:[cardDict[@"id_meaning_false_1"] intValue]],
-            [self getMeaningById:[cardDict[@"id_meaning_false_2"] intValue]]
+            meaning_false_1,
+            meaning_false_2
         ];
         
         Card *card = [[Card alloc]
@@ -202,27 +220,27 @@ NSString *queryDropTable = @"DROP TABLE ?";
     return [NSArray arrayWithArray:mutableArray];
 }
 
-- (Article *)getArticleForWordById:(int)wordId
+- (Article *)getArticleForWordById:(NSString *)wordId
 {
     Word *__block word = nil;
     Meaning *__block meaning = nil;
     
-    __block int meaningId = 0;
+    NSString *__block meaningId = 0;
     
     // create Word and get meaning id
     [self.queue inDatabase:^(FMDatabase *db) {
         FMResultSet *wordResult = [db executeQuery:
             @"SELECT word, id_meaning "
             "FROM words "
-            "WHERE words.id = ?",
-            [NSNumber numberWithInt:wordId]
+            "WHERE words.id_object = ?",
+            wordId
         ];
         
         if ([wordResult next]) {
             NSString *wordString = [wordResult stringForColumn:@"word"];
             word = [[Word alloc] initWithText:wordString];
             
-            meaningId = [wordResult intForColumn:@"id_meaning"];
+            meaningId = [wordResult stringForColumn:@"id_meaning"];
             [wordResult close];
         }
     }];
@@ -232,7 +250,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
     return [[Article alloc] initWithWord:word meaning:meaning];
 }
 
-- (Meaning *)getMeaningById:(int)meaningId
+- (Meaning *)getMeaningById:(NSString *)meaningId
 {
     Meaning *__block meaning = nil;
     
@@ -241,8 +259,8 @@ NSString *queryDropTable = @"DROP TABLE ?";
         FMResultSet *meaningResult = [db executeQuery:
             @"SELECT meaning "
             "FROM meanings "
-            "WHERE meanings.id = ?",
-            [NSNumber numberWithInt:meaningId]
+            "WHERE meanings.id_object = ?",
+            meaningId
         ];
         
         if ([meaningResult next]) {
@@ -270,16 +288,15 @@ NSString *queryDropTable = @"DROP TABLE ?";
     return [NSArray arrayWithArray:mutableArray];
 }
 
-- (void)addMeaning:(Meaning *)meaning
-    forLanguage:(int)languageId {
-    [self.queue inDatabase:^(FMDatabase *db) {
-       // [db executeUpdate:@"INSERT INTO meanings, NAME, DEPT FROM COMPANY INNER JOIN DEPARTMENT
-    }];
-}
-
 -(void)insertLanguage:(NSString *)name withObjectId:(NSString *)objectId {
     [self.queue inDatabase:^(FMDatabase *db) {
-        [db executeUpdate:@"INSERT INTO languages (name, id_object) VALUES (?, ?)", name, objectId];
+        [db executeUpdate:
+            @"INSERT INTO languages "
+            "(name, id_object) "
+            "VALUES (?, ?)",
+            name,
+            objectId
+        ];
     }];
 }
 
@@ -287,7 +304,48 @@ NSString *queryDropTable = @"DROP TABLE ?";
     forLanguage:(NSString *)languageId
     withObjectId:(NSString *)objectId {
     [self.queue inDatabase:^(FMDatabase *db) {
-        [db executeUpdate:@"INSERT INTO meanings (meaning, id_object, id_language) VALUES (?, ?, ?)", text, objectId, languageId];
+        [db executeUpdate:
+            @"INSERT INTO meanings "
+            "(meaning, id_object, id_language) "
+            "VALUES (?, ?, ?)",
+            text,
+            objectId,
+            languageId
+        ];
+    }];
+}
+
+- (void)insertWord:(NSString *)word
+    withMeaning:(NSString *)meaningId
+    forLanguage:(NSString *)languageId
+    withObjectId:(NSString *)objectId {
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"INSERT INTO words"
+            "(word, id_meaning, id_language, id_object)"
+            "VALUES (?, ?, ?, ?)",
+            word,
+            meaningId,
+            languageId,
+            objectId
+        ];
+    }];
+}
+
+- (void)insertCardWithWord:(NSString *)wordId
+    falseMeaningOne:(NSString *)meaningOneId
+    falseMeaningTwo:(NSString *)meaningTwoId
+    withObjectId:(NSString *)objectId {
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"INSERT INTO cards"
+            "(id_word, id_meaning_false_1, id_meaning_false_2, id_object)"
+            "VALUES (?, ?, ?, ?)",
+            wordId,
+            meaningOneId,
+            meaningTwoId,
+            objectId
+        ];
     }];
 }
 

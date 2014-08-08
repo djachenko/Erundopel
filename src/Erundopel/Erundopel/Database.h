@@ -12,12 +12,23 @@
 
 - (NSArray *)getAllFixedCards;
 - (NSArray *)getAllMeanings;
+- (void)wipeAllTables;
 
 - (void)insertLanguage:(NSString *)name
     withObjectId:(NSString *)objectId;
 
 - (void)insertMeaning:(NSString *)text
     forLanguage:(NSString *)languageId
+    withObjectId:(NSString *)objectId;
+
+- (void)insertWord:(NSString *)word
+    withMeaning:(NSString *)meaningId
+    forLanguage:(NSString *)languageId
+    withObjectId:(NSString *)objectId;
+
+- (void)insertCardWithWord:(NSString *)wordId
+    falseMeaningOne:(NSString *)meaningOneId
+    falseMeaningTwo:(NSString *)meaningTwoId
     withObjectId:(NSString *)objectId;
 
 @end
