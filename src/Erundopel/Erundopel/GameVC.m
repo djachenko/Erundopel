@@ -49,13 +49,15 @@
     Database *db = [[Database alloc] init];
     NSArray *cards = [db getAllFixedCards];
 
-    self.currentCard = cards[0];
+    if ([cards count] > 0) {
+        self.currentCard = cards[0];
 
-    CardQuestionVC *cardVC = [[CardQuestionVC alloc] initWithCard:self.currentCard];
-    cardVC.delegate = self;
-
-    [self addChildViewController:cardVC];
-    [self.view addSubview:cardVC.view];
+        CardQuestionVC *cardVC = [[CardQuestionVC alloc] initWithCard:self.currentCard];
+        cardVC.delegate = self;
+        
+        [self addChildViewController:cardVC];
+        [self.view addSubview:cardVC.view];
+    }    
 }
 
 - (void)chosenCorrectOption:(BOOL)state
