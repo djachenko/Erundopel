@@ -50,7 +50,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
  *  and execute enough queries to get all the data.
  */
 
-- (void)initUpdateDates {
+- (void)initUpdateDates:(BOOL)forced {
     NSArray *keys = @[
         kLastUpdateLanguage,
         kLastUpdateMeaning,
@@ -59,7 +59,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     ];
     
     for (NSString *key in keys) {
-        if ([self getLastUpdateDateForKey:key] == nil) {
+        if ([self getLastUpdateDateForKey:key] == nil || forced) {
             [self setLastUpdateDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0]
                 forKey:key];
         }
@@ -67,7 +67,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 }
 
 - (void)downloadAll {
-    [self initUpdateDates];
+    [self initUpdateDates:NO];
     
     //[self.db wipeAllTables];
     [self downloadLanguages];
@@ -77,9 +77,11 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 }
 
 - (void)downloadLanguages {
+    NSString *key = kLastUpdateLanguage;
+    
     PFQuery *query = [ParseLanguage query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateLanguage]];
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
     
     [query orderByDescending:@"updatedAt"];
     
@@ -96,12 +98,9 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
             
             ParseLanguage *newestObject = objects.firstObject;
             
-            if (!!newestObject) {
-                [self setLastUpdateDate:newestObject.updatedAt
-                    forKey:kLastUpdateLanguage];
-            }
+            [self setLastUpdateDateFromObject:newestObject forKey:key];
             
-            NSLog(@"%@", [self getLastUpdateDateForKey:kLastUpdateLanguage]);
+            NSLog(@"%@", [self getLastUpdateDateForKey:key]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -109,9 +108,11 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 }
 
 - (void)downloadMeanings {
+    NSString *key = kLastUpdateMeaning;
+
     PFQuery *query = [ParseMeaning query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateMeaning]];
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
     
     [query setLimit:1000];
     [query orderByDescending:@"updatedAt"];
@@ -130,12 +131,9 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
             
             ParseMeaning *newestObject = objects.firstObject;
             
-            if (!!newestObject) {
-                [self setLastUpdateDate:newestObject.updatedAt
-                    forKey:kLastUpdateMeaning];
-            }
+            [self setLastUpdateDateFromObject:newestObject forKey:key];
             
-            NSLog(@"%@", [self getLastUpdateDateForKey:kLastUpdateMeaning]);
+            NSLog(@"%@", [self getLastUpdateDateForKey:key]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -143,9 +141,11 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 }
 
 - (void)downloadWords {
+    NSString *key = kLastUpdateWord;
+    
     PFQuery *query = [ParseWord query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateWord]];
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
     
     [query orderByDescending:@"updatedAt"];
     
@@ -164,12 +164,9 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
             
             ParseWord *newestObject = objects.firstObject;
             
-            if (!!newestObject) {
-                [self setLastUpdateDate:newestObject.updatedAt
-                    forKey:kLastUpdateWord];
-            }
+            [self setLastUpdateDateFromObject:newestObject forKey:key];
             
-            NSLog(@"%@", [self getLastUpdateDateForKey:kLastUpdateWord]);
+            NSLog(@"%@", [self getLastUpdateDateForKey:key]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -177,9 +174,11 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 }
 
 - (void)downloadCards {
+    NSString *key = kLastUpdateCard;
+    
     PFQuery *query = [ParseCard query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateCard]];
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
     
     [query orderByDescending:@"updatedAt"];
     
@@ -198,12 +197,9 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
             
             ParseCard *newestObject = objects.firstObject;
             
-            if (!!newestObject) {
-                [self setLastUpdateDate:newestObject.updatedAt
-                    forKey:kLastUpdateCard];
-            }
+            [self setLastUpdateDateFromObject:newestObject forKey:key];
             
-            NSLog(@"Card last update: %@", [self getLastUpdateDateForKey:kLastUpdateCard]);
+            NSLog(@"Card last update: %@", [self getLastUpdateDateForKey:key]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -221,6 +217,14 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 
 - (NSDate *)getLastUpdateDateForKey:(NSString *)key {
     return [self.userDefaults objectForKey:key];
+}
+
+- (void)setLastUpdateDateFromObject:(PFObject *)object
+    forKey:(NSString *)key {
+        if (!!object) {
+            [self setLastUpdateDate:object.updatedAt
+                forKey:key];
+        }
 }
 
 @end

@@ -291,6 +291,12 @@ NSString *queryDropTable = @"DROP TABLE ?";
 -(void)insertLanguage:(NSString *)name withObjectId:(NSString *)objectId {
     [self.queue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:
+            @"DELETE FROM languages "
+            "WHERE id_object = ?",
+            objectId
+        ];
+        NSLog(@"Error %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+        [db executeUpdate:
             @"INSERT INTO languages "
             "(name, id_object) "
             "VALUES (?, ?)",
@@ -304,6 +310,11 @@ NSString *queryDropTable = @"DROP TABLE ?";
     forLanguage:(NSString *)languageId
     withObjectId:(NSString *)objectId {
     [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"DELETE FROM meanings "
+            "WHERE id_object = ?",
+            objectId
+        ];
         [db executeUpdate:
             @"INSERT INTO meanings "
             "(meaning, id_object, id_language) "
@@ -321,6 +332,11 @@ NSString *queryDropTable = @"DROP TABLE ?";
     withObjectId:(NSString *)objectId {
     [self.queue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:
+            @"DELETE FROM words "
+            "WHERE id_object = ?",
+            objectId
+        ];
+        [db executeUpdate:
             @"INSERT INTO words"
             "(word, id_meaning, id_language, id_object)"
             "VALUES (?, ?, ?, ?)",
@@ -337,6 +353,11 @@ NSString *queryDropTable = @"DROP TABLE ?";
     falseMeaningTwo:(NSString *)meaningTwoId
     withObjectId:(NSString *)objectId {
     [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"DELETE FROM cards "
+            "WHERE id_object = ?",
+            objectId
+        ];
         [db executeUpdate:
             @"INSERT INTO cards"
             "(id_word, id_meaning_false_1, id_meaning_false_2, id_object)"
