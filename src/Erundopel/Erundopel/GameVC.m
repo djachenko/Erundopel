@@ -63,7 +63,7 @@
     NSLog(@"answer received");
 
     CardAnswerVC *cardVC = [[CardAnswerVC alloc] initWithCard:self.currentCard];
-    cardVC.cardDelegate = self;
+    cardVC.delegate = self;
 
     [self addChildViewController:cardVC];
     [self.view addSubview:cardVC.view];
@@ -83,7 +83,9 @@
 
 - (void)finishGame
 {
+    [self.currentCardVC removeFromParentViewController];
 
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (void)answerAccepted

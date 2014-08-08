@@ -27,11 +27,17 @@
     [super viewDidLoad];
 
     [self.word setText:self.origin.word.text];
+
     [self.answer setText:((Meaning *)self.origin.meanings[self.origin.rightMeaningIndex]).text];
 
-    UITapGestureRecognizer *tapHandler = [[UITapGestureRecognizer alloc] initWithTarget:self.cardDelegate
+    UITapGestureRecognizer *tapHandler = [[UITapGestureRecognizer alloc] initWithTarget:self.delegate
                     action:@selector(answerAccepted)];
     [self.view addGestureRecognizer:tapHandler];
+}
+
+- (IBAction)back:(UIButton *)sender
+{
+    [self.delegate finishGame];
 }
 
 @end

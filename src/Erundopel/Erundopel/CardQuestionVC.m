@@ -29,15 +29,8 @@
     [self.wordLabel setText:self.origin.word.text];
 
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop){
-        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.alignment = NSTextAlignmentCenter;
-
-        NSAttributedString *title = [[NSAttributedString alloc]
-                initWithString:((Meaning *)self.origin.meanings[idx]).text
-                attributes: @{NSParagraphStyleAttributeName: paragraphStyle}];
-
-        [button setAttributedTitle:title
-                forState:UIControlStateNormal];
+        [button setTitle:((Meaning *)self.origin.meanings[idx]).text forState:UIControlStateNormal];
+        [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
     }];
 }
 
@@ -54,6 +47,11 @@
     }
 
     [self.delegate chosenCorrectOption:index == self.origin.rightMeaningIndex];
+}
+
+- (IBAction)back:(UIButton *)sender
+{
+    [self.delegate finishGame];
 }
 
 @end
