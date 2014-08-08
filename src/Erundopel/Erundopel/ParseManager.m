@@ -14,19 +14,28 @@
 #import "ParseMeaning.h"
 #import "ParseLanguage.h"
 
+
+
 @interface ParseManager ()
 
 @property (nonatomic, strong) Database *db;
+@property (nonatomic, weak) NSUserDefaults *userDefaults;
 
 @end
 
 @implementation ParseManager
+
+static NSString *const kLastUpdateLanguage = @"LastUpdateLanguage";
+static NSString *const kLastUpdateMeaning = @"LastUpdateMeaning";
+static NSString *const kLastUpdateWord = @"LastUpdateWord";
+static NSString *const kLastUpdateCard = @"LastUpdateCard";
 
 - (instancetype)init {
     self = [super init];
     
     if (self) {
         _db = [[Database alloc] init];
+        _userDefaults = [NSUserDefaults standardUserDefaults];
     }
     
     return self;
@@ -41,8 +50,26 @@
  *  and execute enough queries to get all the data.
  */
 
+- (void)initUpdateDates {
+    NSArray *keys = @[
+        kLastUpdateLanguage,
+        kLastUpdateMeaning,
+        kLastUpdateWord,
+        kLastUpdateCard
+    ];
+    
+    for (NSString *key in keys) {
+        if ([self getLastUpdateDateForKey:key] == nil) {
+            [self setLastUpdateDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0]
+                forKey:key];
+        }
+    }
+}
+
 - (void)downloadAll {
-    [self.db wipeAllTables];
+    [self initUpdateDates];
+    
+    //[self.db wipeAllTables];
     [self downloadLanguages];
     [self downloadMeanings];
     [self downloadWords];
@@ -51,6 +78,10 @@
 
 - (void)downloadLanguages {
     PFQuery *query = [ParseLanguage query];
+    
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateLanguage]];
+    
+    [query orderByDescending:@"updatedAt"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -62,6 +93,15 @@
                     withObjectId:language.objectId
                 ];
             }
+            
+            ParseLanguage *newestObject = objects.firstObject;
+            
+            if (!!newestObject) {
+                [self setLastUpdateDate:newestObject.updatedAt
+                    forKey:kLastUpdateLanguage];
+            }
+            
+            NSLog(@"%@", [self getLastUpdateDateForKey:kLastUpdateLanguage]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -71,7 +111,10 @@
 - (void)downloadMeanings {
     PFQuery *query = [ParseMeaning query];
     
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateMeaning]];
+    
     [query setLimit:1000];
+    [query orderByDescending:@"updatedAt"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -84,6 +127,15 @@
                     withObjectId:meaning.objectId
                 ];
             }
+            
+            ParseMeaning *newestObject = objects.firstObject;
+            
+            if (!!newestObject) {
+                [self setLastUpdateDate:newestObject.updatedAt
+                    forKey:kLastUpdateMeaning];
+            }
+            
+            NSLog(@"%@", [self getLastUpdateDateForKey:kLastUpdateMeaning]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -92,6 +144,10 @@
 
 - (void)downloadWords {
     PFQuery *query = [ParseWord query];
+    
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateWord]];
+    
+    [query orderByDescending:@"updatedAt"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -105,6 +161,15 @@
                     withObjectId:word.objectId
                 ];
             }
+            
+            ParseWord *newestObject = objects.firstObject;
+            
+            if (!!newestObject) {
+                [self setLastUpdateDate:newestObject.updatedAt
+                    forKey:kLastUpdateWord];
+            }
+            
+            NSLog(@"%@", [self getLastUpdateDateForKey:kLastUpdateWord]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -113,6 +178,10 @@
 
 - (void)downloadCards {
     PFQuery *query = [ParseCard query];
+    
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:kLastUpdateCard]];
+    
+    [query orderByDescending:@"updatedAt"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -126,10 +195,32 @@
                     withObjectId:card.objectId
                 ];
             }
+            
+            ParseCard *newestObject = objects.firstObject;
+            
+            if (!!newestObject) {
+                [self setLastUpdateDate:newestObject.updatedAt
+                    forKey:kLastUpdateCard];
+            }
+            
+            NSLog(@"Card last update: %@", [self getLastUpdateDateForKey:kLastUpdateCard]);
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+}
+
+- (void)setLastUpdateDate:(NSDate *)updateDate
+    forKey:(NSString *)key {
+    [self.userDefaults
+        setObject:updateDate
+        forKey:key];
+    
+    [self.userDefaults synchronize];
+}
+
+- (NSDate *)getLastUpdateDateForKey:(NSString *)key {
+    return [self.userDefaults objectForKey:key];
 }
 
 @end
