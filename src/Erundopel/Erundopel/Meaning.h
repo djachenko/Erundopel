@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "ParseObject.h"
 
 
-@interface Meaning : NSObject <NSCopying, ParseObject>
+@interface Meaning : NSObject <NSCopying>
 
 @property (nonatomic, strong, readonly) NSString *text;
 

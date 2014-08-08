@@ -6,8 +6,6 @@
 
 }
 
-@synthesize objectId;
-
 - (instancetype)initWithText:(NSString *)text
 {
     self = [self init];
