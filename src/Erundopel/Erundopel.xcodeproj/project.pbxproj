@@ -35,6 +35,10 @@
 		84462EE819937B310072D773 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462EDB19937AAE0072D773 /* StoreKit.framework */; };
 		84462EE919937B310072D773 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462EDD19937AB60072D773 /* SystemConfiguration.framework */; };
 		84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EEB1993A6CC0072D773 /* ParseManager.m */; };
+		84462EF01994B5820072D773 /* ParseWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EEF1994B5820072D773 /* ParseWord.m */; };
+		84462EF31994B8850072D773 /* ParseMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF21994B8850072D773 /* ParseMeaning.m */; };
+		84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF51994B93D0072D773 /* ParseLanguage.m */; };
+		84462EF91994BCF10072D773 /* ParseCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF81994BCF10072D773 /* ParseCard.m */; };
 		84688911198B8172005BC906 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468890F198B8172005BC906 /* MainMenuVC.m */; };
 		84688912198B8172005BC906 /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84688910198B8172005BC906 /* MainMenuVC.xib */; };
 		84688914198B8F28005BC906 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 84688913198B8F28005BC906 /* black_line.png */; };
@@ -99,7 +103,14 @@
 		84462EDD19937AB60072D773 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		84462EEA1993A6CC0072D773 /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseManager.h; sourceTree = "<group>"; };
 		84462EEB1993A6CC0072D773 /* ParseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseManager.m; sourceTree = "<group>"; };
-		84462EED1993B0AE0072D773 /* ParseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseObject.h; sourceTree = "<group>"; };
+		84462EEE1994B5820072D773 /* ParseWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseWord.h; sourceTree = "<group>"; };
+		84462EEF1994B5820072D773 /* ParseWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseWord.m; sourceTree = "<group>"; };
+		84462EF11994B8850072D773 /* ParseMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseMeaning.h; sourceTree = "<group>"; };
+		84462EF21994B8850072D773 /* ParseMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseMeaning.m; sourceTree = "<group>"; };
+		84462EF41994B93D0072D773 /* ParseLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseLanguage.h; sourceTree = "<group>"; };
+		84462EF51994B93D0072D773 /* ParseLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseLanguage.m; sourceTree = "<group>"; };
+		84462EF71994BCF10072D773 /* ParseCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseCard.h; sourceTree = "<group>"; };
+		84462EF81994BCF10072D773 /* ParseCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseCard.m; sourceTree = "<group>"; };
 		8468890E198B8172005BC906 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		8468890F198B8172005BC906 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		84688910198B8172005BC906 /* MainMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuVC.xib; sourceTree = "<group>"; };
@@ -210,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				84A3A83719862CBC003594C7 /* Erundopel */,
-				84A3A85019862CBC003594C7 /* ErundopelTests */,
 				84A3A83019862CBC003594C7 /* Frameworks */,
 				84A3A82F19862CBC003594C7 /* Products */,
 			);
@@ -279,9 +289,17 @@
 				5860393905F73B344D397CF2 /* CardAnswerVC.h */,
 				5860396C28A5F32727260464 /* CardAnswerVC.m */,
 				5860316A9A8D09EF23F4AEB2 /* GameFinisher.h */,
-				84462EED1993B0AE0072D773 /* ParseObject.h */,
 				84462EEA1993A6CC0072D773 /* ParseManager.h */,
 				84462EEB1993A6CC0072D773 /* ParseManager.m */,
+				84462EEE1994B5820072D773 /* ParseWord.h */,
+				84462EEF1994B5820072D773 /* ParseWord.m */,
+				84462EF11994B8850072D773 /* ParseMeaning.h */,
+				84462EF21994B8850072D773 /* ParseMeaning.m */,
+				84462EF41994B93D0072D773 /* ParseLanguage.h */,
+				84462EF51994B93D0072D773 /* ParseLanguage.m */,
+				84462EF71994BCF10072D773 /* ParseCard.h */,
+				84462EF81994BCF10072D773 /* ParseCard.m */,
+				84A3A85019862CBC003594C7 /* ErundopelTests */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -304,7 +322,7 @@
 				84A3A85119862CBC003594C7 /* Supporting Files */,
 			);
 			path = ErundopelTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		84A3A85119862CBC003594C7 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -416,9 +434,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A3A84219862CBC003594C7 /* AppDelegate.m in Sources */,
+				84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */,
 				849940E5198FB2C20001C817 /* FMDatabaseQueue.m in Sources */,
 				84688911198B8172005BC906 /* MainMenuVC.m in Sources */,
 				8478D312198E4E9A005049E9 /* CardQuestionVC.m in Sources */,
+				84462EF31994B8850072D773 /* ParseMeaning.m in Sources */,
 				84F56EF3199208AB009102F0 /* GameVC.m in Sources */,
 				84A3A83E19862CBC003594C7 /* main.m in Sources */,
 				849940E2198FB2C20001C817 /* FMDatabase.m in Sources */,
@@ -428,6 +448,8 @@
 				849940A5198FA5AF0001C817 /* Database.m in Sources */,
 				849940E3198FB2C20001C817 /* FMDatabaseAdditions.m in Sources */,
 				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
+				84462EF01994B5820072D773 /* ParseWord.m in Sources */,
+				84462EF91994BCF10072D773 /* ParseCard.m in Sources */,
 				58603239484151DA98F44533 /* Word.m in Sources */,
 				586039B96A113282FB62CD06 /* Article.m in Sources */,
 				5860375F6FBE66D5B0540880 /* Card.m in Sources */,

@@ -1,6 +1,10 @@
 #import "AppDelegate.h"
 #import "MainMenuVC.h"
-#import "Parse/Parse.h"
+#import "ParseCard.h"
+#import "ParseWord.h"
+#import "ParseMeaning.h"
+#import "ParseLanguage.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -16,6 +20,12 @@
     self.window.rootViewController = navigationController;
 
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    // register Parse PFObject subclasses
+    [ParseLanguage registerSubclass];
+    [ParseMeaning registerSubclass];
+    [ParseWord registerSubclass];
+    [ParseCard registerSubclass];
     
     // authorize app to Parse.com
     [Parse setApplicationId:@"WmRYckJZWu9SaAEGu32YdDFHlBH2jjd0ziaWrYqR"
