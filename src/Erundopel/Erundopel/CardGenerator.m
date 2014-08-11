@@ -93,9 +93,14 @@
     NSMutableArray *cards = [[NSMutableArray alloc] init];
     
     NSArray *articles = [self.db getRandomArticles:5];
-    NSSet *meanings = [self.db getRandomMeanings:15];
+    NSSet *meanings = [self.db getRandomMeanings:5*3];
+    NSMutableSet *mutableMeanings = [meanings mutableCopy];
     
-    NSEnumerator *meaningEnumerator = [meanings objectEnumerator];
+    for (Article *article in articles) {
+        [mutableMeanings removeObject:article.meaning];
+    }
+    
+    NSEnumerator *meaningEnumerator = [mutableMeanings objectEnumerator];
     
     for (Article *article in articles) {
         Card *card = [[Card alloc]
