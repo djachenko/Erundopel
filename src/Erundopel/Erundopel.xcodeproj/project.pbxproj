@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		586030214B0FEB270F1E6E83 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A76700C25FAE1FA187A /* HelpVC.m */; };
+		586030EA31CCFD505B70C636 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603B00720B89800107015B /* HelpVC.xib */; };
 		58603239484151DA98F44533 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603434B68371D83C6E4637 /* Word.m */; };
 		58603568E6C339BF960818D3 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860309F38FD78E64687C825 /* Meaning.m */; };
 		5860374CB0E6BE50545F864F /* CardAnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860396C28A5F32727260464 /* CardAnswerVC.m */; };
@@ -58,6 +60,7 @@
 		5860309F38FD78E64687C825 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meaning.m; sourceTree = "<group>"; };
 		5860311BB0FA2652E8300E4A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		5860316A9A8D09EF23F4AEB2 /* GameFinisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFinisher.h; sourceTree = "<group>"; };
+		586031D3D0C0CC7B58F27DF8 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
 		5860339BD57A18D43D8B240F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		58603434B68371D83C6E4637 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		586034FF79580665684CD7D4 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 		5860385B21C332BABCF61493 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		5860393905F73B344D397CF2 /* CardAnswerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAnswerVC.h; sourceTree = "<group>"; };
 		5860396C28A5F32727260464 /* CardAnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAnswerVC.m; sourceTree = "<group>"; };
+		58603A76700C25FAE1FA187A /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
+		58603B00720B89800107015B /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
 		58603FC5F627789E6E394D5A /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
 		8468890E198B8172005BC906 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		8468890F198B8172005BC906 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
@@ -221,6 +226,9 @@
 				847B53681994E61D005A60DC /* AddContentChooseViewController.h */,
 				847B53691994E61D005A60DC /* AddContentChooseViewController.m */,
 				847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */,
+				586031D3D0C0CC7B58F27DF8 /* HelpVC.h */,
+				58603A76700C25FAE1FA187A /* HelpVC.m */,
+				58603B00720B89800107015B /* HelpVC.xib */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 				84F56EF4199208AB009102F0 /* GameVC.xib in Resources */,
 				8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */,
 				58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */,
+				586030EA31CCFD505B70C636 /* HelpVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +381,7 @@
 				847B536B1994E61D005A60DC /* AddContentChooseViewController.m in Sources */,
 				5860375F6FBE66D5B0540880 /* Card.m in Sources */,
 				5860374CB0E6BE50545F864F /* CardAnswerVC.m in Sources */,
+				586030214B0FEB270F1E6E83 /* HelpVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

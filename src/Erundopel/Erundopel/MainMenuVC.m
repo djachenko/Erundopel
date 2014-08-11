@@ -1,6 +1,7 @@
 #import "MainMenuVC.h"
 #import "GameVC.h"
 #import "AddContentChooseViewController.h"
+#import "HelpVC.h"
 
 @interface MainMenuVC ()
 
@@ -48,7 +49,7 @@
 }
 
 - (IBAction)buttonHowToPlay:(UIButton *)sender {
-    NSLog(@"How To Play pressed");
+    [self presentViewController:[[HelpVC alloc] init] animated:YES completion:nil];
 }
 
 - (IBAction)buttonRecords:(UIButton *)sender {
