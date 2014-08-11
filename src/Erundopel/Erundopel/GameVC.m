@@ -23,7 +23,7 @@
     
     if (self) {
         _count = 0;
-        _cardGenerator = [[CardGenerator alloc] init];
+        _cardGenerator = [[CardGenerator alloc] initWithMode:CardGeneratorModeRandom];
     }
     
     return self;

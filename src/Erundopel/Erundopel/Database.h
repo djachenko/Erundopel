@@ -12,6 +12,10 @@
 
 - (NSArray *)getAllFixedCards;
 - (NSArray *)getAllMeanings;
+
+- (NSArray *)getRandomArticles:(unsigned int)amount;
+- (NSSet *)getRandomMeanings:(unsigned int)amount;
+
 - (void)wipeAllTables;
 
 - (void)insertLanguage:(NSString *)name

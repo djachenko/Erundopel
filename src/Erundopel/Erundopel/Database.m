@@ -121,44 +121,6 @@ NSString *queryDropTable = @"DROP TABLE ?";
             ")"
         ];
     }];
-    //[self fillWithTestContent];
-}
-
-- (void)fillWithTestContent {
-    [self.queue inDatabase:^(FMDatabase *db) {
-//        // meanings
-//        [db executeUpdate:@"DELETE FROM meanings"];
-//        
-//        NSArray *meanings = @[
-//            @"другое название ягоды голубики",
-//            @"гладкоствольное, фитильное дульнозарядное ружьё",
-//            @"неправильное определение",
-//            @"определение от совсем другого слова",
-//            @"вообще что-то странное и не к месту",
-//            @"имперский звездолет класса \"планетарный разрушитель\"",
-//            @"большой полосатый мух",
-//            @"кто-то хитрый и большой"
-//        ];
-//        
-//        for (NSString *meaning in meanings) {
-//            [db executeUpdate:@"INSERT INTO meanings (meaning, id_language) VALUES (?, ?)", meaning, [NSNumber numberWithInt:1]];
-//        }
-//        
-//        // cards
-//        [db executeUpdate:@"DELETE FROM cards"];
-//        
-//        [db executeUpdate:
-//            @"INSERT INTO cards (id_word, id_meaning_false_1, id_meaning_false_2) VALUES (?, ?, ?)",
-//            [NSNumber numberWithInt:1],
-//            [NSNumber numberWithInt:5],
-//            [NSNumber numberWithInt:6]];
-//        [db executeUpdate:
-//            @"INSERT INTO cards (id_word, id_meaning_false_1, id_meaning_false_2) VALUES (?, ?, ?)",
-//            [NSNumber numberWithInt:2],
-//            [NSNumber numberWithInt:7],
-//            [NSNumber numberWithInt:8]];
-    }];
-
 }
 
 - (void)dropAllTables {
@@ -201,8 +163,8 @@ NSString *queryDropTable = @"DROP TABLE ?";
     
     for (NSDictionary *cardDict in cardsArray) {
         Article *article = [self getArticleForWordById:cardDict[@"id_word"]];
-        Meaning *meaning_false_1 = [self getMeaningById:cardDict[@"id_meaning_false_1"]];
-        Meaning *meaning_false_2 = [self getMeaningById:cardDict[@"id_meaning_false_2"]];
+        Meaning *meaning_false_1 = [self getMeaningByObjectId:cardDict[@"id_meaning_false_1"]];
+        Meaning *meaning_false_2 = [self getMeaningByObjectId:cardDict[@"id_meaning_false_2"]];
         NSArray *meanings = @[
             meaning_false_1,
             meaning_false_2
@@ -245,12 +207,12 @@ NSString *queryDropTable = @"DROP TABLE ?";
         }
     }];
     
-    meaning = [self getMeaningById:meaningId];
+    meaning = [self getMeaningByObjectId:meaningId];
     
     return [[Article alloc] initWithWord:word meaning:meaning];
 }
 
-- (Meaning *)getMeaningById:(NSString *)meaningId
+- (Meaning *)getMeaningByObjectId:(NSString *)meaningId
 {
     Meaning *__block meaning = nil;
     
@@ -259,7 +221,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
         FMResultSet *meaningResult = [db executeQuery:
             @"SELECT meaning "
             "FROM meanings "
-            "WHERE meanings.id_object = ?",
+            "WHERE id_object = ?",
             meaningId
         ];
         
@@ -286,6 +248,92 @@ NSString *queryDropTable = @"DROP TABLE ?";
 //        }
     }];
     return [NSArray arrayWithArray:mutableArray];
+}
+
+- (NSArray *)getRandomArticles:(unsigned int)amount {
+    NSMutableArray *__block articlesArray = [[NSMutableArray alloc] init];
+    
+    NSMutableSet *__block wordObjectIds = [[NSMutableSet alloc] init];
+
+    [self.queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *maxIdResult = [db executeQuery:
+            @"SELECT id "
+            "FROM words "
+            "ORDER BY id DESC "
+            "LIMIT 1"
+        ];
+        
+        unsigned int maxId = 0;
+        
+        if ([maxIdResult next]) {
+            maxId = [maxIdResult intForColumn:@"id"];
+        }
+        [maxIdResult close];
+        
+        if (maxId > 0) {
+            while ([wordObjectIds count] < amount) {
+                 FMResultSet *wordResult = [db executeQuery:
+                    @"SELECT id_object "
+                    "FROM words "
+                    "WHERE id = ?"
+                    "LIMIT 1",
+                    [NSNumber numberWithInt:(arc4random() % maxId)]
+                ];
+                
+                if ([wordResult next]) {
+                    NSString *wordObjectId = [wordResult stringForColumn:@"id_object"];
+                    [wordObjectIds addObject:wordObjectId];
+                }
+                [wordResult close];
+            }
+        }
+    }];
+    
+    for (NSString *wordObjectId in wordObjectIds) {
+        [articlesArray addObject:[self getArticleForWordById:wordObjectId]];
+    }
+    
+    return articlesArray;
+}
+
+- (NSSet *)getRandomMeanings:(unsigned int)amount {
+    NSMutableSet *__block meaningsSet = [[NSMutableSet alloc] init];
+
+    [self.queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *maxIdResult = [db executeQuery:
+            @"SELECT id "
+            "FROM meanings "
+            "ORDER BY id DESC "
+            "LIMIT 1"
+        ];
+        
+        unsigned int maxId = 0;
+        
+        if ([maxIdResult next]) {
+            maxId = [maxIdResult intForColumn:@"id"];
+        }
+        [maxIdResult close];
+        
+        if (maxId > 0) {
+            while ([meaningsSet count] < amount) {
+                 FMResultSet *meaningResult = [db executeQuery:
+                    @"SELECT meaning "
+                    "FROM meanings "
+                    "WHERE id = ?"
+                    "LIMIT 1",
+                    [NSNumber numberWithInt:(arc4random() % maxId)]
+                ];
+                
+                if ([meaningResult next]) {
+                    NSString *meaning = [meaningResult stringForColumn:@"meaning"];
+                    [meaningsSet addObject:[[Meaning alloc] initWithText:meaning]];
+                }
+                [meaningResult close];
+            }
+        }
+    }];
+    
+    return [NSSet setWithSet:meaningsSet];
 }
 
 -(void)insertLanguage:(NSString *)name withObjectId:(NSString *)objectId {
