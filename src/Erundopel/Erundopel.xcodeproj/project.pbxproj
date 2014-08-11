@@ -18,6 +18,8 @@
 		84688914198B8F28005BC906 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 84688913198B8F28005BC906 /* black_line.png */; };
 		8478D312198E4E9A005049E9 /* CardQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478D310198E4E9A005049E9 /* CardQuestionVC.m */; };
 		8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478D311198E4E9A005049E9 /* CardQuestionVC.xib */; };
+		847B536B1994E61D005A60DC /* AddContentChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B53691994E61D005A60DC /* AddContentChooseViewController.m */; };
+		847B536C1994E61D005A60DC /* AddContentChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */; };
 		8499407B198F96D40001C817 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8499407A198F96D40001C817 /* libsqlite3.dylib */; };
 		849940A5198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
 		849940A6198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
@@ -72,6 +74,9 @@
 		8478D30F198E4E9A005049E9 /* CardQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardQuestionVC.h; sourceTree = "<group>"; };
 		8478D310198E4E9A005049E9 /* CardQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardQuestionVC.m; sourceTree = "<group>"; };
 		8478D311198E4E9A005049E9 /* CardQuestionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardQuestionVC.xib; sourceTree = "<group>"; };
+		847B53681994E61D005A60DC /* AddContentChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContentChooseViewController.h; sourceTree = "<group>"; };
+		847B53691994E61D005A60DC /* AddContentChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContentChooseViewController.m; sourceTree = "<group>"; };
+		847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddContentChooseViewController.xib; sourceTree = "<group>"; };
 		8499407A198F96D40001C817 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849940A3198FA5AF0001C817 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		849940A4198FA5AF0001C817 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
@@ -200,19 +205,22 @@
 				849940A4198FA5AF0001C817 /* Database.m */,
 				84A3A83819862CBC003594C7 /* Supporting Files */,
 				5860371B0F114CBFB92A035B /* Meaning.h */,
-				5860309F38FD78E64687C825 /* Meaning.m */,
 				58603434B68371D83C6E4637 /* Word.m */,
 				586037842C180713A70CBAB2 /* Word.h */,
 				5860339BD57A18D43D8B240F /* Article.m */,
 				5860311BB0FA2652E8300E4A /* Article.h */,
 				586034FF79580665684CD7D4 /* Card.m */,
-				84F56EF0199208AB009102F0 /* GameVC.h */,
+				5860309F38FD78E64687C825 /* Meaning.m */,
 				84F56EF1199208AB009102F0 /* GameVC.m */,
+				84F56EF0199208AB009102F0 /* GameVC.h */,
 				5860385B21C332BABCF61493 /* Card.h */,
 				84F56EF2199208AB009102F0 /* GameVC.xib */,
 				5860393905F73B344D397CF2 /* CardAnswerVC.h */,
 				5860396C28A5F32727260464 /* CardAnswerVC.m */,
 				5860316A9A8D09EF23F4AEB2 /* GameFinisher.h */,
+				847B53681994E61D005A60DC /* AddContentChooseViewController.h */,
+				847B53691994E61D005A60DC /* AddContentChooseViewController.m */,
+				847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				84A3A83C19862CBC003594C7 /* InfoPlist.strings in Resources */,
 				84688914198B8F28005BC906 /* black_line.png in Resources */,
 				84688912198B8172005BC906 /* MainMenuVC.xib in Resources */,
+				847B536C1994E61D005A60DC /* AddContentChooseViewController.xib in Resources */,
 				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
 				84F56EF4199208AB009102F0 /* GameVC.xib in Resources */,
 				8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */,
@@ -360,6 +369,7 @@
 				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
 				58603239484151DA98F44533 /* Word.m in Sources */,
 				586039B96A113282FB62CD06 /* Article.m in Sources */,
+				847B536B1994E61D005A60DC /* AddContentChooseViewController.m in Sources */,
 				5860375F6FBE66D5B0540880 /* Card.m in Sources */,
 				5860374CB0E6BE50545F864F /* CardAnswerVC.m in Sources */,
 			);

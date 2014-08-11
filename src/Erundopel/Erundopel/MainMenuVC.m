@@ -1,7 +1,6 @@
 #import "MainMenuVC.h"
-#import "Database.h"
-#import "CardQuestionVC.h"
 #import "GameVC.h"
+#import "AddContentChooseViewController.h"
 
 @interface MainMenuVC ()
 
@@ -41,7 +40,7 @@
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
-    NSLog(@"Add Content pressed");
+    [self.navigationController pushViewController:[[AddContentChooseViewController alloc] init] animated:YES];
 }
 
 - (IBAction)buttonSettingsTap:(UIButton *)sender {
