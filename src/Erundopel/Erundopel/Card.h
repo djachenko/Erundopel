@@ -14,4 +14,6 @@
 - (instancetype)initWithArticle:(Article *)article falseMeaning:(Meaning *)meaning1 falseMeaning:
         (Meaning *)meaning2;
 
+- (void)shuffleMeanings;
+
 @end
