@@ -28,5 +28,17 @@
     return [NSString stringWithFormat:@"{<Meaning>: %@}", self.text];
 }
 
+- (BOOL)isEqual:(id)object {
+    if (![object isMemberOfClass:[self class]]) {
+        return false;
+    }
+    Meaning *other = (Meaning *)object;
+    return [self.text isEqual:other.text];
+}
+
+- (NSUInteger)hash {
+    return [self.text hash] * 13;
+}
+
 
 @end
