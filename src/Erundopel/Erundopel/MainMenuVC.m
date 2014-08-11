@@ -2,6 +2,7 @@
 #import "Database.h"
 #import "CardQuestionVC.h"
 #import "GameVC.h"
+#import "GameModeVC.h"
 #import "ParseManager.h"
 
 @interface MainMenuVC ()
@@ -38,7 +39,7 @@
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
-    [self.navigationController pushViewController:[[GameVC alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[GameModeVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {

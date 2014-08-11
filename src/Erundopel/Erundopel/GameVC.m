@@ -2,7 +2,7 @@
 #import "CardQuestionVC.h"
 #import "CardAnswerVC.h"
 #import "Database.h"
-#import "CardGenerator.h"
+
 
 @interface GameVC ()<CardQuestionVCDelegate, CardAnswerVCDelegate>
 
@@ -23,10 +23,15 @@
     
     if (self) {
         _count = 0;
-        _cardGenerator = [[CardGenerator alloc] initWithMode:CardGeneratorModeRandom];
+        _cardGenerator = [[CardGenerator alloc] initWithMode:CardGeneratorModeFixed];
     }
     
     return self;
+}
+
+- (void)setGameMode:(CardGeneratorMode)mode
+{
+    self.cardGenerator = [[CardGenerator alloc] initWithMode:mode];
 }
 
 - (void)viewDidLoad

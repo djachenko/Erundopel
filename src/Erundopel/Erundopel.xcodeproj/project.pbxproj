@@ -14,6 +14,8 @@
 		586039B96A113282FB62CD06 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860339BD57A18D43D8B240F /* Article.m */; };
 		58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603FC5F627789E6E394D5A /* CardAnswerVC.xib */; };
 		84381E821998A627004EB0DC /* CardGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E811998A627004EB0DC /* CardGenerator.m */; };
+		84381E861998DE46004EB0DC /* GameModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E841998DE46004EB0DC /* GameModeVC.m */; };
+		84381E871998DE46004EB0DC /* GameModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84381E851998DE46004EB0DC /* GameModeVC.xib */; };
 		84462ECC19937A280072D773 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECB19937A280072D773 /* Parse.framework */; };
 		84462ECE19937A5C0072D773 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECD19937A5C0072D773 /* AudioToolbox.framework */; };
 		84462ED019937A670072D773 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECF19937A670072D773 /* CFNetwork.framework */; };
@@ -94,6 +96,9 @@
 		58603FC5F627789E6E394D5A /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
 		84381E801998A627004EB0DC /* CardGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGenerator.h; sourceTree = "<group>"; };
 		84381E811998A627004EB0DC /* CardGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGenerator.m; sourceTree = "<group>"; };
+		84381E831998DE46004EB0DC /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
+		84381E841998DE46004EB0DC /* GameModeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeVC.m; sourceTree = "<group>"; };
+		84381E851998DE46004EB0DC /* GameModeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameModeVC.xib; sourceTree = "<group>"; };
 		84462ECB19937A280072D773 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		84462ECD19937A5C0072D773 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84462ECF19937A670072D773 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -292,6 +297,9 @@
 				8468890E198B8172005BC906 /* MainMenuVC.h */,
 				8468890F198B8172005BC906 /* MainMenuVC.m */,
 				84688910198B8172005BC906 /* MainMenuVC.xib */,
+				84381E831998DE46004EB0DC /* GameModeVC.h */,
+				84381E841998DE46004EB0DC /* GameModeVC.m */,
+				84381E851998DE46004EB0DC /* GameModeVC.xib */,
 				849940A3198FA5AF0001C817 /* Database.h */,
 				849940A4198FA5AF0001C817 /* Database.m */,
 				84A3A83819862CBC003594C7 /* Supporting Files */,
@@ -428,6 +436,7 @@
 				84F56EF4199208AB009102F0 /* GameVC.xib in Resources */,
 				8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */,
 				58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */,
+				84381E871998DE46004EB0DC /* GameModeVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +468,7 @@
 				84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */,
 				849940E4198FB2C20001C817 /* FMDatabasePool.m in Sources */,
 				849940E6198FB2C20001C817 /* FMResultSet.m in Sources */,
+				84381E861998DE46004EB0DC /* GameModeVC.m in Sources */,
 				849940A5198FA5AF0001C817 /* Database.m in Sources */,
 				849940E3198FB2C20001C817 /* FMDatabaseAdditions.m in Sources */,
 				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
