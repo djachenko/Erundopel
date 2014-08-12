@@ -30,7 +30,8 @@ static NSString *const kLastUpdateMeaning = @"LastUpdateMeaning";
 static NSString *const kLastUpdateWord = @"LastUpdateWord";
 static NSString *const kLastUpdateCard = @"LastUpdateCard";
 
-- (instancetype)init {
+- (instancetype)init
+{
     self = [super init];
     
     if (self) {
@@ -50,7 +51,8 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
  *  and execute enough queries to get all the data.
  */
 
-- (void)initUpdateDates:(BOOL)forced {
+- (void)initUpdateDates:(BOOL)forced
+{
     NSArray *keys = @[
         kLastUpdateLanguage,
         kLastUpdateMeaning,
@@ -76,138 +78,148 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     [self downloadCards];
 }
 
-- (void)downloadLanguages {
+- (void)handleQuery:(PFQuery *)query
+    withKey:(NSString *)key
+    block:(void (^)(NSArray *objects, NSError *error))block
+{
+    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
+    
+    [query orderByDescending:@"updatedAt"];
+    
+    [query setLimit:1000];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+
+}
+
+- (void)downloadLanguages
+{
     NSString *key = kLastUpdateLanguage;
     
     PFQuery *query = [ParseLanguage query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
-    
-    [query orderByDescending:@"updatedAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"Successfully retrieved %lu languages.", (unsigned long)objects.count);
+    [self handleQuery:query
+        withKey:key
+        block:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"Successfully retrieved %lu languages.", (unsigned long)objects.count);
 
-            for (ParseLanguage *language in objects) {
-                [self.db
-                    insertLanguage:language.name
-                    withObjectId:language.objectId
-                ];
+                for (ParseLanguage *language in objects) {
+                    [self.db
+                        insertLanguage:language.name
+                        withObjectId:language.objectId
+                    ];
+                }
+                
+                ParseLanguage *newestObject = objects.firstObject;
+                
+                [self setLastUpdateDateFromObject:newestObject forKey:key];
+                
+                NSLog(@"%@", [self getLastUpdateDateForKey:key]);
+            } else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            
-            ParseLanguage *newestObject = objects.firstObject;
-            
-            [self setLastUpdateDateFromObject:newestObject forKey:key];
-            
-            NSLog(@"%@", [self getLastUpdateDateForKey:key]);
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
     }];
 }
 
-- (void)downloadMeanings {
+- (void)downloadMeanings
+{
     NSString *key = kLastUpdateMeaning;
 
     PFQuery *query = [ParseMeaning query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
-    
-    [query setLimit:1000];
-    [query orderByDescending:@"updatedAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"Successfully retrieved %lu meanings.", (unsigned long)objects.count);
+    [self handleQuery:query
+        withKey:key
+        block:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"Successfully retrieved %lu meanings.", (unsigned long)objects.count);
 
-            for (ParseMeaning *meaning in objects) {
-                [self.db
-                    insertMeaning:meaning.meaning
-                    forLanguage:meaning.language.objectId
-                    withObjectId:meaning.objectId
-                ];
+                for (ParseMeaning *meaning in objects) {
+                    [self.db
+                        insertMeaning:meaning.meaning
+                        forLanguage:meaning.language.objectId
+                        withObjectId:meaning.objectId
+                    ];
+                }
+                
+                ParseMeaning *newestObject = objects.firstObject;
+                
+                [self setLastUpdateDateFromObject:newestObject forKey:key];
+                
+                NSLog(@"%@", [self getLastUpdateDateForKey:key]);
+            } else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            
-            ParseMeaning *newestObject = objects.firstObject;
-            
-            [self setLastUpdateDateFromObject:newestObject forKey:key];
-            
-            NSLog(@"%@", [self getLastUpdateDateForKey:key]);
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
     }];
 }
 
-- (void)downloadWords {
+- (void)downloadWords
+{
     NSString *key = kLastUpdateWord;
     
     PFQuery *query = [ParseWord query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
-    
-    [query orderByDescending:@"updatedAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"Successfully retrieved %lu words.", (unsigned long)objects.count);
+    [self handleQuery:query
+        withKey:key
+        block:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"Successfully retrieved %lu words.", (unsigned long)objects.count);
 
-            for (ParseWord *word in objects) {
-                [self.db
-                    insertWord:word.word
-                    withMeaning:word.meaning.objectId
-                    forLanguage:word.language.objectId
-                    withObjectId:word.objectId
-                ];
+                for (ParseWord *word in objects) {
+                    [self.db
+                        insertWord:word.word
+                        withMeaning:word.meaning.objectId
+                        forLanguage:word.language.objectId
+                        withObjectId:word.objectId
+                    ];
+                }
+                
+                ParseWord *newestObject = objects.firstObject;
+                
+                [self setLastUpdateDateFromObject:newestObject forKey:key];
+                
+                NSLog(@"%@", [self getLastUpdateDateForKey:key]);
+            } else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            
-            ParseWord *newestObject = objects.firstObject;
-            
-            [self setLastUpdateDateFromObject:newestObject forKey:key];
-            
-            NSLog(@"%@", [self getLastUpdateDateForKey:key]);
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
     }];
 }
 
-- (void)downloadCards {
+- (void)downloadCards
+{
     NSString *key = kLastUpdateCard;
     
     PFQuery *query = [ParseCard query];
     
-    [query whereKey:@"updatedAt" greaterThan:[self getLastUpdateDateForKey:key]];
-    
-    [query orderByDescending:@"updatedAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"Successfully retrieved %lu cards.", (unsigned long)objects.count);
+    [self handleQuery:query
+        withKey:key
+        block:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"Successfully retrieved %lu cards.", (unsigned long)objects.count);
 
-            for (ParseCard *card in objects) {
-                [self.db
-                    insertCardWithWord:card.word.objectId
-                    falseMeaningOne:card.meaning_false_1.objectId
-                    falseMeaningTwo:card.meaning_false_2.objectId
-                    withObjectId:card.objectId
-                ];
+                for (ParseCard *card in objects) {
+                    [self.db
+                        insertCardWithWord:card.word.objectId
+                        falseMeaningOne:card.meaning_false_1.objectId
+                        falseMeaningTwo:card.meaning_false_2.objectId
+                        withObjectId:card.objectId
+                    ];
+                }
+                
+                ParseCard *newestObject = objects.firstObject;
+                
+                [self setLastUpdateDateFromObject:newestObject forKey:key];
+                
+                NSLog(@"Card last update: %@", [self getLastUpdateDateForKey:key]);
+            } else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            
-            ParseCard *newestObject = objects.firstObject;
-            
-            [self setLastUpdateDateFromObject:newestObject forKey:key];
-            
-            NSLog(@"Card last update: %@", [self getLastUpdateDateForKey:key]);
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
     }];
 }
 
 - (void)setLastUpdateDate:(NSDate *)updateDate
-    forKey:(NSString *)key {
+    forKey:(NSString *)key
+{
     [self.userDefaults
         setObject:updateDate
         forKey:key];
@@ -215,12 +227,14 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     [self.userDefaults synchronize];
 }
 
-- (NSDate *)getLastUpdateDateForKey:(NSString *)key {
+- (NSDate *)getLastUpdateDateForKey:(NSString *)key
+{
     return [self.userDefaults objectForKey:key];
 }
 
 - (void)setLastUpdateDateFromObject:(PFObject *)object
-    forKey:(NSString *)key {
+    forKey:(NSString *)key
+{
         if (!!object) {
             [self setLastUpdateDate:object.updatedAt
                 forKey:key];
