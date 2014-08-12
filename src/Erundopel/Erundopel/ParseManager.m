@@ -87,7 +87,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully retrieved %d languages.", objects.count);
+            NSLog(@"Successfully retrieved %lu languages.", (unsigned long)objects.count);
 
             for (ParseLanguage *language in objects) {
                 [self.db
@@ -119,7 +119,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully retrieved %d meanings.", objects.count);
+            NSLog(@"Successfully retrieved %lu meanings.", (unsigned long)objects.count);
 
             for (ParseMeaning *meaning in objects) {
                 [self.db
@@ -151,7 +151,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully retrieved %d words.", objects.count);
+            NSLog(@"Successfully retrieved %lu words.", (unsigned long)objects.count);
 
             for (ParseWord *word in objects) {
                 [self.db
@@ -184,7 +184,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully retrieved %d cards.", objects.count);
+            NSLog(@"Successfully retrieved %lu cards.", (unsigned long)objects.count);
 
             for (ParseCard *card in objects) {
                 [self.db

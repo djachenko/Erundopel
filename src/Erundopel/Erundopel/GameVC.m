@@ -55,7 +55,7 @@
 
 - (void)chosenCorrectOption:(BOOL)state
 {
-    NSLog(@"answer received");
+    NSLog(@"answer received : %i", state);
 
     CardAnswerVC *cardVC = [[CardAnswerVC alloc] initWithCard:self.currentCard];
     cardVC.cardDelegate = self;
