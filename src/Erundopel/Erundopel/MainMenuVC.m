@@ -2,6 +2,7 @@
 #import "GameVC.h"
 #import "AddContentChooseViewController.h"
 #import "HelpVC.h"
+#import "LoginVC.h"
 
 @interface MainMenuVC ()
 
@@ -45,7 +46,7 @@
 }
 
 - (IBAction)buttonSettingsTap:(UIButton *)sender {
-    NSLog(@"Settings pressed");
+    [self.navigationController pushViewController:[[LoginVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonHowToPlay:(UIButton *)sender {

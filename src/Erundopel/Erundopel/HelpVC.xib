@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MEY-h0-Vob">
-                    <rect key="frame" x="97" y="499.00000031992789" width="127" height="50"/>
+                    <rect key="frame" x="97" y="499.00000031992801" width="127" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                     <state key="normal" title="Я понял">

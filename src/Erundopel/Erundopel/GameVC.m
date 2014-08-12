@@ -2,6 +2,7 @@
 #import "CardQuestionVC.h"
 #import "CardAnswerVC.h"
 #import "Database.h"
+#import "UserManager.h"
 
 @interface GameVC ()<CardQuestionVCDelegate, CardAnswerVCDelegate>
 
@@ -10,6 +11,8 @@
 
 @property (nonatomic, strong) UIViewController *currentCardVC;
 
+@property UserManager *userManager;
+
 @end
 
 @implementation GameVC
@@ -17,9 +20,12 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
     if (self) {
         _count = 0;
+        _userManager = [[UserManager alloc] init];
     }
+
     return self;
 }
 
@@ -60,7 +66,9 @@
 
 - (void)chosenCorrectOption:(BOOL)state
 {
-    NSLog(@"answer received");
+    self.userManager = [[UserManager alloc] init];
+    [self.userManager.currentUser guessedRight:state];
+    [self.userManager synchronize];
 
     CardAnswerVC *cardVC = [[CardAnswerVC alloc] initWithCard:self.currentCard];
     cardVC.delegate = self;
