@@ -33,7 +33,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-KH-FlE">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-KH-FlE" userLabel="View - buttons">
                     <rect key="frame" x="20" y="196" width="280" height="352"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
