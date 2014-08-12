@@ -5,33 +5,38 @@
 @property (nonatomic, strong) IBOutlet UILabel *word;
 @property (nonatomic, strong) IBOutlet UILabel *answer;
 
-@property (nonatomic, strong) Card *origin;
-
 @end
 
 @implementation CardAnswerVC
 
-- (instancetype)initWithCard:(Card *)card
+- (void)setCard:(Card *)card
 {
-    self = [self init];
+    _card = card;
 
-    if (self) {
-        _origin = card;
-    }
-
-    return self;
+    [self updateContent];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    [self.word setText:self.origin.word.text];
-    [self.answer setText:((Meaning *)self.origin.meanings[self.origin.rightMeaningIndex]).text];
-
-    UITapGestureRecognizer *tapHandler = [[UITapGestureRecognizer alloc] initWithTarget:self.cardDelegate
+    UITapGestureRecognizer *tapHandler = [[UITapGestureRecognizer alloc] initWithTarget:self.delegate
                     action:@selector(answerAccepted)];
     [self.view addGestureRecognizer:tapHandler];
+
+    [self updateContent];
+}
+
+- (void)updateContent
+{
+    self.word.text = self.card.word.text;
+
+    self.answer.text = ((Meaning *)self.card.meanings[self.card.rightMeaningIndex]).text;
+}
+
+- (IBAction)back:(UIButton *)sender
+{
+    [self.delegate finishGame];
 }
 
 @end

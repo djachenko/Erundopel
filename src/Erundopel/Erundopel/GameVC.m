@@ -1,7 +1,7 @@
 #import "GameVC.h"
 #import "CardQuestionVC.h"
 #import "CardAnswerVC.h"
-#import "Database.h"
+#import "UserManager.h"
 
 
 @interface GameVC ()<CardQuestionVCDelegate, CardAnswerVCDelegate>
@@ -9,7 +9,10 @@
 @property (nonatomic, strong) Card *currentCard;
 @property (nonatomic) NSInteger count;
 
-@property (nonatomic, strong) UIViewController *currentCardVC;
+@property UserManager *userManager;
+
+@property CardAnswerVC *answerVC;
+@property CardQuestionVC *questionVC;
 
 @property (nonatomic, strong) CardGenerator *cardGenerator;
 
@@ -20,12 +23,16 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
     if (self) {
-        _count = 0;
         _cardGenerator = [[CardGenerator alloc] initWithMode:CardGeneratorModeFixed];
+        _count = 0;
+        //TODO: CR: It would be nice to receive this object from outside.
+        _userManager = [[UserManager alloc] init];
+
+        _answerVC = [[CardAnswerVC alloc] init];
+        _questionVC = [[CardQuestionVC alloc] init];
     }
-    
+
     return self;
 }
 
@@ -38,62 +45,77 @@
 {
     [super viewDidLoad];
 
-    [self nextCard];
+    self.questionVC.delegate = self;
+    self.answerVC.delegate = self;
+
+    [self showCard:self.questionVC];
+    [self showCard:self.answerVC];
+
+    [self showNextQuestionCard];
 }
 
-- (void)nextCard
+- (void)showNextQuestionCard
 {
     self.currentCard = self.cardGenerator.nextCard;
     [self.currentCard shuffleMeanings];
 
-    CardQuestionVC *cardVC = [[CardQuestionVC alloc] initWithCard:self.currentCard];
-    cardVC.delegate = self;
-    
-    [self addChildViewController:cardVC];
-    [self.view addSubview:cardVC.view];
+    self.questionVC.card = self.currentCard;
+    self.answerVC.card = self.currentCard;
+
+    self.answerVC.view.hidden = YES;
+    self.questionVC.view.hidden = NO;
+
+    /*[UIView transitionWithView:self.view
+            duration:5.75
+            options:UIViewAnimationOptionTransitionCurlDown
+            animations:^{
+                self.answerVC.view.hidden = YES;
+                self.questionVC.view.hidden = NO;
+            }
+            completion:nil];*/
 }
 
 - (void)chosenCorrectOption:(BOOL)state
 {
-    NSLog(@"answer received");
-
-    CardAnswerVC *cardVC = [[CardAnswerVC alloc] initWithCard:self.currentCard];
-    cardVC.cardDelegate = self;
-
-    [self addChildViewController:cardVC];
-    [self.view addSubview:cardVC.view];
+    [self.userManager.currentUser guessedRight:state];
+    [self.userManager synchronize];
 
     [UIView transitionWithView:self.view
             duration:0.75
             options:arc4random_uniform(2) == 0 ? UIViewAnimationOptionTransitionFlipFromTop :
                     UIViewAnimationOptionTransitionFlipFromBottom
             animations:^{
-                [self.currentCardVC removeFromParentViewController];
-
-                [self addChildViewController:cardVC];
-                [self.view addSubview:cardVC.view];
+                self.answerVC.view.hidden = NO;
+                self.questionVC.view.hidden = YES;
             }
             completion:nil];
 }
 
 - (void)finishGame
 {
+    [self removeCard:self.answerVC];
+    [self removeCard:self.questionVC];
 
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)answerAccepted
 {
-    [self nextCard];
+    [self showNextQuestionCard];
 }
 
-- (void)addChildViewController:(UIViewController *)childController
+- (void)showCard:(UIViewController *)cardVC
 {
-    childController.view.frame = self.view.frame;
+    cardVC.view.frame = self.view.frame;
 
-    [super addChildViewController:childController];
-
-    self.currentCardVC = childController;
+    [self addChildViewController:cardVC];
+    [self.view addSubview:cardVC.view];
 }
 
+- (void)removeCard:(UIViewController *)cardVC
+{
+    [cardVC.view removeFromSuperview];
+    [cardVC removeFromParentViewController];
+}
 
 @end

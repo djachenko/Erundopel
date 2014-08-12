@@ -9,8 +9,7 @@
 
 @interface CardAnswerVC : UIViewController
 
-@property (nonatomic, strong) id<CardAnswerVCDelegate> cardDelegate;
-
-- (instancetype)initWithCard:(Card *)card;
+@property (nonatomic, weak) id<CardAnswerVCDelegate> delegate;
+@property (nonatomic, strong) Card *card;
 
 @end

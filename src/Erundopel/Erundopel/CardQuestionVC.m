@@ -3,57 +3,60 @@
 @interface CardQuestionVC ()
 
 @property (nonatomic, strong) IBOutlet UILabel *wordLabel;
-@property (nonatomic, strong) IBOutletCollection(UIButton) NSMutableArray *buttons;
-@property (nonatomic, strong) Card *origin;
+@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
 
 @end
 
 @implementation CardQuestionVC
 
-- (instancetype)initWithCard:(Card *)card
+- (instancetype)init
 {
-    self = [self init];
+    self = [super init];
 
     if (self) {
         _buttons = [NSMutableArray arrayWithCapacity:3];
-        _origin = card;
     }
 
     return self;
+}
+
+- (void)setCard:(Card *)card
+{
+    _card = card;
+
+    [self updateContent];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    [self.wordLabel setText:self.origin.word.text];
+    [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop){
+        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+    }];
+
+    [self updateContent];
+}
+
+- (void)updateContent
+{
+    self.wordLabel.text = self.card.word.text;
 
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop){
-        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.alignment = NSTextAlignmentCenter;
-
-        NSAttributedString *title = [[NSAttributedString alloc]
-                initWithString:((Meaning *)self.origin.meanings[idx]).text
-                attributes: @{NSParagraphStyleAttributeName: paragraphStyle}];
-
-        [button setAttributedTitle:title
-                forState:UIControlStateNormal];
+        [button setTitle:((Meaning *)self.card.meanings[idx]).text forState:UIControlStateNormal];
     }];
 }
 
 - (IBAction)meaningChosen:(UIButton *)sender
 {
-    NSUInteger index = 4;
+    NSUInteger index = [self.buttons indexOfObject:sender];
 
-    for (NSUInteger i = 0; i < [self.buttons count]; i++) {
-        if (sender == self.buttons[i]) {
-            index = i;
+    [self.delegate chosenCorrectOption:index == self.card.rightMeaningIndex];
+}
 
-            break;
-        }
-    }
-
-    [self.delegate chosenCorrectOption:index == self.origin.rightMeaningIndex];
+- (IBAction)back:(UIButton *)sender
+{
+    [self.delegate finishGame];
 }
 
 @end

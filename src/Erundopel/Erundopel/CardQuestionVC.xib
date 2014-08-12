@@ -26,11 +26,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view opaque="NO" contentMode="scaleToFill" id="VC8-WD-Ywb">
-                    <rect key="frame" x="0.0" y="168" width="320" height="400"/>
+                    <rect key="frame" x="0.0" y="150" width="320" height="418"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="KWD-y8-iic">
-                            <rect key="frame" x="20" y="0.0" width="280" height="100"/>
+                            <rect key="frame" x="20" y="0.0" width="280" height="106"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                             <state key="normal" title="Значение 1">
@@ -41,51 +41,37 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" id="KTt-HW-icc">
-                            <rect key="frame" x="0.0" y="100" width="320" height="40"/>
+                            <rect key="frame" x="0.0" y="104" width="320" height="42"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" id="tBQ-t9-lyk">
-                            <rect key="frame" x="20" y="140" width="280" height="100"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="tBQ-t9-lyk">
+                            <rect key="frame" x="20" y="146" width="280" height="104"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <state key="normal">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Значение 2">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="18" name="Georgia"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                            <state key="normal" title="Значение 2">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="meaningChosen:" destination="-1" eventType="touchUpInside" id="lzC-xh-OAT"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" id="sHn-aF-lOH">
-                            <rect key="frame" x="0.0" y="240" width="320" height="40"/>
+                            <rect key="frame" x="0.0" y="251" width="320" height="42"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" id="hfZ-sE-q2b">
-                            <rect key="frame" x="20" y="280" width="280" height="100"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="hfZ-sE-q2b">
+                            <rect key="frame" x="20" y="292" width="280" height="105"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <state key="normal">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Значение 3">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="18" name="Georgia"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                            <state key="normal" title="Значение 3">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="meaningChosen:" destination="-1" eventType="touchUpInside" id="mCI-fR-cDI"/>
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" id="kIO-NS-Uv1">
-                            <rect key="frame" x="0.0" y="380" width="320" height="20"/>
+                            <rect key="frame" x="0.0" y="397" width="320" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
@@ -93,6 +79,16 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2sf-xs-L3K">
+                    <rect key="frame" x="20" y="60" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="P4Z-QE-I2a"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
