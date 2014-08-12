@@ -2,99 +2,115 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameModeVC">
             <connections>
-                <outlet property="view" destination="Kbh-y9-owO" id="cdS-V4-o2a"/>
+                <outlet property="buttonClassic" destination="O8f-NF-uMO" id="QD8-sc-TVk"/>
+                <outlet property="buttonRandom" destination="zzr-QD-XXZ" id="dgw-jn-DGh"/>
+                <outlet property="headerLabel" destination="Rzc-0q-TVR" id="uQF-Rr-WEm"/>
+                <outlet property="view" destination="WbX-Ar-Iar" id="A3f-em-v1j"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Kbh-y9-owO">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="WbX-Ar-Iar">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим игры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-I1-zA4">
-                    <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JX1-gX-Mqh" userLabel="View - align">
+                    <rect key="frame" x="0.0" y="20" width="320" height="183"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="dvh-DU-6HN"/>
-                    </constraints>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим игры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzc-0q-TVR">
+                    <rect key="frame" x="0.0" y="20" width="320" height="83"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="38"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GQ-9O-HbP">
-                    <rect key="frame" x="20" y="228" width="280" height="320"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-Z0-HGQ" userLabel="View - container">
+                    <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-ca-g1S">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgr-3j-g6t" userLabel="View - button container">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8f-NF-uMO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                    <state key="normal" title="Классический">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="classicModeTap:" destination="-1" eventType="touchUpInside" id="IPY-BF-J9b"/>
+                                    </connections>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="hAy-jL-wY9">
+                                    <rect key="frame" x="144" y="89" width="32" height="5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzr-QD-XXZ">
+                                    <rect key="frame" x="0.0" y="94" width="320" height="89"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                    <state key="normal" title="Случайный">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="randomModeTap:" destination="-1" eventType="touchUpInside" id="baY-x2-Exd"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="YZ9-xT-4Nj"/>
+                                <constraint firstItem="hAy-jL-wY9" firstAttribute="width" secondItem="pgr-3j-g6t" secondAttribute="width" multiplier="0.1" id="1yS-xy-vDP"/>
+                                <constraint firstItem="zzr-QD-XXZ" firstAttribute="height" secondItem="O8f-NF-uMO" secondAttribute="height" id="Gbo-00-WOU"/>
+                                <constraint firstItem="hAy-jL-wY9" firstAttribute="top" secondItem="O8f-NF-uMO" secondAttribute="bottom" id="Jbk-HA-0K1"/>
+                                <constraint firstAttribute="bottom" secondItem="zzr-QD-XXZ" secondAttribute="bottom" id="K3H-TS-UVe"/>
+                                <constraint firstItem="zzr-QD-XXZ" firstAttribute="leading" secondItem="pgr-3j-g6t" secondAttribute="leading" id="MHR-CR-2iD"/>
+                                <constraint firstItem="hAy-jL-wY9" firstAttribute="height" secondItem="pgr-3j-g6t" secondAttribute="height" multiplier="0.03" id="Yox-mZ-7SD"/>
+                                <constraint firstAttribute="centerX" secondItem="hAy-jL-wY9" secondAttribute="centerX" id="cSb-wk-JHw"/>
+                                <constraint firstAttribute="trailing" secondItem="O8f-NF-uMO" secondAttribute="trailing" id="ciu-aX-la8"/>
+                                <constraint firstItem="zzr-QD-XXZ" firstAttribute="top" secondItem="hAy-jL-wY9" secondAttribute="bottom" id="dCc-45-VrA"/>
+                                <constraint firstItem="O8f-NF-uMO" firstAttribute="top" secondItem="pgr-3j-g6t" secondAttribute="top" id="mrF-HY-SJ6"/>
+                                <constraint firstItem="O8f-NF-uMO" firstAttribute="leading" secondItem="pgr-3j-g6t" secondAttribute="leading" id="pme-ss-ydv"/>
+                                <constraint firstAttribute="trailing" secondItem="zzr-QD-XXZ" secondAttribute="trailing" id="vYu-Ks-ggV"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
-                            <state key="normal" title="Классический">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="classicModeTap:" destination="-1" eventType="touchUpInside" id="wFD-Bf-g0H"/>
-                            </connections>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-on-9hS">
-                            <rect key="frame" x="128" y="60" width="25" height="26"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="25" id="nlH-JV-MGg"/>
-                                <constraint firstAttribute="height" constant="26" id="rmP-4M-w4S"/>
-                            </constraints>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZZ-SB-qFl">
-                            <rect key="frame" x="0.0" y="86" width="280" height="61"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="61" id="y5K-2H-cVy"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
-                            <state key="normal" title="Случайный">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="randomModeTap:" destination="-1" eventType="touchUpInside" id="xam-cY-CNr"/>
-                            </connections>
-                        </button>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="gbZ-on-9hS" firstAttribute="top" secondItem="bHW-ca-g1S" secondAttribute="bottom" id="5W7-xb-DGF"/>
-                        <constraint firstAttribute="centerX" secondItem="gbZ-on-9hS" secondAttribute="centerX" id="XjA-8G-Wzu"/>
-                        <constraint firstItem="bHW-ca-g1S" firstAttribute="top" secondItem="3GQ-9O-HbP" secondAttribute="top" id="jeb-oT-dqH"/>
-                        <constraint firstItem="EZZ-SB-qFl" firstAttribute="top" secondItem="gbZ-on-9hS" secondAttribute="bottom" id="l5t-tx-ct4"/>
-                        <constraint firstItem="EZZ-SB-qFl" firstAttribute="width" secondItem="3GQ-9O-HbP" secondAttribute="width" id="tYC-1Q-k7c"/>
-                        <constraint firstAttribute="width" secondItem="bHW-ca-g1S" secondAttribute="width" id="wG6-vL-0cy"/>
-                        <constraint firstAttribute="centerX" secondItem="bHW-ca-g1S" secondAttribute="centerX" id="xj8-LI-Mtk"/>
-                        <constraint firstAttribute="centerX" secondItem="gbZ-on-9hS" secondAttribute="centerX" id="ybu-3t-in6"/>
-                        <constraint firstAttribute="height" constant="320" id="zbn-gu-6Qe"/>
-                        <constraint firstAttribute="centerX" secondItem="EZZ-SB-qFl" secondAttribute="centerX" id="zeH-NE-Bth"/>
+                        <constraint firstItem="pgr-3j-g6t" firstAttribute="top" secondItem="xzY-Z0-HGQ" secondAttribute="top" id="MhD-Yv-Dxo"/>
+                        <constraint firstItem="pgr-3j-g6t" firstAttribute="leading" secondItem="xzY-Z0-HGQ" secondAttribute="leading" id="QCz-wT-YDZ"/>
+                        <constraint firstItem="pgr-3j-g6t" firstAttribute="height" secondItem="xzY-Z0-HGQ" secondAttribute="height" multiplier="0.5" id="aWw-58-aXn"/>
+                        <constraint firstAttribute="trailing" secondItem="pgr-3j-g6t" secondAttribute="trailing" id="pKM-2Q-U8J"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Kk1-I1-zA4" firstAttribute="top" secondItem="Kbh-y9-owO" secondAttribute="top" constant="20" id="2J3-vV-3M8"/>
-                <constraint firstAttribute="bottom" secondItem="3GQ-9O-HbP" secondAttribute="bottom" constant="20" id="MqO-v7-38A"/>
-                <constraint firstAttribute="centerX" secondItem="3GQ-9O-HbP" secondAttribute="centerX" id="VxO-3I-ddH"/>
-                <constraint firstAttribute="trailing" secondItem="Kk1-I1-zA4" secondAttribute="trailing" id="ZTi-HX-yOq"/>
-                <constraint firstItem="Kk1-I1-zA4" firstAttribute="leading" secondItem="Kbh-y9-owO" secondAttribute="leading" id="a68-5x-fdS"/>
-                <constraint firstItem="3GQ-9O-HbP" firstAttribute="leading" secondItem="Kbh-y9-owO" secondAttribute="leading" constant="20" id="o8H-j0-a4m"/>
-                <constraint firstAttribute="trailing" secondItem="3GQ-9O-HbP" secondAttribute="trailing" constant="20" id="tcc-ae-ix5"/>
+                <constraint firstItem="Rzc-0q-TVR" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="1E5-jd-Edk"/>
+                <constraint firstAttribute="bottom" secondItem="xzY-Z0-HGQ" secondAttribute="bottom" id="As9-1T-kpb"/>
+                <constraint firstAttribute="trailing" secondItem="JX1-gX-Mqh" secondAttribute="trailing" id="BCh-QC-V1J"/>
+                <constraint firstItem="JX1-gX-Mqh" firstAttribute="top" secondItem="WbX-Ar-Iar" secondAttribute="top" constant="20" id="CMX-b3-NkU"/>
+                <constraint firstItem="JX1-gX-Mqh" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="G9r-Dw-1OK"/>
+                <constraint firstItem="Rzc-0q-TVR" firstAttribute="top" secondItem="WbX-Ar-Iar" secondAttribute="top" constant="20" id="Lsc-Td-dH5"/>
+                <constraint firstItem="JX1-gX-Mqh" firstAttribute="height" secondItem="xzY-Z0-HGQ" secondAttribute="height" multiplier="0.5" id="PhR-zQ-YCn"/>
+                <constraint firstAttribute="trailing" secondItem="xzY-Z0-HGQ" secondAttribute="trailing" id="Prd-jT-en3"/>
+                <constraint firstItem="xzY-Z0-HGQ" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="YGu-rE-hpH"/>
+                <constraint firstItem="JX1-gX-Mqh" firstAttribute="height" secondItem="Rzc-0q-TVR" secondAttribute="height" multiplier="2.2" id="arQ-zD-kEu"/>
+                <constraint firstAttribute="trailing" secondItem="Rzc-0q-TVR" secondAttribute="trailing" id="cLf-GS-S0r"/>
+                <constraint firstItem="xzY-Z0-HGQ" firstAttribute="top" secondItem="JX1-gX-Mqh" secondAttribute="bottom" id="qcB-rj-1GH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

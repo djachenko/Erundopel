@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 //
 //  Database.m
 //  Erundopel
@@ -15,14 +7,15 @@
 //
 
 #import "Database.h"
-#import "FMDatabase.h"
-#import "FMDatabaseQueue.h"
+#import <FMDB/FMDatabase.h>
+#import <FMDB/FMDatabaseQueue.h>
 #import "Meaning.h"
 #import "Word.h"
 #import "Article.h"
 #import "Card.h"
 
 @interface Database ()
+
 
 @property (nonatomic, strong) FMDatabaseQueue *queue;
 
@@ -40,7 +33,18 @@ NSString *tableNameMeaningPopularity = @"meaning_popularity";
 
 NSString *queryDropTable = @"DROP TABLE ?";
 
-- (instancetype)init {
++ (instancetype) sharedInstance
+{
+    static dispatch_once_t pred;
+    static id shared = nil;
+    dispatch_once(&pred, ^{
+        shared = [[super alloc] initUniqueInstance];
+    });
+    return shared;
+}
+
+- (instancetype) initUniqueInstance
+{
     self = [super init];
     
     // initialize queue for all queries
@@ -181,7 +185,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
         [mutableArray addObject:card];
     }
     
-    return [NSArray arrayWithArray:mutableArray];
+    return mutableArray;
 }
 
 - (Article *)getArticleForWordById:(NSString *)wordId
@@ -249,7 +253,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
 //            [mutableArray addObject:meaning];
 //        }
     }];
-    return [NSArray arrayWithArray:mutableArray];
+    return mutableArray;
 }
 
 - (NSArray *)getRandomArticles:(unsigned int)amount {
@@ -335,7 +339,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
         }
     }];
     
-    return [NSSet setWithSet:meaningsSet];
+    return meaningsSet;
 }
 
 -(void)insertLanguage:(NSString *)name withObjectId:(NSString *)objectId {

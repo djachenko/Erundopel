@@ -20,28 +20,18 @@
 
 @implementation CardGenerator
 
-- (instancetype)init {
+- (instancetype)initWithMode:(CardGeneratorMode)mode
+{
     self = [super init];
     
     if (self) {
-        _db = [[Database alloc] init];
+        _db = [Database sharedInstance];
         _cards = nil;
         _cardIndex = 0;
-        _mode = CardGeneratorModeFixed;
-    }
-    
-    return self;
-}
-
-- (instancetype)initWithMode:(CardGeneratorMode)mode {
-    self = [self init];
-    
-    if (self) {
         _mode = mode;
     }
     
     return self;
-    
 }
 
 - (Card *)nextCard {

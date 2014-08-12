@@ -20,7 +20,7 @@
 }
 
 - (void)shuffleMeanings {
-    int oldRightMeaningIndex = self.rightMeaningIndex;
+    unsigned int oldRightMeaningIndex = (unsigned int)self.rightMeaningIndex;
     
     self.rightMeaningIndex = arc4random() % 3;
     int falseMeaningIndexes[] = {

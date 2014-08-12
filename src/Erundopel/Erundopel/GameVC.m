@@ -80,6 +80,8 @@
     [self.userManager.currentUser guessedRight:state];
     [self.userManager synchronize];
 
+    NSLog(@"answer received : %i", state);
+
     [UIView transitionWithView:self.view
             duration:0.75
             options:arc4random_uniform(2) == 0 ? UIViewAnimationOptionTransitionFlipFromTop :

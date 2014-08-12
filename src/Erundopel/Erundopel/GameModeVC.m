@@ -12,6 +12,13 @@
 
 @interface GameModeVC ()
 
+@property (nonatomic, strong) IBOutlet UIButton *buttonClassic;
+@property (nonatomic, strong) IBOutlet UIButton *buttonRandom;
+
+@property (nonatomic, strong) IBOutlet UILabel *headerLabel;
+
+@property (nonatomic, strong) NSMutableArray *buttons;
+
 @end
 
 @implementation GameModeVC
@@ -20,7 +27,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _buttons = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -28,7 +35,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self.buttons addObject:self.buttonClassic];
+    [self.buttons addObject:self.buttonRandom];
+    
+    CGFloat coefficient = 2.3;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        NSString *fontFamily = @"Georgia";
+        for (UIButton *button in self.buttons) {
+            button.titleLabel.font  = [UIFont
+                fontWithName:fontFamily
+                size:button.titleLabel.font.pointSize * coefficient
+            ];
+        }
+        self.headerLabel.font  = [UIFont
+            fontWithName:fontFamily
+            size:self.headerLabel.font.pointSize * coefficient
+        ];
+    }
 }
 
 - (IBAction)classicModeTap:(id)sender
