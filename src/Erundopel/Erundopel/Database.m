@@ -15,8 +15,8 @@
 //
 
 #import "Database.h"
-#import "FMDatabase.h"
-#import "FMDatabaseQueue.h"
+#import <FMDB/FMDatabase.h>
+#import <FMDB/FMDatabaseQueue.h>
 #import "Meaning.h"
 #import "Word.h"
 #import "Article.h"

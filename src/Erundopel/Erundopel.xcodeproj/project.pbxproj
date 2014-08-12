@@ -13,9 +13,12 @@
 		5860375F6FBE66D5B0540880 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034FF79580665684CD7D4 /* Card.m */; };
 		586039B96A113282FB62CD06 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860339BD57A18D43D8B240F /* Article.m */; };
 		58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603FC5F627789E6E394D5A /* CardAnswerVC.xib */; };
+		647351FF629A4DD5B982AB20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B1049A60A041B38DB1550D /* libPods.a */; };
 		84381E821998A627004EB0DC /* CardGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E811998A627004EB0DC /* CardGenerator.m */; };
 		84381E861998DE46004EB0DC /* GameModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E841998DE46004EB0DC /* GameModeVC.m */; };
 		84381E871998DE46004EB0DC /* GameModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84381E851998DE46004EB0DC /* GameModeVC.xib */; };
+		84381E89199A245A004EB0DC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E88199A245A004EB0DC /* Accounts.framework */; };
+		84381E8B199A2471004EB0DC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E8A199A2471004EB0DC /* Social.framework */; };
 		84462ECC19937A280072D773 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECB19937A280072D773 /* Parse.framework */; };
 		84462ECE19937A5C0072D773 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECD19937A5C0072D773 /* AudioToolbox.framework */; };
 		84462ED019937A670072D773 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECF19937A670072D773 /* CFNetwork.framework */; };
@@ -50,11 +53,6 @@
 		8499407B198F96D40001C817 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8499407A198F96D40001C817 /* libsqlite3.dylib */; };
 		849940A5198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
 		849940A6198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
-		849940E2198FB2C20001C817 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940D8198FB2C20001C817 /* FMDatabase.m */; };
-		849940E3198FB2C20001C817 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940DA198FB2C20001C817 /* FMDatabaseAdditions.m */; };
-		849940E4198FB2C20001C817 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940DC198FB2C20001C817 /* FMDatabasePool.m */; };
-		849940E5198FB2C20001C817 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940DE198FB2C20001C817 /* FMDatabaseQueue.m */; };
-		849940E6198FB2C20001C817 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940E1198FB2C20001C817 /* FMResultSet.m */; };
 		84A3A83219862CBC003594C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83119862CBC003594C7 /* Foundation.framework */; };
 		84A3A83419862CBC003594C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83319862CBC003594C7 /* CoreGraphics.framework */; };
 		84A3A83619862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
@@ -99,6 +97,8 @@
 		84381E831998DE46004EB0DC /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
 		84381E841998DE46004EB0DC /* GameModeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeVC.m; sourceTree = "<group>"; };
 		84381E851998DE46004EB0DC /* GameModeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameModeVC.xib; sourceTree = "<group>"; };
+		84381E88199A245A004EB0DC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		84381E8A199A2471004EB0DC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84462ECB19937A280072D773 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		84462ECD19937A5C0072D773 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84462ECF19937A670072D773 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -129,17 +129,6 @@
 		8499407A198F96D40001C817 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849940A3198FA5AF0001C817 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		849940A4198FA5AF0001C817 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
-		849940D7198FB2C20001C817 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		849940D8198FB2C20001C817 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		849940D9198FB2C20001C817 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		849940DA198FB2C20001C817 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		849940DB198FB2C20001C817 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		849940DC198FB2C20001C817 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		849940DD198FB2C20001C817 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		849940DE198FB2C20001C817 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		849940DF198FB2C20001C817 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		849940E0198FB2C20001C817 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		849940E1198FB2C20001C817 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		84A3A82E19862CBC003594C7 /* Erundopel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Erundopel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A3A83119862CBC003594C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84A3A83319862CBC003594C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -156,9 +145,11 @@
 		84A3A85219862CBC003594C7 /* ErundopelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ErundopelTests-Info.plist"; sourceTree = "<group>"; };
 		84A3A85419862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84A3A85619862CBC003594C7 /* ErundopelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErundopelTests.m; sourceTree = "<group>"; };
+		84B1049A60A041B38DB1550D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F56EF0199208AB009102F0 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
 		84F56EF1199208AB009102F0 /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVC.m; sourceTree = "<group>"; };
 		84F56EF2199208AB009102F0 /* GameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84381E8B199A2471004EB0DC /* Social.framework in Frameworks */,
+				84381E89199A245A004EB0DC /* Accounts.framework in Frameworks */,
 				84462EDE19937AB60072D773 /* SystemConfiguration.framework in Frameworks */,
 				84462EDC19937AAE0072D773 /* StoreKit.framework in Frameworks */,
 				84462EDA19937AA50072D773 /* Security.framework in Frameworks */,
@@ -180,6 +173,7 @@
 				84A3A83619862CBC003594C7 /* UIKit.framework in Frameworks */,
 				84A3A83219862CBC003594C7 /* Foundation.framework in Frameworks */,
 				84462ECC19937A280072D773 /* Parse.framework in Frameworks */,
+				647351FF629A4DD5B982AB20 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,30 +218,13 @@
 			name = ParseClasses;
 			sourceTree = "<group>";
 		};
-		849940D6198FB2C20001C817 /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				849940D7198FB2C20001C817 /* FMDatabase.h */,
-				849940D8198FB2C20001C817 /* FMDatabase.m */,
-				849940D9198FB2C20001C817 /* FMDatabaseAdditions.h */,
-				849940DA198FB2C20001C817 /* FMDatabaseAdditions.m */,
-				849940DB198FB2C20001C817 /* FMDatabasePool.h */,
-				849940DC198FB2C20001C817 /* FMDatabasePool.m */,
-				849940DD198FB2C20001C817 /* FMDatabaseQueue.h */,
-				849940DE198FB2C20001C817 /* FMDatabaseQueue.m */,
-				849940DF198FB2C20001C817 /* FMDB.h */,
-				849940E0198FB2C20001C817 /* FMResultSet.h */,
-				849940E1198FB2C20001C817 /* FMResultSet.m */,
-			);
-			path = fmdb;
-			sourceTree = "<group>";
-		};
 		84A3A82519862CBC003594C7 = {
 			isa = PBXGroup;
 			children = (
 				84A3A83719862CBC003594C7 /* Erundopel */,
 				84A3A83019862CBC003594C7 /* Frameworks */,
 				84A3A82F19862CBC003594C7 /* Products */,
+				DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +240,8 @@
 		84A3A83019862CBC003594C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84381E8A199A2471004EB0DC /* Social.framework */,
+				84381E88199A245A004EB0DC /* Accounts.framework */,
 				84462EDD19937AB60072D773 /* SystemConfiguration.framework */,
 				84462EDB19937AAE0072D773 /* StoreKit.framework */,
 				84462ED919937AA50072D773 /* Security.framework */,
@@ -278,6 +257,7 @@
 				84A3A83319862CBC003594C7 /* CoreGraphics.framework */,
 				84A3A83519862CBC003594C7 /* UIKit.framework */,
 				84A3A84A19862CBC003594C7 /* XCTest.framework */,
+				84B1049A60A041B38DB1550D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,7 +265,6 @@
 		84A3A83719862CBC003594C7 /* Erundopel */ = {
 			isa = PBXGroup;
 			children = (
-				849940D6198FB2C20001C817 /* fmdb */,
 				84688913198B8F28005BC906 /* black_line.png */,
 				8478D30F198E4E9A005049E9 /* CardQuestionVC.h */,
 				8478D310198E4E9A005049E9 /* CardQuestionVC.m */,
@@ -361,9 +340,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A3A85A19862CBC003594C7 /* Build configuration list for PBXNativeTarget "Erundopel" */;
 			buildPhases = (
+				4C3D64576C4440FA97D170C7 /* Check Pods Manifest.lock */,
 				84A3A82A19862CBC003594C7 /* Sources */,
 				84A3A82B19862CBC003594C7 /* Frameworks */,
 				84A3A82C19862CBC003594C7 /* Resources */,
+				0BD4B8AB12CA4A0AA2E8C74E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -450,6 +431,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BD4B8AB12CA4A0AA2E8C74E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C3D64576C4440FA97D170C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84A3A82A19862CBC003594C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -458,19 +472,14 @@
 				84A3A84219862CBC003594C7 /* AppDelegate.m in Sources */,
 				84381E821998A627004EB0DC /* CardGenerator.m in Sources */,
 				84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */,
-				849940E5198FB2C20001C817 /* FMDatabaseQueue.m in Sources */,
 				84688911198B8172005BC906 /* MainMenuVC.m in Sources */,
 				8478D312198E4E9A005049E9 /* CardQuestionVC.m in Sources */,
 				84462EF31994B8850072D773 /* ParseMeaning.m in Sources */,
 				84F56EF3199208AB009102F0 /* GameVC.m in Sources */,
 				84A3A83E19862CBC003594C7 /* main.m in Sources */,
-				849940E2198FB2C20001C817 /* FMDatabase.m in Sources */,
 				84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */,
-				849940E4198FB2C20001C817 /* FMDatabasePool.m in Sources */,
-				849940E6198FB2C20001C817 /* FMResultSet.m in Sources */,
 				84381E861998DE46004EB0DC /* GameModeVC.m in Sources */,
 				849940A5198FA5AF0001C817 /* Database.m in Sources */,
-				849940E3198FB2C20001C817 /* FMDatabaseAdditions.m in Sources */,
 				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
 				84462EF01994B5820072D773 /* ParseWord.m in Sources */,
 				84462EF91994BCF10072D773 /* ParseCard.m in Sources */,
@@ -594,6 +603,7 @@
 		};
 		84A3A85B19862CBC003594C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -612,6 +622,7 @@
 		};
 		84A3A85C19862CBC003594C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
