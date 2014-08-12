@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC">
             <connections>
+                <outlet property="control" destination="Yb8-OD-HPf" id="mQg-aI-ycF"/>
                 <outlet property="loginField" destination="6nA-qg-Rha" id="chB-oB-TzT"/>
                 <outlet property="passwordField" destination="doE-Vr-i3E" id="GNV-WI-WN8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -52,7 +53,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1B-W7-KEI">
-                    <rect key="frame" x="104" y="518" width="112" height="30"/>
+                    <rect key="frame" x="104" y="518.00000031113746" width="112" height="30"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                     <state key="normal" title="Поехали!">

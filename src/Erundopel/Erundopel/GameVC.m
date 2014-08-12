@@ -9,9 +9,10 @@
 @property (nonatomic, strong) Card *currentCard;
 @property (nonatomic) NSInteger count;
 
-@property (nonatomic, strong) UIViewController *currentCardVC;
-
 @property UserManager *userManager;
+
+@property CardAnswerVC *answerVC;
+@property CardQuestionVC *questionVC;
 
 @end
 
@@ -23,7 +24,11 @@
 
     if (self) {
         _count = 0;
+        //TODO: CR: It would be nice to receive this object from outside.
         _userManager = [[UserManager alloc] init];
+
+        _answerVC = [[CardAnswerVC alloc] init];
+        _questionVC = [[CardQuestionVC alloc] init];
     }
 
     return self;
@@ -33,82 +38,80 @@
 {
     [super viewDidLoad];
 
-    [self nextCard];
+    self.questionVC.delegate = self;
+    self.answerVC.delegate = self;
+
+    [self showCard:self.questionVC];
+    [self showCard:self.answerVC];
+
+    [self showNextQuestionCard];
 }
 
-- (void)nextCard
+- (void)showNextQuestionCard
 {
-    /*Word *word = [[Word alloc] initWithText:[NSString stringWithFormat:@"Word %d", self.count]];
-
-    self.count++;
-
-    Meaning *right = [[Meaning alloc] initWithText:@"right meaning"];
-
-    Article *article = [[Article alloc] initWithWord:word meaning:right];
-
-    Meaning *false1 = [[Meaning alloc] initWithText:@"false meaning 1"];
-    Meaning *false2 = [[Meaning alloc] initWithText:@"false meaning 2"];
-
-    self.currentCard = [[Card alloc] initWithArticle:article falseMeaning:false1
-    falseMeaning:false2];*/
-
+    // CR: really need to create DB object each time we show a new card?
     Database *db = [[Database alloc] init];
     NSArray *cards = [db getAllFixedCards];
 
     self.currentCard = cards[0];
 
-    CardQuestionVC *cardVC = [[CardQuestionVC alloc] initWithCard:self.currentCard];
-    cardVC.delegate = self;
+    self.questionVC.card = self.currentCard;
+    self.answerVC.card = self.currentCard;
 
-    [self addChildViewController:cardVC];
-    [self.view addSubview:cardVC.view];
+    self.answerVC.view.hidden = YES;
+    self.questionVC.view.hidden = NO;
+
+    /*[UIView transitionWithView:self.view
+            duration:5.75
+            options:UIViewAnimationOptionTransitionCurlDown
+            animations:^{
+                self.answerVC.view.hidden = YES;
+                self.questionVC.view.hidden = NO;
+            }
+            completion:nil];*/
 }
 
 - (void)chosenCorrectOption:(BOOL)state
 {
-    self.userManager = [[UserManager alloc] init];
     [self.userManager.currentUser guessedRight:state];
     [self.userManager synchronize];
-
-    CardAnswerVC *cardVC = [[CardAnswerVC alloc] initWithCard:self.currentCard];
-    cardVC.delegate = self;
-
-    [self addChildViewController:cardVC];
-    [self.view addSubview:cardVC.view];
 
     [UIView transitionWithView:self.view
             duration:0.75
             options:arc4random_uniform(2) == 0 ? UIViewAnimationOptionTransitionFlipFromTop :
                     UIViewAnimationOptionTransitionFlipFromBottom
             animations:^{
-                [self.currentCardVC removeFromParentViewController];
-
-                [self addChildViewController:cardVC];
-                [self.view addSubview:cardVC.view];
+                self.answerVC.view.hidden = NO;
+                self.questionVC.view.hidden = YES;
             }
             completion:nil];
 }
 
 - (void)finishGame
 {
-    [self.currentCardVC removeFromParentViewController];
+    [self removeCard:self.answerVC];
+    [self removeCard:self.questionVC];
 
-    [[self navigationController] popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)answerAccepted
 {
-    [self nextCard];
+    [self showNextQuestionCard];
 }
 
-- (void)addChildViewController:(UIViewController *)childController
+- (void)showCard:(UIViewController *)cardVC
 {
-    childController.view.frame = self.view.frame;
+    cardVC.view.frame = self.view.frame;
 
-    [super addChildViewController:childController];
-
-    self.currentCardVC = childController;
+    [self addChildViewController:cardVC];
+    [self.view addSubview:cardVC.view];
 }
 
+- (void)removeCard:(UIViewController *)cardVC
+{
+    [cardVC.view removeFromSuperview];
+    [cardVC removeFromParentViewController];
+}
 
 @end

@@ -5,18 +5,18 @@
 
 @interface AddContentChooseViewController ()
 
-@property IBOutlet UISegmentedControl *selector;
+@property(nonatomic, strong) IBOutlet UISegmentedControl *selector;
 
-@property IBOutlet UIView *wordView;
-@property IBOutlet UITextField *meaningView;
+@property(nonatomic, strong) IBOutlet UIView *wordView;
+@property(nonatomic, strong) IBOutlet UITextField *meaningView;
 
-@property IBOutlet UITextField *wordField;
-@property IBOutlet UITextField *meaningField;
+@property(nonatomic, strong) IBOutlet UITextField *wordField;
+@property(nonatomic, strong) IBOutlet UITextField *meaningField;
 
 typedef NS_ENUM(NSInteger, ContentType)
 {
-    ContentTypeWord = 0,
-    ContentTypeMeaning = 1
+    contentTypeWord = 0,
+    contentTypeMeaning = 1
 };
 
 @end
@@ -26,15 +26,15 @@ typedef NS_ENUM(NSInteger, ContentType)
 - (IBAction)action:(UISegmentedControl *)sender
 {
     switch (sender.selectedSegmentIndex) {
-        case ContentTypeWord: {
-            [self.wordView setHidden:NO];
-            [self.meaningView setHidden:YES];
+        case contentTypeWord: {
+            self.wordView.hidden = NO;
+            self.meaningView.hidden = YES;
 
             break;
         }
-        case ContentTypeMeaning: {
-            [self.wordView setHidden:YES];
-            [self.meaningView setHidden:NO];
+        case contentTypeMeaning: {
+            self.wordView.hidden = YES;
+            self.meaningView.hidden = NO;
 
             break;
         }
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, ContentType)
 - (IBAction)save:(UIButton *)sender
 {
     switch (self.selector.selectedSegmentIndex) {
-        case ContentTypeWord: {
+        case contentTypeWord: {
             NSString *wordString = self.wordField.text;
             NSString *meaningString = self.meaningField.text;
 
@@ -55,17 +55,19 @@ typedef NS_ENUM(NSInteger, ContentType)
 
             Article *article = [[Article alloc] initWithWord:word meaning:meaning];
 
-            //save article
+            #warning
+            //TODO: save article
 
             break;
         }
-        case ContentTypeMeaning: {
+        case contentTypeMeaning: {
 
             NSString *meaningString = self.meaningView.text;
 
             Meaning *meaning = [[Meaning alloc] initWithText:meaningString];
 
-            //save meaning
+            #warning
+            //TODO: save meaning
 
             break;
         }

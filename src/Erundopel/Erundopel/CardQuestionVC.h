@@ -10,8 +10,6 @@
 
 @interface CardQuestionVC : UIViewController
 
-@property (nonatomic, strong) id<CardQuestionVCDelegate> delegate;
-
-- (instancetype)initWithCard:(Card *)card;
-
+@property (nonatomic, weak) id<CardQuestionVCDelegate> delegate;
+@property (nonatomic, strong) Card *card;
 @end

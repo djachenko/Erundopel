@@ -22,6 +22,8 @@
 
 @implementation Database
 
+// CR: do NOT indent text inside a line.
+// CR: use 'static NSString *const blabla' for string constants.
 NSString *tableNameLanguages         = @"languages";
 NSString *tableNameMeanings          = @"meanings";
 NSString *tableNameWords             = @"words";
