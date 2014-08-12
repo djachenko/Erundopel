@@ -13,6 +13,10 @@
 @property (nonatomic, strong) IBOutlet UIButton *buttonHowToPlay;
 @property (nonatomic, strong) IBOutlet UIButton *buttonRecords;
 
+@property (nonatomic, strong) IBOutlet UILabel *headerLabel;
+
+@property (nonatomic, strong) NSMutableArray *buttons;
+
 @end
 
 @implementation MainMenuVC
@@ -21,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _buttons = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -29,13 +33,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self.buttons addObject:self.buttonNewGame];
+    [self.buttons addObject:self.buttonAddContent];
+    [self.buttons addObject:self.buttonSettings];
+    [self.buttons addObject:self.buttonHowToPlay];
+    [self.buttons addObject:self.buttonRecords];
+    
+    CGFloat coefficient = 2.3;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        for (UIButton *button in self.buttons) {
+            button.titleLabel.font  = [UIFont fontWithName:@"Georgia" size:button.titleLabel.font.pointSize * coefficient];
+        }
+        self.headerLabel.font  = [UIFont fontWithName:@"Georgia" size:self.headerLabel.font.pointSize * coefficient];
+    }
+    
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
