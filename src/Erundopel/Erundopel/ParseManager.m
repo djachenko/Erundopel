@@ -34,7 +34,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     self = [super init];
     
     if (self) {
-        _db = [[Database alloc] init];
+        _db = [Database sharedInstance];
         _userDefaults = [NSUserDefaults standardUserDefaults];
     }
     

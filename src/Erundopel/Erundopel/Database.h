@@ -10,6 +10,18 @@
 
 @interface Database : NSObject
 
++(instancetype) sharedInstance;
+
++(instancetype) alloc __attribute__((unavailable(
+    "alloc not available, call sharedInstance instead"
+)));
+-(instancetype) init __attribute__((unavailable(
+    "init not available, call sharedInstance instead"
+)));
++(instancetype) new __attribute__((unavailable(
+    "new not available, call sharedInstance instead"
+)));
+
 - (NSArray *)getAllFixedCards;
 - (NSArray *)getAllMeanings;
 
