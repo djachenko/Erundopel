@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) NSMutableArray *buttons;
 
+@property (nonatomic, strong) ParseManager *parseManager;
+
 @end
 
 @implementation MainMenuVC
@@ -26,6 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _buttons = [[NSMutableArray alloc] init];
+        _parseManager = [[ParseManager alloc] init];
     }
     return self;
 }
@@ -43,10 +46,17 @@
     CGFloat coefficient = 2.3;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        NSString *fontFamily = @"Georgia";
         for (UIButton *button in self.buttons) {
-            button.titleLabel.font  = [UIFont fontWithName:@"Georgia" size:button.titleLabel.font.pointSize * coefficient];
+            button.titleLabel.font  = [UIFont
+                fontWithName:fontFamily
+                size:button.titleLabel.font.pointSize * coefficient
+            ];
         }
-        self.headerLabel.font  = [UIFont fontWithName:@"Georgia" size:self.headerLabel.font.pointSize * coefficient];
+        self.headerLabel.font  = [UIFont
+            fontWithName:fontFamily
+            size:self.headerLabel.font.pointSize * coefficient
+        ];
     }
     
 }
@@ -56,7 +66,7 @@
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
-    [[[ParseManager alloc] init] downloadAll];
+    [self.parseManager downloadAll];
     NSLog(@"Add Content pressed");
 }
 
