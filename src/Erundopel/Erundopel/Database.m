@@ -25,11 +25,11 @@
 
 // CR: do NOT indent text inside a line.
 // CR: use 'static NSString *const blabla' for string constants.
-NSString *tableNameLanguages         = @"languages";
-NSString *tableNameMeanings          = @"meanings";
-NSString *tableNameWords             = @"words";
-NSString *tableNameCards             = @"cards";
-NSString *tableNameMeaningPopularity = @"meaning_popularity";
+static NSString *const tableNameLanguages = @"languages";
+static NSString *const tableNameMeanings = @"meanings";
+static NSString *const tableNameWords = @"words";
+static NSString *const tableNameCards = @"cards";
+static NSString *const tableNameMeaningPopularity = @"meaning_popularity";
 
 NSString *queryDropTable = @"DROP TABLE ?";
 
