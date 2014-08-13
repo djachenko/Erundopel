@@ -281,7 +281,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
                  FMResultSet *wordResult = [db executeQuery:
                     @"SELECT id_object "
                     "FROM words "
-                    "WHERE id = ?"
+                    "WHERE id = ? "
                     "LIMIT 1",
                     [NSNumber numberWithInt:(arc4random() % maxId)]
                 ];
@@ -322,10 +322,10 @@ NSString *queryDropTable = @"DROP TABLE ?";
         
         if (maxId > 0) {
             while ([meaningsSet count] < amount) {
-                 FMResultSet *meaningResult = [db executeQuery:
+                FMResultSet *meaningResult = [db executeQuery:
                     @"SELECT meaning "
                     "FROM meanings "
-                    "WHERE id = ?"
+                    "WHERE id = ? "
                     "LIMIT 1",
                     [NSNumber numberWithInt:(arc4random() % maxId)]
                 ];
