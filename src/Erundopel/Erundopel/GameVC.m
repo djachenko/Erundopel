@@ -98,7 +98,8 @@
     [self removeCard:self.answerVC];
     [self removeCard:self.questionVC];
 
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)answerAccepted

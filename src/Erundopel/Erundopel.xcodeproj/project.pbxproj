@@ -71,6 +71,7 @@
 		84A3A84D19862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
 		84A3A85519862CBC003594C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A85319862CBC003594C7 /* InfoPlist.strings */; };
 		84A3A85719862CBC003594C7 /* ErundopelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A85619862CBC003594C7 /* ErundopelTests.m */; };
+		84C53C07199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C53C06199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png */; };
 		84F56EF3199208AB009102F0 /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F56EF1199208AB009102F0 /* GameVC.m */; };
 		84F56EF4199208AB009102F0 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F56EF2199208AB009102F0 /* GameVC.xib */; };
 		84FAC60C1998E6F000B735F3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAC60A1998E6F000B735F3 /* LoginVC.m */; };
@@ -164,6 +165,7 @@
 		84A3A85419862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84A3A85619862CBC003594C7 /* ErundopelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErundopelTests.m; sourceTree = "<group>"; };
 		84B1049A60A041B38DB1550D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C53C06199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1407931660_icon-ios7-arrow-left.png"; path = "../../../../../Desktop/1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
 		84F56EF0199208AB009102F0 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
 		84F56EF1199208AB009102F0 /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVC.m; sourceTree = "<group>"; };
 		84F56EF2199208AB009102F0 /* GameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				8478D30F198E4E9A005049E9 /* CardQuestionVC.h */,
 				8478D310198E4E9A005049E9 /* CardQuestionVC.m */,
 				58603FC5F627789E6E394D5A /* CardAnswerVC.xib */,
+				84C53C06199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png */,
 				8478D311198E4E9A005049E9 /* CardQuestionVC.xib */,
 				84A3A84019862CBC003594C7 /* AppDelegate.h */,
 				84A3A84119862CBC003594C7 /* AppDelegate.m */,
@@ -452,6 +455,7 @@
 				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
 				84F56EF4199208AB009102F0 /* GameVC.xib in Resources */,
 				8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */,
+				84C53C07199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
 				58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */,
 				84381E871998DE46004EB0DC /* GameModeVC.xib in Resources */,
 				586030EA31CCFD505B70C636 /* HelpVC.xib in Resources */,

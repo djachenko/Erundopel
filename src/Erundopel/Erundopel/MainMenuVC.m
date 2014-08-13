@@ -1,5 +1,4 @@
 #import "MainMenuVC.h"
-#import "GameVC.h"
 #import "GameModeVC.h"
 #import "ParseManager.h"
 #import "AddContentChooseViewController.h"

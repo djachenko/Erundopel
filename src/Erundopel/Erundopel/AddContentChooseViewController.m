@@ -78,4 +78,9 @@ typedef NS_ENUM(NSInteger, ContentType)
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)back
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end

@@ -75,4 +75,9 @@ typedef NS_ENUM(NSInteger, ActionType)
 
 }
 
+- (IBAction)goBack
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end
