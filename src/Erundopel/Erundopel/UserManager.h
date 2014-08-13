@@ -2,10 +2,17 @@
 
 #import "User.h"
 
+@protocol UserManagerDelegate<NSObject>
+
+- (void)notifyPlayerChanged:(NSString *)name;
+
+@end
 
 @interface UserManager : NSObject
 
-@property(nonatomic) User *currentUser;
+@property (nonatomic, weak) id<UserManagerDelegate> delegate;
+@property (nonatomic, strong, readonly) User *currentUser;
+@property (nonatomic, strong, readonly) User *anonymous;
 
 - (NSMutableArray *)users;
 

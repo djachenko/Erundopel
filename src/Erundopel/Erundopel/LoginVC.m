@@ -4,7 +4,7 @@
 
 @interface LoginVC ()<UITextFieldDelegate>
 
-@property UserManager *userManager;
+@property(nonatomic, strong) UserManager *userManager;
 
 @property IBOutlet UISegmentedControl *control;
 
@@ -24,12 +24,12 @@ typedef NS_ENUM(NSInteger, ActionType)
 
 @implementation LoginVC
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithUserManager:(UserManager *)userManager
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [self init];
 
     if (self) {
-        _userManager = [[UserManager alloc] init];
+        _userManager = userManager;
     }
 
     return self;

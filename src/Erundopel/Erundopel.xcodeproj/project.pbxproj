@@ -78,6 +78,7 @@
 		84A3A84D19862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
 		84A3A85519862CBC003594C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A85319862CBC003594C7 /* InfoPlist.strings */; };
 		84A3A85719862CBC003594C7 /* ErundopelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A85619862CBC003594C7 /* ErundopelTests.m */; };
+		84C53C09199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C53C08199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,7 @@
 		84A3A85419862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84A3A85619862CBC003594C7 /* ErundopelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErundopelTests.m; sourceTree = "<group>"; };
 		84B1049A60A041B38DB1550D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C53C08199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1407947738_common_logout_signout_exit_.png; path = ../../../../../Desktop/1407947738_common_logout_signout_exit_.png; sourceTree = "<group>"; };
 		DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,6 +297,7 @@
 		5860395D77DED98607B51368 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84C53C08199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png */,
 				58603103D649DC1E25EA5825 /* black_line.png */,
 				586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */,
 			);
@@ -495,6 +498,7 @@
 				58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */,
 				58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */,
 				58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */,
+				84C53C09199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png in Resources */,
 				5860333EE55C14902C698CA3 /* GameVC.xib in Resources */,
 				5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */,
 				586030EF3938019B35F5933E /* LoginVC.xib in Resources */,

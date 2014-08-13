@@ -13,6 +13,7 @@ static NSString *arrayKey = @"olololololoo";
 @implementation UserManager
 
 User *_user;
+User *_anon;
 
 - (User *)currentUser;
 {
@@ -20,14 +21,25 @@ User *_user;
         NSData *userData = [[NSUserDefaults standardUserDefaults] objectForKey:UserIdentifier];
 
         if (!userData) {
-            [self loginWithUser:[[User alloc] initWithName:@"Anonymous" password:nil]];
+           _user = self.anonymous;
         }
         else {
             _user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+
+            //[self loginWithUser:[NSKeyedUnarchiver unarchiveObjectWithData:userData]];
         }
     }
 
     return _user;
+}
+
+- (User *)anonymous
+{
+    if (!_anon) {
+        _anon = [[User alloc] initWithName:@"Anonymous" password:nil];
+    }
+
+    return _anon;
 }
 
 - (NSMutableArray *)users
@@ -80,10 +92,14 @@ User *_user;
 
 - (BOOL)loginWithUser:(User *)user
 {
-    if ([self.users indexOfObject:user] != NSNotFound) {
+    if (user == self.anonymous || [self.users indexOfObject:user] != NSNotFound) {
         _user = user;
 
         [self synchronize];
+
+        NSLog(@"prenot %@ %@", _user.name, self.delegate);
+
+        [self.delegate notifyPlayerChanged:user.name];
 
         return YES;
     }
@@ -109,15 +125,20 @@ User *_user;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:UserIdentifier];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    _user = nil;
+    [self loginWithUser:self.anonymous];
+
+    NSLog(@"outed");
 }
 
 - (void)synchronize
 {
-    NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:_user];
+    if (self.currentUser != self.anonymous) {
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:_user];
+        [[NSUserDefaults standardUserDefaults] setObject:userData forKey:UserIdentifier];
+    }
+
     NSData *usersData = [NSKeyedArchiver archivedDataWithRootObject:self.users];
 
-    [[NSUserDefaults standardUserDefaults] setObject:userData forKey:UserIdentifier];
     [[NSUserDefaults standardUserDefaults] setObject:usersData forKey:arrayKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

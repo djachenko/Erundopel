@@ -4,8 +4,11 @@
 #import "AddContentChooseViewController.h"
 #import "HelpVC.h"
 #import "LoginVC.h"
+#import "UserManager.h"
 
-@interface MainMenuVC ()
+static void *const context = (void *const) &context;
+
+@interface MainMenuVC ()<UserManagerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *buttonNewGame;
 @property (nonatomic, strong) IBOutlet UIButton *buttonAddContent;
@@ -18,7 +21,10 @@
 @property (nonatomic, strong) NSMutableArray *buttons;
 
 @property (nonatomic, strong) ParseManager *parseManager;
+@property (nonatomic, strong) UserManager *userManager;
 
+@property (nonatomic, strong) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) IBOutlet UIButton *logoutButton;
 @end
 
 @implementation MainMenuVC
@@ -29,6 +35,9 @@
     if (self) {
         _buttons = [[NSMutableArray alloc] init];
         _parseManager = [[ParseManager alloc] init];
+        _userManager = [[UserManager alloc] init];
+
+        _userManager.delegate = self;
     }
     return self;
 }
@@ -58,6 +67,8 @@
             size:self.headerLabel.font.pointSize * coefficient
         ];
     }
+
+    [self notifyPlayerChanged:nil];
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
@@ -69,7 +80,7 @@
 }
 
 - (IBAction)buttonSettingsTap:(UIButton *)sender {
-    [self.navigationController pushViewController:[[LoginVC alloc] init] animated:YES];
+    [self userButtonTap:nil];
 }
 
 - (IBAction)buttonHowToPlay:(UIButton *)sender {
@@ -81,5 +92,27 @@
 
     [[[ParseManager alloc] init] downloadAll];
 }
+
+- (IBAction)userButtonTap:(UIButton *)sender
+{
+    LoginVC *loginVC = [[LoginVC alloc] initWithUserManager:self.userManager];
+
+    [self.navigationController pushViewController:loginVC animated:YES];
+}
+
+- (IBAction)logoutButtonTap:(UIButton *)sender
+{
+    [self.userManager logout];
+}
+
+- (void)notifyPlayerChanged:(NSString *)name
+{
+    NSLog(@"notify %@ %@", self.userManager.currentUser.name, name);
+    [self.loginButton setTitle:[NSString stringWithFormat:@"Вы %@", self.userManager.currentUser.name]
+            forState:UIControlStateNormal];
+
+    self.logoutButton.hidden = self.userManager.currentUser == self.userManager.anonymous;
+}
+
 
 @end
