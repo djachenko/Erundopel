@@ -139,6 +139,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
                         insertMeaning:meaning.meaning
                         forLanguage:meaning.language.objectId
                         withObjectId:meaning.objectId
+                        sync:YES
                     ];
                 }
                 
@@ -171,6 +172,7 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
                         withMeaning:word.meaning.objectId
                         forLanguage:word.language.objectId
                         withObjectId:word.objectId
+                        sync:YES
                     ];
                 }
                 

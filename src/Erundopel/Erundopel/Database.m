@@ -72,64 +72,68 @@ NSString *queryDropTable = @"DROP TABLE ?";
 }
 
 // only to be called from constructor
-- (void)createScheme {
+- (void)createScheme
+{
     [self.queue inDatabase:^(FMDatabase *db) {
         // Languages (independent)
-        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS languages ("
-            "id INTEGER PRIMARY KEY,"
-            "id_object TEXT,"
-            "name TEXT"
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS languages ( "
+            "id INTEGER PRIMARY KEY, "
+            "id_object TEXT, "
+            "name TEXT "
             ")"
         ];
         
         // Meanings (depends on Languages)
-        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS meanings ("
-            "id INTEGER PRIMARY KEY,"
-            "id_object TEXT,"
-            "meaning TEXT,"
-            "id_language TEXT,"
-            "FOREIGN KEY(id_language) REFERENCES languages(id_object)"
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS meanings ( "
+            "id INTEGER PRIMARY KEY, "
+            "id_object TEXT, "
+            "meaning TEXT, "
+            "id_language TEXT, "
+            "sync INTEGER, " // 0 if added by user but not uploaded, otherwise 1
+            "FOREIGN KEY(id_language) REFERENCES languages(id_object) "
             ")"
         ];
         
         // Words (depends on Languages and Meanings)
-        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS words ("
-            "id INTEGER PRIMARY KEY,"
-            "id_object TEXT,"
-            "word TEXT,"
-            "id_language TEXT,"
-            "id_meaning TEXT,"
-            "FOREIGN KEY(id_language) REFERENCES languages(id_object),"
-            "FOREIGN KEY(id_meaning) REFERENCES meanings(id_object)"
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS words ( "
+            "id INTEGER PRIMARY KEY, "
+            "id_object TEXT, "
+            "word TEXT, "
+            "id_language TEXT, "
+            "id_meaning TEXT, "
+            "sync INTEGER, " // 0 if added by user but not uploaded, otherwise 1
+            "FOREIGN KEY(id_language) REFERENCES languages(id_object), "
+            "FOREIGN KEY(id_meaning) REFERENCES meanings(id_object) "
             ")"
         ];
         
         // Cards (depends on Words)
-        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS cards ("
-            "id INTEGER PRIMARY KEY,"
-            "id_object TEXT,"
-            "id_word INTEGER,"
-            "id_meaning_false_1 INTEGER,"
-            "id_meaning_false_2 INTEGER,"
-            "FOREIGN KEY(id_word) REFERENCES words(id),"
-            "FOREIGN KEY(id_meaning_false_1) REFERENCES meanings(id),"
-            "FOREIGN KEY(id_meaning_false_2) REFERENCES meanings(id)"
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS cards ( "
+            "id INTEGER PRIMARY KEY, "
+            "id_object TEXT, "
+            "id_word INTEGER, "
+            "id_meaning_false_1 INTEGER, "
+            "id_meaning_false_2 INTEGER, "
+            "FOREIGN KEY(id_word) REFERENCES words(id), "
+            "FOREIGN KEY(id_meaning_false_1) REFERENCES meanings(id), "
+            "FOREIGN KEY(id_meaning_false_2) REFERENCES meanings(id) "
             ")"
         ];
         
         // Meaning popularity (depends on Words and Meanings)
-        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS meaning_popularity ("
-            "id_word INTEGER,"
-            "id_meaning INTEGER,"
-            "count INTEGER,"
-            "FOREIGN KEY(id_word) REFERENCES words(id),"
-            "FOREIGN KEY(id_meaning) REFERENCES meanings(id)"
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS meaning_popularity ( "
+            "id_word INTEGER, "
+            "id_meaning INTEGER, "
+            "count INTEGER, "
+            "FOREIGN KEY(id_word) REFERENCES words(id), "
+            "FOREIGN KEY(id_meaning) REFERENCES meanings(id) "
             ")"
         ];
     }];
 }
 
-- (void)dropAllTables {
+- (void)dropAllTables
+{
     [self.queue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:@"DROP TABLE languages"];
         [db executeUpdate:@"DROP TABLE meanings"];
@@ -139,7 +143,8 @@ NSString *queryDropTable = @"DROP TABLE ?";
     }];
 }
 
-- (void)wipeAllTables {
+- (void)wipeAllTables
+{
     [self.queue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:@"DELETE FROM languages"];
         [db executeUpdate:@"DELETE FROM meanings"];
@@ -242,21 +247,8 @@ NSString *queryDropTable = @"DROP TABLE ?";
     return meaning;
 }
 
-- (NSArray *)getAllMeanings {
-    NSMutableArray *__block mutableArray = [[NSMutableArray alloc] init];
-    
-    [self.queue inDatabase:^(FMDatabase *db) {
-//        FMResultSet *s = [db executeQuery:@"SELECT * FROM meanings;"];
-//        while ([s next]) {
-//            NSString *meaningString = [s stringForColumn:@"meaning"];
-//            Meaning *meaning = [[Meaning alloc]initWithText:meaningString];
-//            [mutableArray addObject:meaning];
-//        }
-    }];
-    return mutableArray;
-}
-
-- (NSArray *)getRandomArticles:(unsigned int)amount {
+- (NSArray *)getRandomArticles:(unsigned int)amount
+{
     NSMutableArray *__block articlesArray = [[NSMutableArray alloc] init];
     
     NSMutableSet *__block wordObjectIds = [[NSMutableSet alloc] init];
@@ -302,7 +294,8 @@ NSString *queryDropTable = @"DROP TABLE ?";
     return articlesArray;
 }
 
-- (NSSet *)getRandomMeanings:(unsigned int)amount {
+- (NSSet *)getRandomMeanings:(unsigned int)amount
+{
     NSMutableSet *__block meaningsSet = [[NSMutableSet alloc] init];
 
     [self.queue inDatabase:^(FMDatabase *db) {
@@ -343,7 +336,8 @@ NSString *queryDropTable = @"DROP TABLE ?";
 }
 
 -(void)insertLanguage:(NSString *)name withObjectId:(NSString *)objectId {
-    [self.queue inDatabase:^(FMDatabase *db) {
+    [self.queue inDatabase:^(FMDatabase *db)
+{
         [db executeUpdate:
             @"DELETE FROM languages "
             "WHERE id_object = ?",
@@ -362,8 +356,10 @@ NSString *queryDropTable = @"DROP TABLE ?";
 
 - (void)insertMeaning:(NSString *)text
     forLanguage:(NSString *)languageId
-    withObjectId:(NSString *)objectId {
-    [self.queue inDatabase:^(FMDatabase *db) {
+    withObjectId:(NSString *)objectId
+    sync:(BOOL)sync {
+    [self.queue inDatabase:^(FMDatabase *db)
+{
         [db executeUpdate:
             @"DELETE FROM meanings "
             "WHERE id_object = ?",
@@ -371,11 +367,12 @@ NSString *queryDropTable = @"DROP TABLE ?";
         ];
         [db executeUpdate:
             @"INSERT INTO meanings "
-            "(meaning, id_object, id_language) "
-            "VALUES (?, ?, ?)",
+            "(meaning, id_object, id_language, sync) "
+            "VALUES (?, ?, ?, ?)",
             text,
             objectId,
-            languageId
+            languageId,
+            [NSNumber numberWithBool:sync]
         ];
     }];
 }
@@ -383,7 +380,9 @@ NSString *queryDropTable = @"DROP TABLE ?";
 - (void)insertWord:(NSString *)word
     withMeaning:(NSString *)meaningId
     forLanguage:(NSString *)languageId
-    withObjectId:(NSString *)objectId {
+    withObjectId:(NSString *)objectId
+    sync:(BOOL)sync
+{
     [self.queue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:
             @"DELETE FROM words "
@@ -392,12 +391,13 @@ NSString *queryDropTable = @"DROP TABLE ?";
         ];
         [db executeUpdate:
             @"INSERT INTO words"
-            "(word, id_meaning, id_language, id_object)"
-            "VALUES (?, ?, ?, ?)",
+            "(word, id_meaning, id_language, id_object, sync)"
+            "VALUES (?, ?, ?, ?, ?)",
             word,
             meaningId,
             languageId,
-            objectId
+            objectId,
+            [NSNumber numberWithBool:sync]
         ];
     }];
 }
@@ -423,6 +423,130 @@ NSString *queryDropTable = @"DROP TABLE ?";
         ];
     }];
 }
+
+- (NSString *)getLanguageObjectIdBytName:(NSString *)name
+{
+    NSString *__block languageObjectId = nil;
+    
+    [self.queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *languageResult = [db executeQuery:
+            @"SELECT id_object "
+            "FROM languages "
+            "WHERE name = ? "
+            "LIMIT 1",
+            name
+        ];
+        
+        if ([languageResult next]) {
+            languageObjectId = [languageResult stringForColumn:@"id_object"];
+            [languageResult close];
+        }
+    }];
+    
+    return languageObjectId;
+}
+
+- (NSString *)getTempObjectIdForEntity:(NSString *)entity
+{
+    NSString *__block tempObjectId = nil;
+    
+    NSString *queryString = [NSString stringWithFormat:
+            @"SELECT max(id) as max_id "
+            "FROM %@",
+            entity
+    ];
+    
+    [self.queue inDatabase:^(FMDatabase *db) {
+        
+        FMResultSet *idResult = [db executeQuery:queryString];
+        
+        if ([idResult next]) {
+            int maxId = [idResult intForColumn:@"max_id"];
+            tempObjectId = [NSString stringWithFormat:@"temp%d", maxId];
+            [idResult close];
+        }
+    }];
+    
+    return tempObjectId;
+}
+
+- (void)addArticle:(Article *)article
+{
+    NSString *languageObjectId = [self getLanguageObjectIdBytName:@"russian"];
+    
+    NSString *tempMeaningObjectId = [self getTempObjectIdForEntity:tableNameMeanings];
+    
+    [self insertMeaning:article.meaning.text
+        forLanguage:languageObjectId
+        withObjectId:tempMeaningObjectId
+        sync:NO
+    ];
+    
+    NSString *tempWordObjectId = [self getTempObjectIdForEntity:tableNameWords];
+    
+    [self insertWord:article.word.text
+        withMeaning:tempMeaningObjectId
+        forLanguage:languageObjectId
+        withObjectId:tempWordObjectId
+        sync:NO
+    ];
+}
+
+- (void)addMeaning:(Meaning *)meaning
+{
+    NSString *languageObjectId = [self getLanguageObjectIdBytName:@"russian"];
+    
+    NSString *tempMeaningObjectId = [self getTempObjectIdForEntity:tableNameMeanings];
+    
+    [self insertMeaning:meaning.text
+        forLanguage:languageObjectId
+        withObjectId:tempMeaningObjectId
+        sync:NO
+    ];
+}
+
+- (BOOL)hasWordWithValue:(NSString *)value
+{
+    return [self hasEntity:tableNameWords
+        withField:@"word"
+        equalTo:value
+    ];}
+
+- (BOOL)hasMeaningWithValue:(NSString *)value
+{
+    return [self hasEntity:tableNameMeanings
+        withField:@"meaning"
+        equalTo:value
+    ];
+}
+
+- (BOOL)hasEntity:(NSString *)entity
+    withField:(NSString *)fieldName
+    equalTo:(NSString *)value
+{
+    BOOL __block result = NO;
+    
+    NSString *query = [NSString
+        stringWithFormat:@"SELECT * FROM %@ WHERE %@ = ?",
+        entity,
+        fieldName
+    ];
+    
+    [self.queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *rs = [db executeQuery:query, value];
+        
+        if ([rs next]) {
+            if ([rs hasAnotherRow]) {
+                result = YES;
+            }
+        }
+        [rs close];
+    }];
+    
+    return result;
+}
+
+
 
 
 

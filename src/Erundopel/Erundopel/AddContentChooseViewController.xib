@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="meaningField" destination="UyH-xM-qOI" id="qVr-AK-oU8"/>
                 <outlet property="meaningView" destination="nKP-bz-jhk" id="qTY-aE-i6e"/>
+                <outlet property="selector" destination="olJ-dR-9Dc" id="5dT-Ag-gr3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wordField" destination="WEy-Tl-Umn" id="Mr1-HZ-F9A"/>
                 <outlet property="wordView" destination="kwc-uS-hdd" id="6dU-fA-ZOv"/>
@@ -26,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="olJ-dR-9Dc">
-                    <rect key="frame" x="23" y="128" width="280" height="29"/>
+                    <rect key="frame" x="20" y="128" width="280" height="29"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="Слово"/>
@@ -46,6 +47,9 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="QZH-ph-UGR"/>
+                            </connections>
                         </textField>
                         <view contentMode="scaleToFill" id="kwc-uS-hdd">
                             <rect key="frame" x="20" y="50" width="280" height="220"/>
@@ -56,12 +60,18 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="MSW-PO-cvx"/>
+                                    </connections>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Значение" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="UyH-xM-qOI">
                                     <rect key="frame" x="0.0" y="70" width="280" height="150"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="kan-k0-5BD"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -71,7 +81,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L3y-p8-Jcw">
-                    <rect key="frame" x="50" y="491.99999989271157" width="221" height="56"/>
+                    <rect key="frame" x="50" y="492" width="221" height="56"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="25"/>
                     <state key="normal" title="Сохранить">

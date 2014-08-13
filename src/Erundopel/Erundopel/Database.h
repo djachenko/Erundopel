@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class Article;
+@class Word;
+@class Meaning;
+
 @interface Database : NSObject
 
 +(instancetype) sharedInstance;
@@ -23,10 +27,12 @@
 )));
 
 - (NSArray *)getAllFixedCards;
-- (NSArray *)getAllMeanings;
 
 - (NSArray *)getRandomArticles:(unsigned int)amount;
 - (NSSet *)getRandomMeanings:(unsigned int)amount;
+
+- (BOOL)hasWordWithValue:(NSString *)value;
+- (BOOL)hasMeaningWithValue:(NSString *)value;
 
 - (void)wipeAllTables;
 
@@ -35,16 +41,22 @@
 
 - (void)insertMeaning:(NSString *)text
     forLanguage:(NSString *)languageId
-    withObjectId:(NSString *)objectId;
+    withObjectId:(NSString *)objectId
+    sync:(BOOL)sync;
 
 - (void)insertWord:(NSString *)word
     withMeaning:(NSString *)meaningId
     forLanguage:(NSString *)languageId
-    withObjectId:(NSString *)objectId;
+    withObjectId:(NSString *)objectId
+    sync:(BOOL)sync;
 
 - (void)insertCardWithWord:(NSString *)wordId
     falseMeaningOne:(NSString *)meaningOneId
     falseMeaningTwo:(NSString *)meaningTwoId
     withObjectId:(NSString *)objectId;
+
+- (void)addArticle:(Article *)article;
+- (void)addMeaning:(Meaning *)meaning;
+
 
 @end

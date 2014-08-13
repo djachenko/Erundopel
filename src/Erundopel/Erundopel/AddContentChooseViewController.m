@@ -2,8 +2,9 @@
 #import "Word.h"
 #import "Meaning.h"
 #import "Article.h"
+#import "Database.h"
 
-@interface AddContentChooseViewController ()
+@interface AddContentChooseViewController ()<UITextFieldDelegate>
 
 @property(nonatomic, strong) IBOutlet UISegmentedControl *selector;
 
@@ -45,18 +46,31 @@ typedef NS_ENUM(NSInteger, ContentType)
 
 - (IBAction)save:(UIButton *)sender
 {
+    Database *db = [Database sharedInstance];
+    
+    NSLog(@"%d", self.selector.selectedSegmentIndex);
+    
     switch (self.selector.selectedSegmentIndex) {
         case contentTypeWord: {
-            NSString *wordString = self.wordField.text;
-            NSString *meaningString = self.meaningField.text;
+            NSString *wordString = [self.wordField.text lowercaseString];
+            NSString *meaningString = [self.meaningField.text lowercaseString];
 
             Word *word = [[Word alloc] initWithText:wordString];
             Meaning *meaning = [[Meaning alloc] initWithText:meaningString];
 
             Article *article = [[Article alloc] initWithWord:word meaning:meaning];
 
-            #warning
-            //TODO: save article
+
+            if ([db hasWordWithValue:article.word.text]) {
+                [self showAlertWithTitle:@"Уже есть"
+                    text:@"Такое слово уже есть в базе. Придумайте что-нибудь новое!"];
+            } else if ([db hasMeaningWithValue:article.meaning.text]) {
+                [self showAlertWithTitle:@"Уже есть"
+                    text:@"Слово с таким значением уже есть в базе. Придумайте что-нибудь новое!"];
+            } else {
+                [[Database sharedInstance] addArticle:article];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
 
             break;
         }
@@ -64,18 +78,43 @@ typedef NS_ENUM(NSInteger, ContentType)
 
             NSString *meaningString = self.meaningView.text;
 
-            Meaning *meaning = [[Meaning alloc] initWithText:meaningString];
-
-            #warning
-            //TODO: save meaning
+            Meaning *meaning = [[Meaning alloc] initWithText:[meaningString lowercaseString]];
+            
+            if ([db hasMeaningWithValue:meaning.text]) {
+                [self showAlertWithTitle:@"Уже есть"
+                    text:@"Такое значение уже есть в базе. Придумайте что-нибудь новое!"];
+            } else {
+                [[Database sharedInstance] addMeaning:meaning];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
 
             break;
         }
         default:
             break;
     }
-
-    [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+
+    return NO;
+}
+
+- (void)showAlertWithTitle:(NSString *)title
+    text:(NSString *)text
+{
+    UIAlertView *alert = [[UIAlertView alloc]
+        initWithTitle:title
+        message:text
+        delegate:self
+        cancelButtonTitle:@"OK"
+        otherButtonTitles:nil
+    ];
+
+    [alert show];
+}
+
 
 @end
