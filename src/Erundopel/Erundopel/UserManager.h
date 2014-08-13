@@ -9,11 +9,14 @@
 
 - (NSMutableArray *)users;
 
-//- (void)registerUser:(User *)user;
+- (BOOL)hasUser:(User *)user;
+- (BOOL)hasUserWithName:(NSString *)name;
 
-- (void)loginWithUser:(User *)user;
+- (void)registerUser:(User *)user;
+- (void)registerUserWithName:(NSString *)name password:(NSString *)password;
 
-- (void)loginWithName:(NSString *)name;
+- (BOOL)loginWithUser:(User *)user;
+- (BOOL)loginWithName:(NSString *)name password:(NSString *)password;
 
 - (void)logout;
 

@@ -3,7 +3,7 @@
 #import "Meaning.h"
 #import "Article.h"
 
-@interface AddContentChooseViewController ()
+@interface AddContentChooseViewController ()<UITextFieldDelegate>
 
 @property(nonatomic, strong) IBOutlet UISegmentedControl *selector;
 
@@ -82,5 +82,13 @@ typedef NS_ENUM(NSInteger, ContentType)
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+
+    return NO;
+}
+
 
 @end

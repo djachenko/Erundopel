@@ -25,6 +25,9 @@
                         <segment title="Зарегистироваться"/>
                     </segments>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="action:" destination="-1" eventType="valueChanged" id="Pps-rd-hS1"/>
+                    </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" id="gpk-EB-RRY">
                     <rect key="frame" x="60" y="249" width="200" height="70"/>

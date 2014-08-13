@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		586030EF3938019B35F5933E /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603F06AD1F30B3A765EECE /* LoginVC.xib */; };
+		58603105A0809F8A5560C203 /* NSString+Hashable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603FE9EA63943D730ACED2 /* NSString+Hashable.m */; };
 		5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603DEBB5141AA49F447E86 /* HelpVC.xib */; };
 		5860333EE55C14902C698CA3 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860353D8859815CF1239617 /* GameVC.xib */; };
 		5860338AFEE77AB29C320D89 /* AddContentChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860302C788BBC9423676927 /* AddContentChooseViewController.xib */; };
-		5860344DF13C89D8068C7CAF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603D2B5D0A473508189647 /* UserManager.m */; };
 		586034705977759638D639AB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860387E6B865E0B6ABA7086 /* User.m */; };
 		58603479155F691F72A03F3E /* GameModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */; };
 		58603494BE8F2FEBE6C8637D /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034BC596D8CC8E46912F4 /* Word.m */; };
+		5860352966AFCF93BF3E3CF4 /* UIView+Shakeable.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034437E5C6502B7BE0FEF /* UIView+Shakeable.m */; };
 		5860355BB68BF0B595E167C1 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 586038524A679F9655A1C7D6 /* MainMenuVC.m */; };
 		5860364E126FCAC99F18E9C6 /* CardAnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860340006B894A229ED2C30 /* CardAnswerVC.m */; };
 		5860369581FD8B3D9F8D42F9 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860391E9CA6BBEFDF0D9494 /* Meaning.m */; };
@@ -24,6 +25,7 @@
 		58603790275386AF8AE400C8 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 586030C2BF4C7344BA28DF46 /* LoginVC.m */; };
 		586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860324C8B52B5E958846E90 /* MainMenuVC.xib */; };
 		58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603368D1718F0135210DD7 /* CardQuestionVC.xib */; };
+		58603D0491B3120A7AF62849 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603D70BADA224C35E3BCD3 /* UserManager.m */; };
 		58603D72EDAA591097E738B9 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A69537D3461EB0E0D4E /* HelpVC.m */; };
 		58603DD8587378CE6988E4E5 /* CardQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603B71A182DF53FB53B18C /* CardQuestionVC.m */; };
 		58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603930732BCE7419615527 /* GameModeVC.xib */; };
@@ -90,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		5860302C788BBC9423676927 /* AddContentChooseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddContentChooseViewController.xib; sourceTree = "<group>"; };
+		586030465B1401BD29BA6643 /* NSString+Hashable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashable.h"; sourceTree = "<group>"; };
 		586030C2BF4C7344BA28DF46 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		58603103D649DC1E25EA5825 /* black_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_line.png; sourceTree = "<group>"; };
 		5860314D03857B7EE0AFE1FF /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVC.m; sourceTree = "<group>"; };
@@ -98,12 +101,14 @@
 		58603368D1718F0135210DD7 /* CardQuestionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardQuestionVC.xib; sourceTree = "<group>"; };
 		586033C2F7951289201A8386 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		5860340006B894A229ED2C30 /* CardAnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAnswerVC.m; sourceTree = "<group>"; };
+		586034437E5C6502B7BE0FEF /* UIView+Shakeable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shakeable.m"; sourceTree = "<group>"; };
 		586034BC596D8CC8E46912F4 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		5860353D8859815CF1239617 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
 		586035957EA512875A5C7D80 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		586035C0F32726D09541865E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		586035C6FF50DCF95ECAB89F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		586036C004E2928611418D3D /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
+		586036FE4E64CC45A88119B9 /* UIView+Shakeable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shakeable.h"; sourceTree = "<group>"; };
 		586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1407931660_icon-ios7-arrow-left.png"; path = "../../../../../Desktop/1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
 		5860375F86ADB17CA63B30BD /* GameFinisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFinisher.h; sourceTree = "<group>"; };
 		586037A196212F89F5368B56 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -118,9 +123,8 @@
 		58603B71A182DF53FB53B18C /* CardQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardQuestionVC.m; sourceTree = "<group>"; };
 		58603C123C341C75158C81D2 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		58603D169F6CE6BC3A65C5CF /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
-		58603D1FEC6C6D04E8D2C605 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
-		58603D2B5D0A473508189647 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		58603D70BADA224C35E3BCD3 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		58603D8A4692600E318B80A9 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
 		58603D8E055F9BB67A04944C /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		58603DEBB5141AA49F447E86 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		58603EE0614B1CD9A1444552 /* AddContentChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContentChooseViewController.h; sourceTree = "<group>"; };
 		58603F06AD1F30B3A765EECE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		58603F705D8F351E10F0F97F /* CardQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardQuestionVC.h; sourceTree = "<group>"; };
+		58603FB5F7019FA9A732B3C6 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		58603FE9EA63943D730ACED2 /* NSString+Hashable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashable.m"; sourceTree = "<group>"; };
 		84381E801998A627004EB0DC /* CardGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGenerator.h; sourceTree = "<group>"; };
 		84381E811998A627004EB0DC /* CardGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGenerator.m; sourceTree = "<group>"; };
 		84381E88199A245A004EB0DC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -224,20 +230,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5860305084161646998BB114 /* UtilCategories */ = {
+			isa = PBXGroup;
+			children = (
+				586036FE4E64CC45A88119B9 /* UIView+Shakeable.h */,
+				58603FE9EA63943D730ACED2 /* NSString+Hashable.m */,
+				586034437E5C6502B7BE0FEF /* UIView+Shakeable.m */,
+				586030465B1401BD29BA6643 /* NSString+Hashable.h */,
+			);
+			path = UtilCategories;
+			sourceTree = "<group>";
+		};
 		586033E2222DB33A58123231 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5860387E6B865E0B6ABA7086 /* User.m */,
-				586035C6FF50DCF95ECAB89F /* Article.m */,
-				58603D2B5D0A473508189647 /* UserManager.m */,
-				5860391E9CA6BBEFDF0D9494 /* Meaning.m */,
-				586034BC596D8CC8E46912F4 /* Word.m */,
-				586033C2F7951289201A8386 /* Article.h */,
-				58603D1FEC6C6D04E8D2C605 /* UserManager.h */,
-				586037DEC42EA52105DCC489 /* Meaning.h */,
-				586035C0F32726D09541865E /* Card.h */,
+				58603FB5F7019FA9A732B3C6 /* UserManager.h */,
+				58603D70BADA224C35E3BCD3 /* UserManager.m */,
 				586037A196212F89F5368B56 /* User.h */,
+				5860387E6B865E0B6ABA7086 /* User.m */,
 				586035957EA512875A5C7D80 /* Word.h */,
+				586034BC596D8CC8E46912F4 /* Word.m */,
+				586035C6FF50DCF95ECAB89F /* Article.m */,
+				586033C2F7951289201A8386 /* Article.h */,
+				586037DEC42EA52105DCC489 /* Meaning.h */,
+				5860391E9CA6BBEFDF0D9494 /* Meaning.m */,
+				586035C0F32726D09541865E /* Card.h */,
 				58603AC94CF7EF3A0BBF69B2 /* Card.m */,
 			);
 			name = Model;
@@ -249,28 +266,28 @@
 				58603EE0614B1CD9A1444552 /* AddContentChooseViewController.h */,
 				58603EC9DA4907D87C963DAA /* AddContentChooseViewController.m */,
 				5860302C788BBC9423676927 /* AddContentChooseViewController.xib */,
+				58603261F8867F556EE63D6A /* CardAnswerVC.h */,
 				5860340006B894A229ED2C30 /* CardAnswerVC.m */,
 				58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */,
-				58603261F8867F556EE63D6A /* CardAnswerVC.h */,
 				58603F705D8F351E10F0F97F /* CardQuestionVC.h */,
 				58603B71A182DF53FB53B18C /* CardQuestionVC.m */,
 				58603368D1718F0135210DD7 /* CardQuestionVC.xib */,
-				58603930732BCE7419615527 /* GameModeVC.xib */,
 				5860375F86ADB17CA63B30BD /* GameFinisher.h */,
-				58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */,
 				586036C004E2928611418D3D /* GameModeVC.h */,
-				5860353D8859815CF1239617 /* GameVC.xib */,
+				58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */,
+				58603930732BCE7419615527 /* GameModeVC.xib */,
 				58603D8A4692600E318B80A9 /* GameVC.h */,
-				58603A69537D3461EB0E0D4E /* HelpVC.m */,
-				58603D169F6CE6BC3A65C5CF /* HelpVC.h */,
-				58603DEBB5141AA49F447E86 /* HelpVC.xib */,
 				5860314D03857B7EE0AFE1FF /* GameVC.m */,
+				5860353D8859815CF1239617 /* GameVC.xib */,
+				58603D169F6CE6BC3A65C5CF /* HelpVC.h */,
+				58603A69537D3461EB0E0D4E /* HelpVC.m */,
+				58603DEBB5141AA49F447E86 /* HelpVC.xib */,
+				58603D8E055F9BB67A04944C /* MainMenuVC.h */,
 				586038524A679F9655A1C7D6 /* MainMenuVC.m */,
-				58603F06AD1F30B3A765EECE /* LoginVC.xib */,
 				5860324C8B52B5E958846E90 /* MainMenuVC.xib */,
 				58603C123C341C75158C81D2 /* LoginVC.h */,
 				586030C2BF4C7344BA28DF46 /* LoginVC.m */,
-				58603D8E055F9BB67A04944C /* MainMenuVC.h */,
+				58603F06AD1F30B3A765EECE /* LoginVC.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -361,6 +378,7 @@
 				586037DA83AC0194043309B0 /* GUI */,
 				586033E2222DB33A58123231 /* Model */,
 				5860395D77DED98607B51368 /* Resources */,
+				5860305084161646998BB114 /* UtilCategories */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -553,10 +571,12 @@
 				58603790275386AF8AE400C8 /* LoginVC.m in Sources */,
 				586034705977759638D639AB /* User.m in Sources */,
 				5860377CD0E442828468897F /* Article.m in Sources */,
-				5860344DF13C89D8068C7CAF /* UserManager.m in Sources */,
 				5860369581FD8B3D9F8D42F9 /* Meaning.m in Sources */,
 				58603494BE8F2FEBE6C8637D /* Word.m in Sources */,
 				58603768CF28603E2B703695 /* Card.m in Sources */,
+				58603D0491B3120A7AF62849 /* UserManager.m in Sources */,
+				58603105A0809F8A5560C203 /* NSString+Hashable.m in Sources */,
+				5860352966AFCF93BF3E3CF4 /* UIView+Shakeable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

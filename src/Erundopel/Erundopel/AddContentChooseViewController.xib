@@ -46,6 +46,9 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="r4t-jS-0Mq"/>
+                            </connections>
                         </textField>
                         <view contentMode="scaleToFill" id="kwc-uS-hdd">
                             <rect key="frame" x="20" y="55" width="280" height="248"/>
@@ -56,12 +59,18 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="IrE-55-qju"/>
+                                    </connections>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Слово" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" id="WEy-Tl-Umn">
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="54"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="hLZ-zy-JJm"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
