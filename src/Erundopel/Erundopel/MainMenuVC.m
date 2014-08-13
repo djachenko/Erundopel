@@ -5,6 +5,7 @@
 #import "HelpVC.h"
 #import "LoginVC.h"
 #import "UserManager.h"
+#import "RecordsVC.h"
 
 static void *const context = (void *const) &context;
 
@@ -91,6 +92,8 @@ static void *const context = (void *const) &context;
     NSLog(@"Records pressed");
 
     [[[ParseManager alloc] init] downloadAll];
+    [self presentViewController:[[RecordsVC alloc] initWithUsers:self.userManager.users] animated:YES
+            completion:nil];
 }
 
 - (IBAction)userButtonTap:(UIButton *)sender

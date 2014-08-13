@@ -15,6 +15,7 @@
 		586034705977759638D639AB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860387E6B865E0B6ABA7086 /* User.m */; };
 		58603479155F691F72A03F3E /* GameModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */; };
 		58603494BE8F2FEBE6C8637D /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034BC596D8CC8E46912F4 /* Word.m */; };
+		58603494C010C413A7DE252A /* RecordsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603E0A58A272A97DC5E898 /* RecordsVC.m */; };
 		5860352966AFCF93BF3E3CF4 /* UIView+Shakeable.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034437E5C6502B7BE0FEF /* UIView+Shakeable.m */; };
 		5860355BB68BF0B595E167C1 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 586038524A679F9655A1C7D6 /* MainMenuVC.m */; };
 		5860364E126FCAC99F18E9C6 /* CardAnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860340006B894A229ED2C30 /* CardAnswerVC.m */; };
@@ -30,6 +31,7 @@
 		58603DD8587378CE6988E4E5 /* CardQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603B71A182DF53FB53B18C /* CardQuestionVC.m */; };
 		58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603930732BCE7419615527 /* GameModeVC.xib */; };
 		58603ED0098334ACE41CAAC2 /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860314D03857B7EE0AFE1FF /* GameVC.m */; };
+		58603EF2467690C25314E431 /* RecordsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586035AC413BF6C1BB06BB7F /* RecordsVC.xib */; };
 		58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */; };
 		58603F600F165AFC3DDBC270 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */; };
 		58603F634BA143453DC78263 /* AddContentChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603EC9DA4907D87C963DAA /* AddContentChooseViewController.m */; };
@@ -106,6 +108,7 @@
 		586034BC596D8CC8E46912F4 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		5860353D8859815CF1239617 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
 		586035957EA512875A5C7D80 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		586035AC413BF6C1BB06BB7F /* RecordsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordsVC.xib; sourceTree = "<group>"; };
 		586035C0F32726D09541865E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		586035C6FF50DCF95ECAB89F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		586036C004E2928611418D3D /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 		58603D8A4692600E318B80A9 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
 		58603D8E055F9BB67A04944C /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		58603DEBB5141AA49F447E86 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
+		58603E0A58A272A97DC5E898 /* RecordsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsVC.m; sourceTree = "<group>"; };
+		58603EA7DF2ADBB33EE1DA11 /* RecordsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsVC.h; sourceTree = "<group>"; };
 		58603EC9DA4907D87C963DAA /* AddContentChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContentChooseViewController.m; sourceTree = "<group>"; };
 		58603EE0614B1CD9A1444552 /* AddContentChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContentChooseViewController.h; sourceTree = "<group>"; };
 		58603F06AD1F30B3A765EECE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -290,6 +295,9 @@
 				58603C123C341C75158C81D2 /* LoginVC.h */,
 				586030C2BF4C7344BA28DF46 /* LoginVC.m */,
 				58603F06AD1F30B3A765EECE /* LoginVC.xib */,
+				58603EA7DF2ADBB33EE1DA11 /* RecordsVC.h */,
+				58603E0A58A272A97DC5E898 /* RecordsVC.m */,
+				586035AC413BF6C1BB06BB7F /* RecordsVC.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -505,6 +513,7 @@
 				586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */,
 				5860378D39F20AF847CC42F5 /* black_line.png in Resources */,
 				58603F600F165AFC3DDBC270 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
+				58603EF2467690C25314E431 /* RecordsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +590,7 @@
 				58603D0491B3120A7AF62849 /* UserManager.m in Sources */,
 				58603105A0809F8A5560C203 /* NSString+Hashable.m in Sources */,
 				5860352966AFCF93BF3E3CF4 /* UIView+Shakeable.m in Sources */,
+				58603494C010C413A7DE252A /* RecordsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
