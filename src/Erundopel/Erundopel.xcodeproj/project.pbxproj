@@ -7,20 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		586030214B0FEB270F1E6E83 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A76700C25FAE1FA187A /* HelpVC.m */; };
-		586030EA31CCFD505B70C636 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603B00720B89800107015B /* HelpVC.xib */; };
-		58603239484151DA98F44533 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603434B68371D83C6E4637 /* Word.m */; };
-		58603568E6C339BF960818D3 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860309F38FD78E64687C825 /* Meaning.m */; };
-		5860374CB0E6BE50545F864F /* CardAnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860396C28A5F32727260464 /* CardAnswerVC.m */; };
-		5860375F6FBE66D5B0540880 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034FF79580665684CD7D4 /* Card.m */; };
-		5860383344935F18C62F9228 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034FD49DD21DD1B03D2DF /* UserManager.m */; };
-		586039B96A113282FB62CD06 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860339BD57A18D43D8B240F /* Article.m */; };
-		58603B154F1346A185A51367 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603FD14BC4A42A91D7D5B1 /* User.m */; };
-		58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603FC5F627789E6E394D5A /* CardAnswerVC.xib */; };
+		586030EF3938019B35F5933E /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603F06AD1F30B3A765EECE /* LoginVC.xib */; };
+		5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603DEBB5141AA49F447E86 /* HelpVC.xib */; };
+		5860333EE55C14902C698CA3 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860353D8859815CF1239617 /* GameVC.xib */; };
+		5860338AFEE77AB29C320D89 /* AddContentChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860302C788BBC9423676927 /* AddContentChooseViewController.xib */; };
+		5860344DF13C89D8068C7CAF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603D2B5D0A473508189647 /* UserManager.m */; };
+		586034705977759638D639AB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860387E6B865E0B6ABA7086 /* User.m */; };
+		58603479155F691F72A03F3E /* GameModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */; };
+		58603494BE8F2FEBE6C8637D /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 586034BC596D8CC8E46912F4 /* Word.m */; };
+		5860355BB68BF0B595E167C1 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 586038524A679F9655A1C7D6 /* MainMenuVC.m */; };
+		5860364E126FCAC99F18E9C6 /* CardAnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860340006B894A229ED2C30 /* CardAnswerVC.m */; };
+		5860369581FD8B3D9F8D42F9 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860391E9CA6BBEFDF0D9494 /* Meaning.m */; };
+		58603768CF28603E2B703695 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603AC94CF7EF3A0BBF69B2 /* Card.m */; };
+		5860377CD0E442828468897F /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 586035C6FF50DCF95ECAB89F /* Article.m */; };
+		5860378D39F20AF847CC42F5 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 58603103D649DC1E25EA5825 /* black_line.png */; };
+		58603790275386AF8AE400C8 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 586030C2BF4C7344BA28DF46 /* LoginVC.m */; };
+		586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860324C8B52B5E958846E90 /* MainMenuVC.xib */; };
+		58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603368D1718F0135210DD7 /* CardQuestionVC.xib */; };
+		58603D72EDAA591097E738B9 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603A69537D3461EB0E0D4E /* HelpVC.m */; };
+		58603DD8587378CE6988E4E5 /* CardQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603B71A182DF53FB53B18C /* CardQuestionVC.m */; };
+		58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603930732BCE7419615527 /* GameModeVC.xib */; };
+		58603ED0098334ACE41CAAC2 /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860314D03857B7EE0AFE1FF /* GameVC.m */; };
+		58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */; };
+		58603F600F165AFC3DDBC270 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */; };
+		58603F634BA143453DC78263 /* AddContentChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603EC9DA4907D87C963DAA /* AddContentChooseViewController.m */; };
 		647351FF629A4DD5B982AB20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B1049A60A041B38DB1550D /* libPods.a */; };
 		84381E821998A627004EB0DC /* CardGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E811998A627004EB0DC /* CardGenerator.m */; };
-		84381E861998DE46004EB0DC /* GameModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E841998DE46004EB0DC /* GameModeVC.m */; };
-		84381E871998DE46004EB0DC /* GameModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84381E851998DE46004EB0DC /* GameModeVC.xib */; };
 		84381E89199A245A004EB0DC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E88199A245A004EB0DC /* Accounts.framework */; };
 		84381E8B199A2471004EB0DC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E8A199A2471004EB0DC /* Social.framework */; };
 		84462ECC19937A280072D773 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECB19937A280072D773 /* Parse.framework */; };
@@ -49,13 +61,6 @@
 		84462EF31994B8850072D773 /* ParseMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF21994B8850072D773 /* ParseMeaning.m */; };
 		84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF51994B93D0072D773 /* ParseLanguage.m */; };
 		84462EF91994BCF10072D773 /* ParseCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF81994BCF10072D773 /* ParseCard.m */; };
-		84688911198B8172005BC906 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468890F198B8172005BC906 /* MainMenuVC.m */; };
-		84688912198B8172005BC906 /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84688910198B8172005BC906 /* MainMenuVC.xib */; };
-		84688914198B8F28005BC906 /* black_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 84688913198B8F28005BC906 /* black_line.png */; };
-		8478D312198E4E9A005049E9 /* CardQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478D310198E4E9A005049E9 /* CardQuestionVC.m */; };
-		8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478D311198E4E9A005049E9 /* CardQuestionVC.xib */; };
-		847B536B1994E61D005A60DC /* AddContentChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B53691994E61D005A60DC /* AddContentChooseViewController.m */; };
-		847B536C1994E61D005A60DC /* AddContentChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */; };
 		8499407B198F96D40001C817 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8499407A198F96D40001C817 /* libsqlite3.dylib */; };
 		849940A5198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
 		849940A6198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
@@ -71,11 +76,6 @@
 		84A3A84D19862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
 		84A3A85519862CBC003594C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A85319862CBC003594C7 /* InfoPlist.strings */; };
 		84A3A85719862CBC003594C7 /* ErundopelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A85619862CBC003594C7 /* ErundopelTests.m */; };
-		84C53C07199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C53C06199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png */; };
-		84F56EF3199208AB009102F0 /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F56EF1199208AB009102F0 /* GameVC.m */; };
-		84F56EF4199208AB009102F0 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F56EF2199208AB009102F0 /* GameVC.xib */; };
-		84FAC60C1998E6F000B735F3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAC60A1998E6F000B735F3 /* LoginVC.m */; };
-		84FAC60D1998E6F000B735F3 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FAC60B1998E6F000B735F3 /* LoginVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,30 +89,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5860309F38FD78E64687C825 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meaning.m; sourceTree = "<group>"; };
-		5860311BB0FA2652E8300E4A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		5860316A9A8D09EF23F4AEB2 /* GameFinisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFinisher.h; sourceTree = "<group>"; };
-		586031D3D0C0CC7B58F27DF8 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
-		5860339BD57A18D43D8B240F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
-		58603434B68371D83C6E4637 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
-		586034FD49DD21DD1B03D2DF /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
-		586034FF79580665684CD7D4 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
-		5860371B0F114CBFB92A035B /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
-		586037842C180713A70CBAB2 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
-		5860385B21C332BABCF61493 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		58603863820F0EFEEAD15AB8 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
-		5860393905F73B344D397CF2 /* CardAnswerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAnswerVC.h; sourceTree = "<group>"; };
-		5860396C28A5F32727260464 /* CardAnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAnswerVC.m; sourceTree = "<group>"; };
-		58603A76700C25FAE1FA187A /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
-		58603B00720B89800107015B /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
-		58603F97B231928AC0D1D564 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		58603FC5F627789E6E394D5A /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
-		58603FD14BC4A42A91D7D5B1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5860302C788BBC9423676927 /* AddContentChooseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddContentChooseViewController.xib; sourceTree = "<group>"; };
+		586030C2BF4C7344BA28DF46 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		58603103D649DC1E25EA5825 /* black_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_line.png; sourceTree = "<group>"; };
+		5860314D03857B7EE0AFE1FF /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVC.m; sourceTree = "<group>"; };
+		5860324C8B52B5E958846E90 /* MainMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuVC.xib; sourceTree = "<group>"; };
+		58603261F8867F556EE63D6A /* CardAnswerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAnswerVC.h; sourceTree = "<group>"; };
+		58603368D1718F0135210DD7 /* CardQuestionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardQuestionVC.xib; sourceTree = "<group>"; };
+		586033C2F7951289201A8386 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		5860340006B894A229ED2C30 /* CardAnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAnswerVC.m; sourceTree = "<group>"; };
+		586034BC596D8CC8E46912F4 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		5860353D8859815CF1239617 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		586035957EA512875A5C7D80 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		586035C0F32726D09541865E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		586035C6FF50DCF95ECAB89F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		586036C004E2928611418D3D /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
+		586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1407931660_icon-ios7-arrow-left.png"; path = "../../../../../Desktop/1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
+		5860375F86ADB17CA63B30BD /* GameFinisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFinisher.h; sourceTree = "<group>"; };
+		586037A196212F89F5368B56 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		586037DEC42EA52105DCC489 /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
+		586038524A679F9655A1C7D6 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
+		5860387E6B865E0B6ABA7086 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5860391E9CA6BBEFDF0D9494 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meaning.m; sourceTree = "<group>"; };
+		58603930732BCE7419615527 /* GameModeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameModeVC.xib; sourceTree = "<group>"; };
+		58603A69537D3461EB0E0D4E /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
+		58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeVC.m; sourceTree = "<group>"; };
+		58603AC94CF7EF3A0BBF69B2 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		58603B71A182DF53FB53B18C /* CardQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardQuestionVC.m; sourceTree = "<group>"; };
+		58603C123C341C75158C81D2 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		58603D169F6CE6BC3A65C5CF /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
+		58603D1FEC6C6D04E8D2C605 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnswerVC.xib; sourceTree = "<group>"; };
+		58603D2B5D0A473508189647 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		58603D8A4692600E318B80A9 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
+		58603D8E055F9BB67A04944C /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
+		58603DEBB5141AA49F447E86 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
+		58603EC9DA4907D87C963DAA /* AddContentChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContentChooseViewController.m; sourceTree = "<group>"; };
+		58603EE0614B1CD9A1444552 /* AddContentChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContentChooseViewController.h; sourceTree = "<group>"; };
+		58603F06AD1F30B3A765EECE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		58603F705D8F351E10F0F97F /* CardQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardQuestionVC.h; sourceTree = "<group>"; };
 		84381E801998A627004EB0DC /* CardGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGenerator.h; sourceTree = "<group>"; };
 		84381E811998A627004EB0DC /* CardGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGenerator.m; sourceTree = "<group>"; };
-		84381E831998DE46004EB0DC /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
-		84381E841998DE46004EB0DC /* GameModeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeVC.m; sourceTree = "<group>"; };
-		84381E851998DE46004EB0DC /* GameModeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameModeVC.xib; sourceTree = "<group>"; };
 		84381E88199A245A004EB0DC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84381E8A199A2471004EB0DC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84462ECB19937A280072D773 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -135,16 +152,6 @@
 		84462EF51994B93D0072D773 /* ParseLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseLanguage.m; sourceTree = "<group>"; };
 		84462EF71994BCF10072D773 /* ParseCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseCard.h; sourceTree = "<group>"; };
 		84462EF81994BCF10072D773 /* ParseCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseCard.m; sourceTree = "<group>"; };
-		8468890E198B8172005BC906 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
-		8468890F198B8172005BC906 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
-		84688910198B8172005BC906 /* MainMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuVC.xib; sourceTree = "<group>"; };
-		84688913198B8F28005BC906 /* black_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_line.png; sourceTree = "<group>"; };
-		8478D30F198E4E9A005049E9 /* CardQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardQuestionVC.h; sourceTree = "<group>"; };
-		8478D310198E4E9A005049E9 /* CardQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardQuestionVC.m; sourceTree = "<group>"; };
-		8478D311198E4E9A005049E9 /* CardQuestionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardQuestionVC.xib; sourceTree = "<group>"; };
-		847B53681994E61D005A60DC /* AddContentChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContentChooseViewController.h; sourceTree = "<group>"; };
-		847B53691994E61D005A60DC /* AddContentChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContentChooseViewController.m; sourceTree = "<group>"; };
-		847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddContentChooseViewController.xib; sourceTree = "<group>"; };
 		8499407A198F96D40001C817 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849940A3198FA5AF0001C817 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		849940A4198FA5AF0001C817 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
@@ -165,13 +172,6 @@
 		84A3A85419862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84A3A85619862CBC003594C7 /* ErundopelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErundopelTests.m; sourceTree = "<group>"; };
 		84B1049A60A041B38DB1550D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C53C06199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1407931660_icon-ios7-arrow-left.png"; path = "../../../../../Desktop/1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
-		84F56EF0199208AB009102F0 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
-		84F56EF1199208AB009102F0 /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVC.m; sourceTree = "<group>"; };
-		84F56EF2199208AB009102F0 /* GameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
-		84FAC6091998E6F000B735F3 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
-		84FAC60A1998E6F000B735F3 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
-		84FAC60B1998E6F000B735F3 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +224,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		586033E2222DB33A58123231 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5860387E6B865E0B6ABA7086 /* User.m */,
+				586035C6FF50DCF95ECAB89F /* Article.m */,
+				58603D2B5D0A473508189647 /* UserManager.m */,
+				5860391E9CA6BBEFDF0D9494 /* Meaning.m */,
+				586034BC596D8CC8E46912F4 /* Word.m */,
+				586033C2F7951289201A8386 /* Article.h */,
+				58603D1FEC6C6D04E8D2C605 /* UserManager.h */,
+				586037DEC42EA52105DCC489 /* Meaning.h */,
+				586035C0F32726D09541865E /* Card.h */,
+				586037A196212F89F5368B56 /* User.h */,
+				586035957EA512875A5C7D80 /* Word.h */,
+				58603AC94CF7EF3A0BBF69B2 /* Card.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		586037DA83AC0194043309B0 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				58603EE0614B1CD9A1444552 /* AddContentChooseViewController.h */,
+				58603EC9DA4907D87C963DAA /* AddContentChooseViewController.m */,
+				5860302C788BBC9423676927 /* AddContentChooseViewController.xib */,
+				5860340006B894A229ED2C30 /* CardAnswerVC.m */,
+				58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */,
+				58603261F8867F556EE63D6A /* CardAnswerVC.h */,
+				58603F705D8F351E10F0F97F /* CardQuestionVC.h */,
+				58603B71A182DF53FB53B18C /* CardQuestionVC.m */,
+				58603368D1718F0135210DD7 /* CardQuestionVC.xib */,
+				58603930732BCE7419615527 /* GameModeVC.xib */,
+				5860375F86ADB17CA63B30BD /* GameFinisher.h */,
+				58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */,
+				586036C004E2928611418D3D /* GameModeVC.h */,
+				5860353D8859815CF1239617 /* GameVC.xib */,
+				58603D8A4692600E318B80A9 /* GameVC.h */,
+				58603A69537D3461EB0E0D4E /* HelpVC.m */,
+				58603D169F6CE6BC3A65C5CF /* HelpVC.h */,
+				58603DEBB5141AA49F447E86 /* HelpVC.xib */,
+				5860314D03857B7EE0AFE1FF /* GameVC.m */,
+				586038524A679F9655A1C7D6 /* MainMenuVC.m */,
+				58603F06AD1F30B3A765EECE /* LoginVC.xib */,
+				5860324C8B52B5E958846E90 /* MainMenuVC.xib */,
+				58603C123C341C75158C81D2 /* LoginVC.h */,
+				586030C2BF4C7344BA28DF46 /* LoginVC.m */,
+				58603D8E055F9BB67A04944C /* MainMenuVC.h */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		5860395D77DED98607B51368 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58603103D649DC1E25EA5825 /* black_line.png */,
+				586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		84381E7F1998A35E004EB0DC /* ParseClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,55 +348,19 @@
 		84A3A83719862CBC003594C7 /* Erundopel */ = {
 			isa = PBXGroup;
 			children = (
-				84688913198B8F28005BC906 /* black_line.png */,
-				8478D30F198E4E9A005049E9 /* CardQuestionVC.h */,
-				8478D310198E4E9A005049E9 /* CardQuestionVC.m */,
-				58603FC5F627789E6E394D5A /* CardAnswerVC.xib */,
-				84C53C06199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png */,
-				8478D311198E4E9A005049E9 /* CardQuestionVC.xib */,
 				84A3A84019862CBC003594C7 /* AppDelegate.h */,
 				84A3A84119862CBC003594C7 /* AppDelegate.m */,
 				84A3A84319862CBC003594C7 /* Images.xcassets */,
-				8468890E198B8172005BC906 /* MainMenuVC.h */,
-				8468890F198B8172005BC906 /* MainMenuVC.m */,
-				84688910198B8172005BC906 /* MainMenuVC.xib */,
-				84381E831998DE46004EB0DC /* GameModeVC.h */,
-				84381E841998DE46004EB0DC /* GameModeVC.m */,
-				84381E851998DE46004EB0DC /* GameModeVC.xib */,
 				849940A3198FA5AF0001C817 /* Database.h */,
 				849940A4198FA5AF0001C817 /* Database.m */,
 				84A3A83819862CBC003594C7 /* Supporting Files */,
-				5860371B0F114CBFB92A035B /* Meaning.h */,
-				5860309F38FD78E64687C825 /* Meaning.m */,
-				58603434B68371D83C6E4637 /* Word.m */,
-				586037842C180713A70CBAB2 /* Word.h */,
-				5860339BD57A18D43D8B240F /* Article.m */,
-				5860311BB0FA2652E8300E4A /* Article.h */,
-				5860385B21C332BABCF61493 /* Card.h */,
-				586034FF79580665684CD7D4 /* Card.m */,
 				84381E801998A627004EB0DC /* CardGenerator.h */,
 				84381E811998A627004EB0DC /* CardGenerator.m */,
-				84F56EF0199208AB009102F0 /* GameVC.h */,
-				84F56EF1199208AB009102F0 /* GameVC.m */,
-				84F56EF2199208AB009102F0 /* GameVC.xib */,
-				5860393905F73B344D397CF2 /* CardAnswerVC.h */,
-				5860396C28A5F32727260464 /* CardAnswerVC.m */,
-				5860316A9A8D09EF23F4AEB2 /* GameFinisher.h */,
 				84381E7F1998A35E004EB0DC /* ParseClasses */,
 				84A3A85019862CBC003594C7 /* ErundopelTests */,
-				847B53681994E61D005A60DC /* AddContentChooseViewController.h */,
-				847B53691994E61D005A60DC /* AddContentChooseViewController.m */,
-				847B536A1994E61D005A60DC /* AddContentChooseViewController.xib */,
-				586031D3D0C0CC7B58F27DF8 /* HelpVC.h */,
-				58603A76700C25FAE1FA187A /* HelpVC.m */,
-				58603B00720B89800107015B /* HelpVC.xib */,
-				58603FD14BC4A42A91D7D5B1 /* User.m */,
-				58603F97B231928AC0D1D564 /* User.h */,
-				84FAC6091998E6F000B735F3 /* LoginVC.h */,
-				84FAC60A1998E6F000B735F3 /* LoginVC.m */,
-				84FAC60B1998E6F000B735F3 /* LoginVC.xib */,
-				586034FD49DD21DD1B03D2DF /* UserManager.m */,
-				58603863820F0EFEEAD15AB8 /* UserManager.h */,
+				586037DA83AC0194043309B0 /* GUI */,
+				586033E2222DB33A58123231 /* Model */,
+				5860395D77DED98607B51368 /* Resources */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -447,18 +471,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FAC60D1998E6F000B735F3 /* LoginVC.xib in Resources */,
 				84A3A83C19862CBC003594C7 /* InfoPlist.strings in Resources */,
-				84688914198B8F28005BC906 /* black_line.png in Resources */,
-				84688912198B8172005BC906 /* MainMenuVC.xib in Resources */,
-				847B536C1994E61D005A60DC /* AddContentChooseViewController.xib in Resources */,
 				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
-				84F56EF4199208AB009102F0 /* GameVC.xib in Resources */,
-				8478D313198E4E9A005049E9 /* CardQuestionVC.xib in Resources */,
-				84C53C07199B46660032C417 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
-				58603C625AAD61D05ED1EDEE /* CardAnswerVC.xib in Resources */,
-				84381E871998DE46004EB0DC /* GameModeVC.xib in Resources */,
-				586030EA31CCFD505B70C636 /* HelpVC.xib in Resources */,
+				5860338AFEE77AB29C320D89 /* AddContentChooseViewController.xib in Resources */,
+				58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */,
+				58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */,
+				58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */,
+				5860333EE55C14902C698CA3 /* GameVC.xib in Resources */,
+				5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */,
+				586030EF3938019B35F5933E /* LoginVC.xib in Resources */,
+				586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */,
+				5860378D39F20AF847CC42F5 /* black_line.png in Resources */,
+				58603F600F165AFC3DDBC270 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,26 +537,26 @@
 				84A3A84219862CBC003594C7 /* AppDelegate.m in Sources */,
 				84381E821998A627004EB0DC /* CardGenerator.m in Sources */,
 				84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */,
-				84FAC60C1998E6F000B735F3 /* LoginVC.m in Sources */,
-				84688911198B8172005BC906 /* MainMenuVC.m in Sources */,
-				8478D312198E4E9A005049E9 /* CardQuestionVC.m in Sources */,
 				84462EF31994B8850072D773 /* ParseMeaning.m in Sources */,
-				84F56EF3199208AB009102F0 /* GameVC.m in Sources */,
 				84A3A83E19862CBC003594C7 /* main.m in Sources */,
 				84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */,
-				84381E861998DE46004EB0DC /* GameModeVC.m in Sources */,
 				849940A5198FA5AF0001C817 /* Database.m in Sources */,
-				58603568E6C339BF960818D3 /* Meaning.m in Sources */,
 				84462EF01994B5820072D773 /* ParseWord.m in Sources */,
 				84462EF91994BCF10072D773 /* ParseCard.m in Sources */,
-				58603239484151DA98F44533 /* Word.m in Sources */,
-				586039B96A113282FB62CD06 /* Article.m in Sources */,
-				847B536B1994E61D005A60DC /* AddContentChooseViewController.m in Sources */,
-				5860375F6FBE66D5B0540880 /* Card.m in Sources */,
-				5860374CB0E6BE50545F864F /* CardAnswerVC.m in Sources */,
-				586030214B0FEB270F1E6E83 /* HelpVC.m in Sources */,
-				58603B154F1346A185A51367 /* User.m in Sources */,
-				5860383344935F18C62F9228 /* UserManager.m in Sources */,
+				58603F634BA143453DC78263 /* AddContentChooseViewController.m in Sources */,
+				5860364E126FCAC99F18E9C6 /* CardAnswerVC.m in Sources */,
+				58603DD8587378CE6988E4E5 /* CardQuestionVC.m in Sources */,
+				58603479155F691F72A03F3E /* GameModeVC.m in Sources */,
+				58603D72EDAA591097E738B9 /* HelpVC.m in Sources */,
+				58603ED0098334ACE41CAAC2 /* GameVC.m in Sources */,
+				5860355BB68BF0B595E167C1 /* MainMenuVC.m in Sources */,
+				58603790275386AF8AE400C8 /* LoginVC.m in Sources */,
+				586034705977759638D639AB /* User.m in Sources */,
+				5860377CD0E442828468897F /* Article.m in Sources */,
+				5860344DF13C89D8068C7CAF /* UserManager.m in Sources */,
+				5860369581FD8B3D9F8D42F9 /* Meaning.m in Sources */,
+				58603494BE8F2FEBE6C8637D /* Word.m in Sources */,
+				58603768CF28603E2B703695 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
