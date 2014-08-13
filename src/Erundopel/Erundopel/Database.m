@@ -546,6 +546,61 @@ NSString *queryDropTable = @"DROP TABLE ?";
     return result;
 }
 
+- (NSArray *)getAllNewArticles
+{
+    NSMutableArray * newArticles = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+
+    [self.queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *newWordsResult = [db executeQuery:
+            @"SELECT * "
+            "FROM words "
+            "WHERE sync = ?",
+            [NSNumber numberWithInt:SyncStateNotSynced]
+        ];
+        
+        while ([newWordsResult next]) {
+            [result addObject:[newWordsResult resultDictionary]];
+        }
+        [newWordsResult close];
+    }];
+    
+    for (NSDictionary *resultRow in result) {
+        NSString *wordObjectId = resultRow[@"id_object"];
+        Article *article = [self getArticleForWordById:wordObjectId];
+        [newArticles addObject:article];
+    }
+    
+    return newArticles;
+}
+
+- (NSArray *)getAllNewMeanings
+{
+    NSMutableArray * newMeanings = [[NSMutableArray alloc] init];
+
+    FMResultSet *__block newMeaningsResult = nil;
+
+    [self.queue inDatabase:^(FMDatabase *db) {
+        newMeaningsResult = [db executeQuery:
+            @"SELECT * "
+            "FROM meanings "
+            "WHERE sync = ?",
+            SyncStateNotSynced
+        ];
+    }];
+
+    while ([newMeaningsResult next]) {
+        NSString *meaningObjectId = [newMeaningsResult stringForColumn:@"id_object"];
+        Meaning *meaning = [self getMeaningByObjectId:meaningObjectId];
+        [newMeanings addObject:meaning];
+    }
+    [newMeaningsResult close];
+    
+    return newMeanings;
+
+}
+
 
 
 

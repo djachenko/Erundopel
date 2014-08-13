@@ -11,5 +11,6 @@
 @interface ParseManager : NSObject
 
 - (void)downloadAll;
+- (void)uploadAll;
 
 @end

@@ -13,6 +13,7 @@
 #import "ParseWord.h"
 #import "ParseMeaning.h"
 #import "ParseLanguage.h"
+#import "Article.h"
 
 
 
@@ -241,6 +242,47 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
             [self setLastUpdateDate:object.updatedAt
                 forKey:key];
         }
+}
+
+- (void)uploadAll
+{
+    [self uploadNewWords];
+    [self uploadNewMeanings];
+}
+
+- (void)uploadNewWords
+{
+    NSArray *articles = [self.db getAllNewArticles];
+    
+    for (Article *article in articles) {
+        ParseMeaning *meaning = [[ParseMeaning alloc] init];
+        
+        meaning.meaning = article.meaning.text;
+        
+        ParseLanguage *language = (ParseLanguage *)[PFObject objectWithoutDataWithClassName:@"language"
+            objectId:[self.db getLanguageObjectIdBytName:@"russian"]
+        ];
+        
+        meaning.language = language;
+        
+        ParseWord *word = [[ParseWord alloc] init];
+        word.word = article.word.text;
+        word.meaning = meaning;
+        word.language = language;
+        
+#warning TODO
+        // update local storage - set state of the word to synced
+        [word saveEventually:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Saved word: %@", word.objectId);
+            }
+        }];
+    }
+}
+
+- (void)uploadNewMeanings
+{
+
 }
 
 @end

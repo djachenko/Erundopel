@@ -3,6 +3,7 @@
 #import "Meaning.h"
 #import "Article.h"
 #import "Database.h"
+#import "ParseManager.h"
 
 @interface AddContentChooseViewController ()<UITextFieldDelegate>
 
@@ -23,6 +24,7 @@ typedef NS_ENUM(NSInteger, ContentType)
 @end
 
 @implementation AddContentChooseViewController
+
 
 - (IBAction)action:(UISegmentedControl *)sender
 {
@@ -69,6 +71,7 @@ typedef NS_ENUM(NSInteger, ContentType)
                     text:@"Слово с таким значением уже есть в базе. Придумайте что-нибудь новое!"];
             } else {
                 [[Database sharedInstance] addArticle:article];
+                [[[ParseManager alloc] init] uploadAll];
                 [self.navigationController popViewControllerAnimated:YES];
             }
 

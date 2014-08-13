@@ -12,6 +12,13 @@
 @class Word;
 @class Meaning;
 
+typedef NS_ENUM(NSUInteger, SyncState) {
+    SyncStateNotSynced = 0,
+    SyncStateStarted = 1,
+    SyncStateSynced = 2
+};
+
+
 @interface Database : NSObject
 
 +(instancetype) sharedInstance;
@@ -30,6 +37,11 @@
 
 - (NSArray *)getRandomArticles:(unsigned int)amount;
 - (NSSet *)getRandomMeanings:(unsigned int)amount;
+
+- (NSArray *)getAllNewArticles;
+- (NSArray *)getAllNewMeanings;
+
+- (NSString *)getLanguageObjectIdBytName:(NSString *)name;
 
 - (BOOL)hasWordWithValue:(NSString *)value;
 - (BOOL)hasMeaningWithValue:(NSString *)value;
