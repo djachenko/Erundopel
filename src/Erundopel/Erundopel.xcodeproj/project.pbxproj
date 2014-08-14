@@ -36,6 +36,7 @@
 		84381E821998A627004EB0DC /* CardGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E811998A627004EB0DC /* CardGenerator.m */; };
 		84381E89199A245A004EB0DC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E88199A245A004EB0DC /* Accounts.framework */; };
 		84381E8B199A2471004EB0DC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E8A199A2471004EB0DC /* Social.framework */; };
+		84381E8D199CB58A004EB0DC /* dbScheme.sql in Resources */ = {isa = PBXBuildFile; fileRef = 84381E8C199CB58A004EB0DC /* dbScheme.sql */; };
 		84462ECC19937A280072D773 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECB19937A280072D773 /* Parse.framework */; };
 		84462ECE19937A5C0072D773 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECD19937A5C0072D773 /* AudioToolbox.framework */; };
 		84462ED019937A670072D773 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECF19937A670072D773 /* CFNetwork.framework */; };
@@ -136,6 +137,7 @@
 		84381E811998A627004EB0DC /* CardGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGenerator.m; sourceTree = "<group>"; };
 		84381E88199A245A004EB0DC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84381E8A199A2471004EB0DC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		84381E8C199CB58A004EB0DC /* dbScheme.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dbScheme.sql; sourceTree = "<group>"; };
 		84462ECB19937A280072D773 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		84462ECD19937A5C0072D773 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84462ECF19937A670072D773 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				58603103D649DC1E25EA5825 /* black_line.png */,
+				84381E8C199CB58A004EB0DC /* dbScheme.sql */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				5860338AFEE77AB29C320D89 /* AddContentChooseViewController.xib in Resources */,
 				58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */,
 				58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */,
+				84381E8D199CB58A004EB0DC /* dbScheme.sql in Resources */,
 				58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */,
 				5860333EE55C14902C698CA3 /* GameVC.xib in Resources */,
 				5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */,
