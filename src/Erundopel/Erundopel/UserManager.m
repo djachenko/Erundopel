@@ -40,6 +40,7 @@ User *_anon;
 - (NSMutableArray *)users
 {
     if (!_users) {
+        #warning get users from base
         NSData *usersData = [[NSUserDefaults standardUserDefaults] objectForKey:arrayKey];
 
         if (!usersData) {
@@ -72,9 +73,9 @@ User *_anon;
 - (void)registerUser:(User *)user
 {
     [self.users addObject:user];
-    [self loginWithUser:user];
+    [self synchronizeUsers];
 
-    [self synchronize];
+    [self loginWithUser:user];
 }
 
 - (void)registerUserWithName:(NSString *)name password:(NSString *)password
@@ -89,10 +90,7 @@ User *_anon;
     if (user == self.anonymous || [self.users indexOfObject:user] != NSNotFound) {
         _user = user;
 
-        [self synchronize];
-
-        NSLog(@"prenot %@ %@", _user.name, self.delegate);
-
+        [self synchronizeCurrentUser];
         [self.delegate notifyPlayerChanged:user.name];
 
         return YES;
@@ -120,22 +118,31 @@ User *_anon;
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     [self loginWithUser:self.anonymous];
-
-    NSLog(@"outed");
 }
 
-- (void)synchronize
+- (void)synchronizeCurrentUser
 {
     if (self.currentUser != self.anonymous) {
         NSInteger currentUserInteger = [self.users indexOfObject:self.currentUser] + 1;
 
         [[NSUserDefaults standardUserDefaults] setInteger:currentUserInteger forKey:UserIdentifier];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
 
+- (void)synchronizeUsers
+{
+    #warning move users to SQLite
     NSData *usersData = [NSKeyedArchiver archivedDataWithRootObject:self.users];
 
     [[NSUserDefaults standardUserDefaults] setObject:usersData forKey:arrayKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)synchronize
+{
+    [self synchronizeCurrentUser];
+    [self synchronizeUsers];
 }
 
 @end
