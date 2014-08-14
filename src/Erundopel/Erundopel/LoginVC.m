@@ -1,9 +1,10 @@
 #import "LoginVC.h"
 #import "UserManager.h"
+#import "UIView+Shakeable.h"
 
 @interface LoginVC ()<UITextFieldDelegate>
 
-@property UserManager *userManager;
+@property(nonatomic, strong) UserManager *userManager;
 
 @property IBOutlet UISegmentedControl *control;
 
@@ -13,8 +14,8 @@
 
 typedef NS_ENUM(NSInteger, ActionType)
 {
-    ActionTypeLogin = 0,
-    ActionTypeRegister = 1
+    actionTypeLogin = 0,
+    actionTypeRegister = 1
 };
 
 @property ActionType currentMode;
@@ -23,12 +24,12 @@ typedef NS_ENUM(NSInteger, ActionType)
 
 @implementation LoginVC
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithUserManager:(UserManager *)userManager
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [self init];
 
     if (self) {
-        _userManager = [[UserManager alloc] init];
+        _userManager = userManager;
     }
 
     return self;
@@ -42,10 +43,10 @@ typedef NS_ENUM(NSInteger, ActionType)
 
     switch (self.control.selectedSegmentIndex) {
         case 0:
-            self.currentMode = ActionTypeLogin;
+            self.currentMode = actionTypeLogin;
             break;
         case 1:
-            self.currentMode = ActionTypeRegister;
+            self.currentMode = actionTypeRegister;
             break;
         default:
             break;
@@ -55,12 +56,48 @@ typedef NS_ENUM(NSInteger, ActionType)
 - (IBAction)login:(UIButton *)sender
 {
     NSString *username = self.loginField.text;
-    // CR: always check your project for warnings. some of them can be useful.
     NSString *password = self.passwordField.text;
 
-    [self.userManager loginWithName:username];
+    if ([username isEqualToString:@""]) {
+        [self.loginField shake];
 
-    [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+
+    switch (self.currentMode) {
+        case actionTypeLogin:
+            if ([self.userManager hasUserWithName:username]) {
+                if ([self.userManager loginWithName:username password:password]) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else {
+                    [self.passwordField shake];
+                }
+            }
+            else {
+                [self.loginField shake];
+            }
+
+            break;
+        case actionTypeRegister:
+            if (![self.userManager hasUserWithName:username]) {
+                if (![password isEqualToString:@""]) {
+                    [self.userManager registerUserWithName:username password:password];
+
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else {
+                    [self.passwordField shake];
+                }
+            }
+            else {
+                [self.loginField shake];
+            }
+
+            break;
+        default:
+            break;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -72,7 +109,21 @@ typedef NS_ENUM(NSInteger, ActionType)
 
 - (IBAction)action:(UISegmentedControl *)sender
 {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.currentMode = actionTypeLogin;
+            break;
+        case 1:
+            self.currentMode = actionTypeRegister;
+            break;
+        default:
+            break;
+    }
+}
 
+- (IBAction)goBack
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

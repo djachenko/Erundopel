@@ -99,13 +99,6 @@ typedef NS_ENUM(NSInteger, ContentType)
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-
-    return NO;
-}
-
 - (void)showAlertWithTitle:(NSString *)title
     text:(NSString *)text
 {
@@ -118,6 +111,18 @@ typedef NS_ENUM(NSInteger, ContentType)
     ];
 
     [alert show];
+}
+
+- (IBAction)back
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+
+    return NO;
 }
 
 

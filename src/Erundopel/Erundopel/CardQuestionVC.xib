@@ -8,9 +8,9 @@
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wordLabel" destination="coA-a4-ObU" id="WjU-fG-Ykp"/>
-                <outletCollection property="buttons" destination="KWD-y8-iic" collectionClass="NSMutableArray" id="kww-bL-iev"/>
-                <outletCollection property="buttons" destination="tBQ-t9-lyk" collectionClass="NSMutableArray" id="O0L-dy-VQ8"/>
-                <outletCollection property="buttons" destination="hfZ-sE-q2b" collectionClass="NSMutableArray" id="edq-zA-uSn"/>
+                <outletCollection property="buttons" destination="KWD-y8-iic" id="kww-bL-iev"/>
+                <outletCollection property="buttons" destination="tBQ-t9-lyk" id="O0L-dy-VQ8"/>
+                <outletCollection property="buttons" destination="hfZ-sE-q2b" id="edq-zA-uSn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,13 +18,31 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слово" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="coA-a4-ObU">
+                <view contentMode="scaleToFill" id="8wW-uH-aNQ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="38"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слово" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="coA-a4-ObU">
+                            <rect key="frame" x="49" y="0.0" width="223" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="38"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2sf-xs-L3K">
+                            <rect key="frame" x="5" y="43" width="64" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="P4Z-QE-I2a"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </view>
                 <view opaque="NO" contentMode="scaleToFill" id="VC8-WD-Ywb">
                     <rect key="frame" x="0.0" y="150" width="320" height="418"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
@@ -79,22 +97,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2sf-xs-L3K">
-                    <rect key="frame" x="20" y="60" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="back:" destination="-1" eventType="touchUpInside" id="P4Z-QE-I2a"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
+        <image name="1407931660_icon-ios7-arrow-left.png" width="256" height="256"/>
         <image name="black_line.png" width="20" height="2"/>
     </resources>
 </document>

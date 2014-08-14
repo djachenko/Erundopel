@@ -1,4 +1,5 @@
 #import "UserManager.h"
+#import "NSString+Hashable.h"
 
 static NSString *UserIdentifier = @"ErundopelUserIdentifier";
 static NSString *arrayKey = @"olololololoo";
@@ -12,6 +13,7 @@ static NSString *arrayKey = @"olololololoo";
 @implementation UserManager
 
 User *_user;
+User *_anon;
 
 - (User *)currentUser;
 {
@@ -19,14 +21,25 @@ User *_user;
         NSData *userData = [[NSUserDefaults standardUserDefaults] objectForKey:UserIdentifier];
 
         if (!userData) {
-            [self loginWithUser:[[User alloc] initWithName:@"Anonymous"]];
+           _user = self.anonymous;
         }
         else {
             _user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+
+            //[self loginWithUser:[NSKeyedUnarchiver unarchiveObjectWithData:userData]];
         }
     }
 
     return _user;
+}
+
+- (User *)anonymous
+{
+    if (!_anon) {
+        _anon = [[User alloc] initWithName:@"Anonymous" password:nil];
+    }
+
+    return _anon;
 }
 
 - (NSMutableArray *)users
@@ -45,27 +58,66 @@ User *_user;
     return _users;
 }
 
-- (void)registerUser:(User *)user
+- (BOOL)hasUser:(User *)user
 {
-    [self.users addObject:user];
-
-    [self synchronize];
+    return [self.users indexOfObject:user] != NSNotFound;
 }
 
-- (void)loginWithUser:(User *)user
-{
-    _user = user;
-
-    [self synchronize];
-}
-
-- (void)loginWithName:(NSString *)name
+- (BOOL)hasUserWithName:(NSString *)name
 {
     for (User *user in self.users) {
         if ([user.name isEqualToString:name]) {
-            [self loginWithUser:user];
+            return YES;
         }
     }
+
+    return NO;
+}
+
+- (void)registerUser:(User *)user
+{
+    [self.users addObject:user];
+    [self loginWithUser:user];
+
+    [self synchronize];
+}
+
+- (void)registerUserWithName:(NSString *)name password:(NSString *)password
+{
+    User *user = [[User alloc] initWithName:name password:password];
+
+    [self registerUser:user];
+}
+
+
+- (BOOL)loginWithUser:(User *)user
+{
+    if (user == self.anonymous || [self.users indexOfObject:user] != NSNotFound) {
+        _user = user;
+
+        [self synchronize];
+
+        NSLog(@"prenot %@ %@", _user.name, self.delegate);
+
+        [self.delegate notifyPlayerChanged:user.name];
+
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
+- (BOOL)loginWithName:(NSString *)name password:(NSString *)password {
+    password = [password hashStringWithSalt:salt];
+
+    for (User *user in self.users) {
+        if ([user.name isEqualToString:name] && [user.password isEqualToString:password]) {
+            return [self loginWithUser:user];
+        }
+    }
+
+    return NO;
 }
 
 - (void)logout
@@ -73,20 +125,22 @@ User *_user;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:UserIdentifier];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    _user = nil;
+    [self loginWithUser:self.anonymous];
+
+    NSLog(@"outed");
 }
 
 - (void)synchronize
 {
-    NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:_user];
+    if (self.currentUser != self.anonymous) {
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:_user];
+        [[NSUserDefaults standardUserDefaults] setObject:userData forKey:UserIdentifier];
+    }
+
     NSData *usersData = [NSKeyedArchiver archivedDataWithRootObject:self.users];
 
-    [[NSUserDefaults standardUserDefaults] setObject:userData forKey:UserIdentifier];
     [[NSUserDefaults standardUserDefaults] setObject:usersData forKey:arrayKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
-
-    NSLog(@"Written ");
 }
-
 
 @end
