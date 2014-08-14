@@ -14,15 +14,15 @@
     self = [self init];
 
     if (self) {
-        _users = [users  sortedArrayUsingComparator: ^(User *a, User *b) {
+        _users = [users sortedArrayUsingComparator: ^(User *a, User *b) {
             double aRatio = (double)a.guessed / a.total;
             double bRatio = (double)b.guessed / b.total;
 
             if (aRatio > bRatio) {
-                return NSOrderedDescending;
+                return NSOrderedAscending;
             }
             else if (aRatio < bRatio) {
-                return NSOrderedAscending;
+                return NSOrderedDescending;
             }
             else {
                 return NSOrderedSame;

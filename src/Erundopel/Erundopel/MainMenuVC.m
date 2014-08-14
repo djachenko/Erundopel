@@ -4,7 +4,6 @@
 #import "AddContentChooseViewController.h"
 #import "HelpVC.h"
 #import "LoginVC.h"
-#import "UserManager.h"
 #import "RecordsVC.h"
 
 static void *const context = (void *const) &context;
@@ -73,7 +72,8 @@ static void *const context = (void *const) &context;
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
-    [self.navigationController pushViewController:[[GameModeVC alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[GameModeVC alloc] initWithUserManager:self.userManager]
+            animated:YES];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
@@ -110,7 +110,6 @@ static void *const context = (void *const) &context;
 
 - (void)notifyPlayerChanged:(NSString *)name
 {
-    NSLog(@"notify %@ %@", self.userManager.currentUser.name, name);
     [self.loginButton setTitle:[NSString stringWithFormat:@"Вы %@", self.userManager.currentUser.name]
             forState:UIControlStateNormal];
 
