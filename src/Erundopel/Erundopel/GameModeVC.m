@@ -69,4 +69,9 @@
     [self.navigationController pushViewController:gameVC animated:YES];
 }
 
+- (IBAction)back
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end

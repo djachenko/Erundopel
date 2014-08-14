@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -29,22 +30,22 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ерундопель" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oa7-WE-5qt">
-                    <rect key="frame" x="0.0" y="20" width="320" height="55"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="81"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="38"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-KH-FlE" userLabel="View - buttons">
-                    <rect key="frame" x="20" y="142" width="280" height="404"/>
+                    <rect key="frame" x="20" y="142" width="280" height="406"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xP8-Vp-qDB" userLabel="View - user info">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fw-76-S8U">
-                                    <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -56,11 +57,13 @@
                                         <action selector="userButtonTap:" destination="-1" eventType="touchUpInside" id="Oe0-69-ZPw"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-yp-S18">
-                                    <rect key="frame" x="211" y="0.0" width="69" height="30"/>
+                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-yp-S18">
+                                    <rect key="frame" x="240" y="0.0" width="40" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
-                                    <state key="normal" title="вон">
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="x7c-yp-S18" secondAttribute="height" id="nsB-8f-av2"/>
+                                    </constraints>
+                                    <state key="normal" title="вон" image="1407947738_common_logout_signout_exit_.png">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -74,16 +77,16 @@
                                 <constraint firstItem="6Fw-76-S8U" firstAttribute="leading" secondItem="xP8-Vp-qDB" secondAttribute="leading" id="7cs-dl-Xlk"/>
                                 <constraint firstAttribute="bottom" secondItem="x7c-yp-S18" secondAttribute="bottom" id="B0G-3n-jx3"/>
                                 <constraint firstAttribute="bottom" secondItem="6Fw-76-S8U" secondAttribute="bottom" id="BRy-BE-Lzc"/>
+                                <constraint firstAttribute="height" constant="40" id="Cdy-ZH-UTl"/>
                                 <constraint firstItem="x7c-yp-S18" firstAttribute="top" secondItem="xP8-Vp-qDB" secondAttribute="top" id="Ddq-Dd-9hX"/>
-                                <constraint firstItem="x7c-yp-S18" firstAttribute="leading" secondItem="6Fw-76-S8U" secondAttribute="trailing" constant="8" id="NE8-Vm-crv"/>
-                                <constraint firstItem="6Fw-76-S8U" firstAttribute="width" secondItem="x7c-yp-S18" secondAttribute="width" multiplier="3" id="h1x-sM-2G0"/>
+                                <constraint firstItem="x7c-yp-S18" firstAttribute="leading" secondItem="6Fw-76-S8U" secondAttribute="trailing" id="NE8-Vm-crv"/>
                                 <constraint firstAttribute="trailing" secondItem="x7c-yp-S18" secondAttribute="trailing" id="qpu-wf-qzR"/>
                                 <constraint firstItem="6Fw-76-S8U" firstAttribute="top" secondItem="xP8-Vp-qDB" secondAttribute="top" id="vjr-CH-WAD"/>
                             </constraints>
                             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-Ye-euW">
-                            <rect key="frame" x="0.0" y="30" width="280" height="89"/>
+                            <rect key="frame" x="0.0" y="40" width="280" height="87"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
                             <state key="normal" title="Новая игра">
@@ -97,11 +100,11 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hj9-xM-svM">
-                            <rect key="frame" x="126" y="119" width="28" height="6"/>
+                            <rect key="frame" x="126" y="127" width="28" height="6"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-SZ-cjk">
-                            <rect key="frame" x="0.0" y="125" width="280" height="89"/>
+                            <rect key="frame" x="0.0" y="133" width="280" height="87"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
                             <state key="normal" title="Добавить контент">
@@ -115,11 +118,11 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-zJ-iXo">
-                            <rect key="frame" x="126" y="214" width="28" height="7"/>
+                            <rect key="frame" x="126" y="220" width="28" height="6"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v2-o6-KOp">
-                            <rect key="frame" x="0.0" y="221" width="280" height="88"/>
+                            <rect key="frame" x="0.0" y="226" width="280" height="87"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
                             <state key="normal" title="Настройки">
@@ -133,15 +136,15 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIo-B7-s32">
-                            <rect key="frame" x="126" y="309" width="28" height="7"/>
+                            <rect key="frame" x="126" y="313" width="28" height="6"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipr-ZA-A9v" userLabel="View - button container">
-                            <rect key="frame" x="0.0" y="316" width="280" height="88"/>
+                            <rect key="frame" x="0.0" y="319" width="280" height="87"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-y4-ueM">
-                                    <rect key="frame" x="140" y="0.0" width="140" height="88"/>
+                                    <rect key="frame" x="140" y="0.0" width="140" height="87"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
@@ -156,7 +159,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpe-iG-uxc">
-                                    <rect key="frame" x="0.0" y="0.0" width="140" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="87"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
@@ -233,7 +236,7 @@
                 <constraint firstItem="Oa7-WE-5qt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Z7h-xb-cQd"/>
                 <constraint firstAttribute="trailing" secondItem="kb2-KH-FlE" secondAttribute="trailing" constant="20" id="g9Y-VZ-Iyz"/>
                 <constraint firstAttribute="trailing" secondItem="Oa7-WE-5qt" secondAttribute="trailing" id="jgn-cg-cnv"/>
-                <constraint firstItem="7K3-Fl-zY5" firstAttribute="height" secondItem="Oa7-WE-5qt" secondAttribute="height" multiplier="2.2" id="mnV-59-Se5"/>
+                <constraint firstItem="7K3-Fl-zY5" firstAttribute="height" secondItem="Oa7-WE-5qt" secondAttribute="height" multiplier="1.5" id="mnV-59-Se5"/>
                 <constraint firstItem="7K3-Fl-zY5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="zSE-hl-nJ8"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -241,6 +244,7 @@
         </view>
     </objects>
     <resources>
+        <image name="1407947738_common_logout_signout_exit_.png" width="256" height="256"/>
         <image name="black_line.png" width="20" height="2"/>
     </resources>
 </document>

@@ -47,6 +47,8 @@ static void *const context = (void *const) &context;
 {
     [super viewDidLoad];
     
+    [self.buttons removeAllObjects];
+    
     [self.buttons addObject:self.buttonNewGame];
     [self.buttons addObject:self.buttonAddContent];
     [self.buttons addObject:self.buttonSettings];

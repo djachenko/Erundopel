@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="acJ-hR-j8p">
-                    <rect key="frame" x="20" y="118.99999933309482" width="280" height="429"/>
+                    <rect key="frame" x="20" y="119" width="280" height="428.99999864185008"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
                         <view opaque="NO" contentMode="scaleToFill" id="VC8-WD-Ywb">

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -19,36 +20,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JX1-gX-Mqh" userLabel="View - align">
-                    <rect key="frame" x="0.0" y="20" width="320" height="183"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="126"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkf-cK-H56">
-                            <rect key="frame" x="38" y="99" width="64" height="64"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим игры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzc-0q-TVR">
-                    <rect key="frame" x="0.0" y="20" width="320" height="83"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzc-0q-TVR">
+                    <rect key="frame" x="0.0" y="20" width="320" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="38"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-Z0-HGQ" userLabel="View - container">
-                    <rect key="frame" x="0.0" y="203" width="320" height="365"/>
+                    <rect key="frame" x="0.0" y="146" width="320" height="422"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgr-3j-g6t" userLabel="View - button container">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8f-NF-uMO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
                                     <state key="normal" title="Классический">
@@ -62,11 +54,11 @@
                                     </connections>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="hAy-jL-wY9">
-                                    <rect key="frame" x="144" y="89" width="32" height="5"/>
+                                    <rect key="frame" x="144" y="103" width="32" height="6"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzr-QD-XXZ">
-                                    <rect key="frame" x="0.0" y="94" width="320" height="89"/>
+                                    <rect key="frame" x="0.0" y="109" width="320" height="102"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
                                     <state key="normal" title="Случайный">
@@ -105,20 +97,36 @@
                         <constraint firstAttribute="trailing" secondItem="pgr-3j-g6t" secondAttribute="trailing" id="pKM-2Q-U8J"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkf-cK-H56" userLabel="Button - Back">
+                    <rect key="frame" x="0.0" y="20" width="84" height="84"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Fkf-cK-H56" secondAttribute="height" id="gmm-k6-R0k"/>
+                    </constraints>
+                    <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="SSk-hh-vBU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Rzc-0q-TVR" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="1E5-jd-Edk"/>
+                <constraint firstItem="Rzc-0q-TVR" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="07C-L9-1wE"/>
+                <constraint firstAttribute="trailing" secondItem="Rzc-0q-TVR" secondAttribute="trailing" id="0Kg-AQ-PXf"/>
                 <constraint firstAttribute="bottom" secondItem="xzY-Z0-HGQ" secondAttribute="bottom" id="As9-1T-kpb"/>
                 <constraint firstAttribute="trailing" secondItem="JX1-gX-Mqh" secondAttribute="trailing" id="BCh-QC-V1J"/>
                 <constraint firstItem="JX1-gX-Mqh" firstAttribute="top" secondItem="WbX-Ar-Iar" secondAttribute="top" constant="20" id="CMX-b3-NkU"/>
                 <constraint firstItem="JX1-gX-Mqh" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="G9r-Dw-1OK"/>
-                <constraint firstItem="Rzc-0q-TVR" firstAttribute="top" secondItem="WbX-Ar-Iar" secondAttribute="top" constant="20" id="Lsc-Td-dH5"/>
-                <constraint firstItem="JX1-gX-Mqh" firstAttribute="height" secondItem="xzY-Z0-HGQ" secondAttribute="height" multiplier="0.5" id="PhR-zQ-YCn"/>
+                <constraint firstItem="Fkf-cK-H56" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="HEI-YJ-2Y9"/>
+                <constraint firstItem="JX1-gX-Mqh" firstAttribute="height" secondItem="Rzc-0q-TVR" secondAttribute="height" multiplier="1.5" id="Mxt-GC-8Kv"/>
+                <constraint firstItem="JX1-gX-Mqh" firstAttribute="height" secondItem="xzY-Z0-HGQ" secondAttribute="height" multiplier="0.3" id="PhR-zQ-YCn"/>
                 <constraint firstAttribute="trailing" secondItem="xzY-Z0-HGQ" secondAttribute="trailing" id="Prd-jT-en3"/>
+                <constraint firstItem="Fkf-cK-H56" firstAttribute="centerY" secondItem="Rzc-0q-TVR" secondAttribute="centerY" id="XRv-hr-KQN"/>
                 <constraint firstItem="xzY-Z0-HGQ" firstAttribute="leading" secondItem="WbX-Ar-Iar" secondAttribute="leading" id="YGu-rE-hpH"/>
-                <constraint firstItem="JX1-gX-Mqh" firstAttribute="height" secondItem="Rzc-0q-TVR" secondAttribute="height" multiplier="2.2" id="arQ-zD-kEu"/>
-                <constraint firstAttribute="trailing" secondItem="Rzc-0q-TVR" secondAttribute="trailing" id="cLf-GS-S0r"/>
+                <constraint firstItem="Rzc-0q-TVR" firstAttribute="height" secondItem="Fkf-cK-H56" secondAttribute="height" id="YoI-8c-uEj"/>
+                <constraint firstItem="Rzc-0q-TVR" firstAttribute="top" secondItem="WbX-Ar-Iar" secondAttribute="top" constant="20" id="dHg-17-6kg"/>
                 <constraint firstItem="xzY-Z0-HGQ" firstAttribute="top" secondItem="JX1-gX-Mqh" secondAttribute="bottom" id="qcB-rj-1GH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
