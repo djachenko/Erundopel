@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddContentChooseViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddContentChooseVC">
             <connections>
                 <outlet property="meaningField" destination="UyH-xM-qOI" id="qVr-AK-oU8"/>
                 <outlet property="meaningView" destination="nKP-bz-jhk" id="qTY-aE-i6e"/>

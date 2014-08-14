@@ -20,14 +20,14 @@
 
 @implementation GameVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithUserManager:(UserManager *)userManager
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [self init];
+
     if (self) {
         _cardGenerator = [[CardGenerator alloc] initWithMode:CardGeneratorModeFixed];
         _count = 0;
-        //TODO: CR: It would be nice to receive this object from outside.
-        _userManager = [[UserManager alloc] init];
+        _userManager = userManager;
 
         _answerVC = [[CardAnswerVC alloc] init];
         _questionVC = [[CardQuestionVC alloc] init];
@@ -79,8 +79,6 @@
 {
     [self.userManager.currentUser guessedRight:state];
     [self.userManager synchronize];
-
-    NSLog(@"answer received : %i", state);
 
     [UIView transitionWithView:self.view
             duration:0.75

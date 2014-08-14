@@ -18,16 +18,11 @@ User *_anon;
 - (User *)currentUser;
 {
     if (!_user) {
-        NSData *userData = [[NSUserDefaults standardUserDefaults] objectForKey:UserIdentifier];
+        NSInteger currentUserIndex = [[NSUserDefaults standardUserDefaults]
+                integerForKey:UserIdentifier];
+        currentUserIndex--;
 
-        if (!userData) {
-           _user = self.anonymous;
-        }
-        else {
-            _user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
-
-            //[self loginWithUser:[NSKeyedUnarchiver unarchiveObjectWithData:userData]];
-        }
+        _user = (currentUserIndex == -1) ? self.anonymous : self.users[currentUserIndex];
     }
 
     return _user;
@@ -89,7 +84,6 @@ User *_anon;
     [self registerUser:user];
 }
 
-
 - (BOOL)loginWithUser:(User *)user
 {
     if (user == self.anonymous || [self.users indexOfObject:user] != NSNotFound) {
@@ -133,8 +127,9 @@ User *_anon;
 - (void)synchronize
 {
     if (self.currentUser != self.anonymous) {
-        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:_user];
-        [[NSUserDefaults standardUserDefaults] setObject:userData forKey:UserIdentifier];
+        NSInteger currentUserInteger = [self.users indexOfObject:self.currentUser] + 1;
+
+        [[NSUserDefaults standardUserDefaults] setInteger:currentUserInteger forKey:UserIdentifier];
     }
 
     NSData *usersData = [NSKeyedArchiver archivedDataWithRootObject:self.users];

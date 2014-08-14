@@ -1,10 +1,11 @@
 #import "MainMenuVC.h"
 #import "GameModeVC.h"
 #import "ParseManager.h"
-#import "AddContentChooseViewController.h"
+#import "AddContentChooseVC.h"
 #import "HelpVC.h"
 #import "LoginVC.h"
-#import "UserManager.h"
+#import "RecordsVC.h"
+#import "SettingsVC.h"
 
 static void *const context = (void *const) &context;
 
@@ -75,15 +76,16 @@ static void *const context = (void *const) &context;
 }
 
 - (IBAction)buttonNewGameTap:(UIButton *)sender {
-    [self.navigationController pushViewController:[[GameModeVC alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[GameModeVC alloc] initWithUserManager:self.userManager]
+            animated:YES];
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
-    [self.navigationController pushViewController:[[AddContentChooseViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[AddContentChooseVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonSettingsTap:(UIButton *)sender {
-    [self userButtonTap:nil];
+    [self.navigationController pushViewController:[[SettingsVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonHowToPlay:(UIButton *)sender {
@@ -94,6 +96,8 @@ static void *const context = (void *const) &context;
     NSLog(@"Records pressed");
 
     [[[ParseManager alloc] init] downloadAll];
+    [self presentViewController:[[RecordsVC alloc] initWithUsers:self.userManager.users] animated:YES
+            completion:nil];
 }
 
 - (IBAction)userButtonTap:(UIButton *)sender
@@ -110,7 +114,6 @@ static void *const context = (void *const) &context;
 
 - (void)notifyPlayerChanged:(NSString *)name
 {
-    NSLog(@"notify %@ %@", self.userManager.currentUser.name, name);
     [self.loginButton setTitle:[NSString stringWithFormat:@"Вы %@", self.userManager.currentUser.name]
             forState:UIControlStateNormal];
 

@@ -1,11 +1,3 @@
-//
-//  GameModeVC.m
-//  Erundopel
-//
-//  Created by Admin on 11/08/14.
-//  Copyright (c) 2014 Noveo Summer Internship. All rights reserved.
-//
-
 #import "GameModeVC.h"
 #import "CardGenerator.h"
 #import "GameVC.h"
@@ -18,17 +10,21 @@
 @property (nonatomic, strong) IBOutlet UILabel *headerLabel;
 
 @property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) UserManager *manager;
 
 @end
 
 @implementation GameModeVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(instancetype)initWithUserManager:(UserManager *)userManager
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [self init];
+
     if (self) {
         _buttons = [[NSMutableArray alloc] init];
+        _manager = userManager;
     }
+
     return self;
 }
 
@@ -68,7 +64,7 @@
 
 - (void)startGameWithMode:(CardGeneratorMode)mode
 {
-    GameVC *gameVC = [[GameVC alloc] init];
+    GameVC *gameVC = [[GameVC alloc] initWithUserManager:self.manager];
     [gameVC setGameMode:mode];
     [self.navigationController pushViewController:gameVC animated:YES];
 }
