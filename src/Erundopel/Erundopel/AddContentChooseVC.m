@@ -1,9 +1,9 @@
-#import "AddContentChooseViewController.h"
+#import "AddContentChooseVC.h"
 #import "Word.h"
 #import "Meaning.h"
 #import "Article.h"
 
-@interface AddContentChooseViewController ()<UITextFieldDelegate>
+@interface AddContentChooseVC ()<UITextFieldDelegate>
 
 @property(nonatomic, strong) IBOutlet UISegmentedControl *selector;
 
@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, ContentType)
 
 @end
 
-@implementation AddContentChooseViewController
+@implementation AddContentChooseVC
 
 - (IBAction)action:(UISegmentedControl *)sender
 {

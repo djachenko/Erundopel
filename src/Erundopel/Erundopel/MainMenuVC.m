@@ -1,7 +1,7 @@
 #import "MainMenuVC.h"
 #import "GameModeVC.h"
 #import "ParseManager.h"
-#import "AddContentChooseViewController.h"
+#import "AddContentChooseVC.h"
 #import "HelpVC.h"
 #import "LoginVC.h"
 #import "RecordsVC.h"
@@ -77,7 +77,7 @@ static void *const context = (void *const) &context;
 }
 
 - (IBAction)buttonAddContentTap:(UIButton *)sender {
-    [self.navigationController pushViewController:[[AddContentChooseViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[AddContentChooseVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonSettingsTap:(UIButton *)sender {
