@@ -110,7 +110,7 @@ static void *const context = (void *const) &context;
 
 - (void)notifyPlayerChanged:(NSString *)name
 {
-    [self.loginButton setTitle:[NSString stringWithFormat:@"Вы %@", self.userManager.currentUser.name]
+    [self.loginButton setTitle:[NSString stringWithFormat:@"Вы: %@", self.userManager.currentUser.name]
             forState:UIControlStateNormal];
 
     self.logoutButton.hidden = self.userManager.currentUser == self.userManager.anonymous;
