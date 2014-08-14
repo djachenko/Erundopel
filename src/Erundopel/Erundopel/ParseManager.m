@@ -43,15 +43,6 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
     return self;
 }
 
-#warning Unresolved TODO mark!
-/**
- *  TODO: handle the limit for one database request
- *  Currently one query to Parse can return up to 1000 objects.
- *  It can be handled with query.limit and query.skip properties.
- *  Just need to count all objects in table,
- *  and execute enough queries to get all the data.
- */
-
 - (void)initUpdateDates:(BOOL)forced
 {
     NSArray *keys = @[
@@ -72,7 +63,6 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 - (void)downloadAll {
     [self initUpdateDates:NO];
     
-    //[self.db wipeAllTables];
     [self downloadLanguages];
     [self downloadMeanings];
     [self downloadWords];
