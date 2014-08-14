@@ -54,21 +54,42 @@ typedef NS_ENUM(NSUInteger, SyncState) {
 - (void)insertMeaning:(NSString *)text
     forLanguage:(NSString *)languageId
     withObjectId:(NSString *)objectId
-    sync:(BOOL)sync;
+    sync:(SyncState)sync;
 
 - (void)insertWord:(NSString *)word
     withMeaning:(NSString *)meaningId
     forLanguage:(NSString *)languageId
     withObjectId:(NSString *)objectId
-    sync:(BOOL)sync;
+    sync:(SyncState)sync;
 
 - (void)insertCardWithWord:(NSString *)wordId
     falseMeaningOne:(NSString *)meaningOneId
     falseMeaningTwo:(NSString *)meaningTwoId
     withObjectId:(NSString *)objectId;
 
+// add entity methods (for user input)
 - (void)addArticle:(Article *)article;
 - (void)addMeaning:(Meaning *)meaning;
+
+// change objectId methods
+- (void)setMeaningObjectId:(NSString *)newObjectId
+    forWordByObjectId:(NSString *)wordObjectId;
+- (void)setNewMeaningObjectId:(NSString *)newObjectId
+    byObjectId:(NSString *)oldObjectId;
+- (void)setNewWordObjectId:(NSString *)newObjectId
+    byObjectId:(NSString *)oldObjectId;
+
+// set sync state methods
+- (void)setSyncState:(SyncState)syncState
+    forWordByObjectId:(NSString *)objectId;
+- (void)setSyncState:(SyncState)syncState
+    forMeaningByObjectId:(NSString *)objectId;
+
+// delete row by objectId
+- (void)deleteLanguageByObjectId:(NSString *)objectId;
+- (void)deleteMeaningByObjectId:(NSString *)objectId;
+- (void)deleteWordByObjectId:(NSString *)objectId;
+- (void)deleteCardByObjectId:(NSString *)objectId;
 
 
 @end

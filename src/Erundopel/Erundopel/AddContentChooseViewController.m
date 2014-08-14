@@ -88,6 +88,7 @@ typedef NS_ENUM(NSInteger, ContentType)
                     text:@"Такое значение уже есть в базе. Придумайте что-нибудь новое!"];
             } else {
                 [[Database sharedInstance] addMeaning:meaning];
+                 [[[ParseManager alloc] init] uploadAll];
                 [self.navigationController popViewControllerAnimated:YES];
             }
 

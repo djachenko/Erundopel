@@ -106,10 +106,14 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
                 NSLog(@"Successfully retrieved %lu languages.", (unsigned long)objects.count);
 
                 for (ParseLanguage *language in objects) {
-                    [self.db
-                        insertLanguage:language.name
-                        withObjectId:language.objectId
-                    ];
+                    if (language.name == nil) {
+                        [self.db deleteLanguageByObjectId:language.objectId];
+                    } else {
+                        [self.db
+                            insertLanguage:language.name
+                            withObjectId:language.objectId
+                        ];
+                    }
                 }
                 
                 ParseLanguage *newestObject = objects.firstObject;
@@ -136,12 +140,16 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
                 NSLog(@"Successfully retrieved %lu meanings.", (unsigned long)objects.count);
 
                 for (ParseMeaning *meaning in objects) {
-                    [self.db
-                        insertMeaning:meaning.meaning
-                        forLanguage:meaning.language.objectId
-                        withObjectId:meaning.objectId
-                        sync:YES
-                    ];
+                    if (meaning.meaning == nil) {
+                        [self.db deleteMeaningByObjectId:meaning.objectId];
+                    } else {
+                        [self.db
+                            insertMeaning:meaning.meaning
+                            forLanguage:meaning.language.objectId
+                            withObjectId:meaning.objectId
+                            sync:SyncStateSynced
+                        ];
+                    }
                 }
                 
                 ParseMeaning *newestObject = objects.firstObject;
@@ -168,13 +176,17 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
                 NSLog(@"Successfully retrieved %lu words.", (unsigned long)objects.count);
 
                 for (ParseWord *word in objects) {
-                    [self.db
-                        insertWord:word.word
-                        withMeaning:word.meaning.objectId
-                        forLanguage:word.language.objectId
-                        withObjectId:word.objectId
-                        sync:YES
-                    ];
+                    if (word.word == nil) {
+                        [self.db deleteWordByObjectId:word.objectId];
+                    } else {
+                        [self.db
+                            insertWord:word.word
+                            withMeaning:word.meaning.objectId
+                            forLanguage:word.language.objectId
+                            withObjectId:word.objectId
+                            sync:SyncStateSynced
+                        ];
+                    }
                 }
                 
                 ParseWord *newestObject = objects.firstObject;
@@ -201,12 +213,16 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
                 NSLog(@"Successfully retrieved %lu cards.", (unsigned long)objects.count);
 
                 for (ParseCard *card in objects) {
-                    [self.db
-                        insertCardWithWord:card.word.objectId
-                        falseMeaningOne:card.meaning_false_1.objectId
-                        falseMeaningTwo:card.meaning_false_2.objectId
-                        withObjectId:card.objectId
-                    ];
+                    if (card.word == nil) {
+                        [self.db deleteCardByObjectId:card.objectId];
+                    } else {
+                        [self.db
+                            insertCardWithWord:card.word.objectId
+                            falseMeaningOne:card.meaning_false_1.objectId
+                            falseMeaningTwo:card.meaning_false_2.objectId
+                            withObjectId:card.objectId
+                        ];
+                    }
                 }
                 
                 ParseCard *newestObject = objects.firstObject;
@@ -252,14 +268,17 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 
 - (void)uploadNewWords
 {
-    NSArray *articles = [self.db getAllNewArticles];
+    NSArray *articleDictionaries = [self.db getAllNewArticles];
     
-    for (Article *article in articles) {
+    for (NSDictionary *dictionary in articleDictionaries) {
         ParseMeaning *meaning = [[ParseMeaning alloc] init];
+        
+        Article *article = dictionary[@"value"];
         
         meaning.meaning = article.meaning.text;
         
-        ParseLanguage *language = (ParseLanguage *)[PFObject objectWithoutDataWithClassName:@"language"
+        ParseLanguage *language = (ParseLanguage *)[PFObject
+            objectWithoutDataWithClassName:@"language"
             objectId:[self.db getLanguageObjectIdBytName:@"russian"]
         ];
         
@@ -270,11 +289,29 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
         word.meaning = meaning;
         word.language = language;
         
-#warning TODO
-        // update local storage - set state of the word to synced
+        
+        NSString *wordObjectId = dictionary[@"word_id"];
+        NSString *meaningObjectId = dictionary[@"meaning_id"];
+        
+        [self.db setSyncState:SyncStateStarted forMeaningByObjectId:meaningObjectId];
+        [self.db setSyncState:SyncStateStarted forWordByObjectId:wordObjectId];
+        
         [word saveEventually:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                NSLog(@"Saved word: %@", word.objectId);
+                NSString *newMeaningObjectId = word.meaning.objectId;
+                NSString *newWordObjectId = word.objectId;
+                
+                // update objectIds
+                [self.db setNewMeaningObjectId:newMeaningObjectId byObjectId:meaningObjectId];
+                [self.db setNewWordObjectId:newWordObjectId byObjectId:wordObjectId];
+                [self.db setMeaningObjectId:newMeaningObjectId forWordByObjectId:newWordObjectId];
+            
+                // update sync state
+                [self.db setSyncState:SyncStateSynced forMeaningByObjectId:newWordObjectId];
+                [self.db setSyncState:SyncStateSynced forWordByObjectId:newMeaningObjectId];
+            } else {
+                [self.db setSyncState:SyncStateNotSynced forMeaningByObjectId:meaningObjectId];
+                [self.db setSyncState:SyncStateNotSynced forWordByObjectId:wordObjectId];
             }
         }];
     }
@@ -282,7 +319,40 @@ static NSString *const kLastUpdateCard = @"LastUpdateCard";
 
 - (void)uploadNewMeanings
 {
-
+    NSArray *meaningDictionaries = [self.db getAllNewMeanings];
+    
+    for (NSDictionary *dictionary in meaningDictionaries) {
+        ParseMeaning *parseMeaning = [[ParseMeaning alloc] init];
+        
+        Meaning *meaning = dictionary[@"value"];
+        
+        parseMeaning.meaning = meaning.text;
+        
+        ParseLanguage *language = (ParseLanguage *)[PFObject
+            objectWithoutDataWithClassName:@"language"
+            objectId:[self.db getLanguageObjectIdBytName:@"russian"]
+        ];
+        
+        parseMeaning.language = language;
+    
+        NSString *meaningObjectId = dictionary[@"meaning_id"];
+        
+        [self.db setSyncState:SyncStateStarted forMeaningByObjectId:meaningObjectId];
+        
+        [parseMeaning saveEventually:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSString *newMeaningObjectId = parseMeaning.objectId;
+                
+                // update objectId
+                [self.db setNewMeaningObjectId:newMeaningObjectId byObjectId:meaningObjectId];
+            
+                // update sync state
+                [self.db setSyncState:SyncStateSynced forMeaningByObjectId:newMeaningObjectId];
+            } else {
+                [self.db setSyncState:SyncStateNotSynced forMeaningByObjectId:meaningObjectId];
+            }
+        }];
+    }
 }
 
 @end

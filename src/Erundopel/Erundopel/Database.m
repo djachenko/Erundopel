@@ -23,8 +23,6 @@
 
 @implementation Database
 
-// CR: do NOT indent text inside a line.
-// CR: use 'static NSString *const blabla' for string constants.
 static NSString *const tableNameLanguages = @"languages";
 static NSString *const tableNameMeanings = @"meanings";
 static NSString *const tableNameWords = @"words";
@@ -357,7 +355,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
 - (void)insertMeaning:(NSString *)text
     forLanguage:(NSString *)languageId
     withObjectId:(NSString *)objectId
-    sync:(BOOL)sync {
+    sync:(SyncState)sync {
     [self.queue inDatabase:^(FMDatabase *db)
 {
         [db executeUpdate:
@@ -372,7 +370,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
             text,
             objectId,
             languageId,
-            [NSNumber numberWithBool:sync]
+            [NSNumber numberWithInteger:sync]
         ];
     }];
 }
@@ -381,7 +379,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
     withMeaning:(NSString *)meaningId
     forLanguage:(NSString *)languageId
     withObjectId:(NSString *)objectId
-    sync:(BOOL)sync
+    sync:(SyncState)sync
 {
     [self.queue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:
@@ -397,7 +395,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
             meaningId,
             languageId,
             objectId,
-            [NSNumber numberWithBool:sync]
+            [NSNumber numberWithInteger:sync]
         ];
     }];
 }
@@ -548,7 +546,7 @@ NSString *queryDropTable = @"DROP TABLE ?";
 
 - (NSArray *)getAllNewArticles
 {
-    NSMutableArray * newArticles = [[NSMutableArray alloc] init];
+    NSMutableArray *newArticles = [[NSMutableArray alloc] init];
     
     NSMutableArray *result = [[NSMutableArray alloc] init];
 
@@ -568,8 +566,13 @@ NSString *queryDropTable = @"DROP TABLE ?";
     
     for (NSDictionary *resultRow in result) {
         NSString *wordObjectId = resultRow[@"id_object"];
+        NSString *meaningObjectId = resultRow[@"id_meaning"];
         Article *article = [self getArticleForWordById:wordObjectId];
-        [newArticles addObject:article];
+        [newArticles addObject:@{
+            @"word_id": wordObjectId,
+            @"meaning_id": meaningObjectId,
+            @"value": article
+        }];
     }
     
     return newArticles;
@@ -578,28 +581,146 @@ NSString *queryDropTable = @"DROP TABLE ?";
 - (NSArray *)getAllNewMeanings
 {
     NSMutableArray * newMeanings = [[NSMutableArray alloc] init];
-
-    FMResultSet *__block newMeaningsResult = nil;
+    
+    NSMutableArray *result = [[NSMutableArray alloc] init];
 
     [self.queue inDatabase:^(FMDatabase *db) {
-        newMeaningsResult = [db executeQuery:
+        FMResultSet *newMeaningsResult = [db executeQuery:
             @"SELECT * "
             "FROM meanings "
             "WHERE sync = ?",
-            SyncStateNotSynced
+            [NSNumber numberWithInt:SyncStateNotSynced]
         ];
+        
+        while ([newMeaningsResult next]) {
+            [result addObject:[newMeaningsResult resultDictionary]];
+        }
+        [newMeaningsResult close];
     }];
 
-    while ([newMeaningsResult next]) {
-        NSString *meaningObjectId = [newMeaningsResult stringForColumn:@"id_object"];
+    for (NSDictionary *resultRow in result) {
+        NSString *meaningObjectId = resultRow[@"id_object"];
         Meaning *meaning = [self getMeaningByObjectId:meaningObjectId];
-        [newMeanings addObject:meaning];
+        [newMeanings addObject:@{
+            @"meaning_id": meaningObjectId,
+            @"value": meaning
+        }];
     }
-    [newMeaningsResult close];
     
     return newMeanings;
-
 }
+
+- (void)setMeaningObjectId:(NSString *)newObjectId
+    forWordByObjectId:(NSString *)wordObjectId
+{
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"UPDATE words "
+            "SET id_meaning = ? "
+            "WHERE id_object = ?",
+            newObjectId,
+            wordObjectId
+        ];
+    }];
+}
+
+- (void)setNewWordObjectId:(NSString *)newObjectId
+    byObjectId:(NSString *)oldObjectId
+{
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"UPDATE words "
+            "SET id_object = ? "
+            "WHERE id_object = ?",
+            newObjectId,
+            oldObjectId
+        ];
+    }];
+}
+
+- (void)setNewMeaningObjectId:(NSString *)newObjectId
+    byObjectId:(NSString *)oldObjectId
+{
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:
+            @"UPDATE meanings "
+            "SET id_object = ? "
+            "WHERE id_object = ?",
+            newObjectId,
+            oldObjectId
+        ];
+    }];
+}
+
+- (void)setSyncState:(SyncState)syncState forEntity:(NSString *)entity byObjectId:(NSString *)objectId
+{
+    NSString *query = [NSString stringWithFormat:
+        @"UPDATE %@ "
+        "SET sync = ? "
+        "WHERE id_object = ?",
+        entity
+    ];
+    
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:query,
+            [NSNumber numberWithInt:syncState],
+            objectId
+        ];
+    }];
+}
+
+-(void)setSyncState:(SyncState)syncState forWordByObjectId:(NSString *)objectId
+{
+    [self setSyncState:syncState forEntity:tableNameWords byObjectId:objectId];
+}
+
+- (void)setSyncState:(SyncState)syncState forMeaningByObjectId:(NSString *)objectId
+{
+    [self setSyncState:syncState forEntity:tableNameMeanings byObjectId:objectId];
+}
+
+// delete methods
+- (void)deleteEntity:(NSString *)entity
+    byObjectId:(NSString *)objectId
+{
+    NSString *query = [NSString stringWithFormat:
+        @"DELETE FROM %@ "
+        "WHERE id_object = ?",
+        entity
+    ];
+    
+    [self.queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:query,
+            objectId
+        ];
+    }];
+}
+
+- (void)deleteLanguageByObjectId:(NSString *)objectId
+{
+    [self deleteEntity:tableNameLanguages byObjectId:objectId];
+}
+
+- (void)deleteMeaningByObjectId:(NSString *)objectId
+{
+    [self deleteEntity:tableNameMeanings byObjectId:objectId];
+}
+
+- (void)deleteWordByObjectId:(NSString *)objectId
+{
+    [self deleteEntity:tableNameWords byObjectId:objectId];
+}
+
+- (void)deleteCardByObjectId:(NSString *)objectId
+{
+    [self deleteEntity:tableNameCards byObjectId:objectId];
+}
+
+
+
+
+
+
 
 
 
