@@ -51,6 +51,9 @@ static void *const context = (void *const) &context;
     [self.buttons addObject:self.buttonSettings];
     [self.buttons addObject:self.buttonHowToPlay];
     [self.buttons addObject:self.buttonRecords];
+    [self.buttons addObject:self.loginButton];
+    [self.buttons addObject:self.logoutButton];
+    
     
     CGFloat coefficient = 2.3;
     
