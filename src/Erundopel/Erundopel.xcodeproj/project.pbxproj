@@ -33,7 +33,6 @@
 		58603ED0098334ACE41CAAC2 /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860314D03857B7EE0AFE1FF /* GameVC.m */; };
 		58603EF2467690C25314E431 /* RecordsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586035AC413BF6C1BB06BB7F /* RecordsVC.xib */; };
 		58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603D25D150C44EFA242AB3 /* CardAnswerVC.xib */; };
-		58603F600F165AFC3DDBC270 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */; };
 		58603F634BA143453DC78263 /* AddContentChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603EC9DA4907D87C963DAA /* AddContentChooseVC.m */; };
 		647351FF629A4DD5B982AB20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B1049A60A041B38DB1550D /* libPods.a */; };
 		84381E821998A627004EB0DC /* CardGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E811998A627004EB0DC /* CardGenerator.m */; };
@@ -65,6 +64,10 @@
 		84462EF31994B8850072D773 /* ParseMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF21994B8850072D773 /* ParseMeaning.m */; };
 		84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF51994B93D0072D773 /* ParseLanguage.m */; };
 		84462EF91994BCF10072D773 /* ParseCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF81994BCF10072D773 /* ParseCard.m */; };
+		84900624199CB59100272EB9 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84900622199CB59100272EB9 /* SettingsVC.m */; };
+		84900625199CB59100272EB9 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84900623199CB59100272EB9 /* SettingsVC.xib */; };
+		84900627199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */; };
+		84900629199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */; };
 		8499407B198F96D40001C817 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8499407A198F96D40001C817 /* libsqlite3.dylib */; };
 		849940A5198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
 		849940A6198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
@@ -80,7 +83,6 @@
 		84A3A84D19862CBC003594C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3A83519862CBC003594C7 /* UIKit.framework */; };
 		84A3A85519862CBC003594C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A3A85319862CBC003594C7 /* InfoPlist.strings */; };
 		84A3A85719862CBC003594C7 /* ErundopelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3A85619862CBC003594C7 /* ErundopelTests.m */; };
-		84C53C09199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C53C08199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +115,6 @@
 		586035C6FF50DCF95ECAB89F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		586036C004E2928611418D3D /* GameModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModeVC.h; sourceTree = "<group>"; };
 		586036FE4E64CC45A88119B9 /* UIView+Shakeable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shakeable.h"; sourceTree = "<group>"; };
-		586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1407931660_icon-ios7-arrow-left.png"; path = "../../../../../Desktop/1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
 		5860375F86ADB17CA63B30BD /* GameFinisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFinisher.h; sourceTree = "<group>"; };
 		586037A196212F89F5368B56 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		586037DEC42EA52105DCC489 /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
@@ -164,6 +165,11 @@
 		84462EF51994B93D0072D773 /* ParseLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseLanguage.m; sourceTree = "<group>"; };
 		84462EF71994BCF10072D773 /* ParseCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseCard.h; sourceTree = "<group>"; };
 		84462EF81994BCF10072D773 /* ParseCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseCard.m; sourceTree = "<group>"; };
+		84900621199CB59100272EB9 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		84900622199CB59100272EB9 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
+		84900623199CB59100272EB9 /* SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
+		84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1407947738_common_logout_signout_exit_.png; sourceTree = "<group>"; };
 		8499407A198F96D40001C817 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849940A3198FA5AF0001C817 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		849940A4198FA5AF0001C817 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
@@ -184,7 +190,6 @@
 		84A3A85419862CBC003594C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84A3A85619862CBC003594C7 /* ErundopelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErundopelTests.m; sourceTree = "<group>"; };
 		84B1049A60A041B38DB1550D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C53C08199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1407947738_common_logout_signout_exit_.png; path = ../../../../../Desktop/1407947738_common_logout_signout_exit_.png; sourceTree = "<group>"; };
 		DC8C1DE010FC4D3A999E2FEA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +275,9 @@
 		586037DA83AC0194043309B0 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				84900621199CB59100272EB9 /* SettingsVC.h */,
+				84900622199CB59100272EB9 /* SettingsVC.m */,
+				84900623199CB59100272EB9 /* SettingsVC.xib */,
 				58603EE0614B1CD9A1444552 /* AddContentChooseVC.h */,
 				58603EC9DA4907D87C963DAA /* AddContentChooseVC.m */,
 				5860302C788BBC9423676927 /* AddContentChooseVC.xib */,
@@ -305,9 +313,9 @@
 		5860395D77DED98607B51368 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84C53C08199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png */,
+				84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */,
+				84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */,
 				58603103D649DC1E25EA5825 /* black_line.png */,
-				586037291409B40D5772CF00 /* 1407931660_icon-ios7-arrow-left.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -504,16 +512,17 @@
 				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
 				5860338AFEE77AB29C320D89 /* AddContentChooseVC.xib in Resources */,
 				58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */,
+				84900627199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
 				58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */,
 				58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */,
-				84C53C09199B852D0032C417 /* 1407947738_common_logout_signout_exit_.png in Resources */,
 				5860333EE55C14902C698CA3 /* GameVC.xib in Resources */,
 				5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */,
+				84900629199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png in Resources */,
 				586030EF3938019B35F5933E /* LoginVC.xib in Resources */,
 				586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */,
 				5860378D39F20AF847CC42F5 /* black_line.png in Resources */,
-				58603F600F165AFC3DDBC270 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
 				58603EF2467690C25314E431 /* RecordsVC.xib in Resources */,
+				84900625199CB59100272EB9 /* SettingsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +579,7 @@
 				84462EF61994B93D0072D773 /* ParseLanguage.m in Sources */,
 				84462EF31994B8850072D773 /* ParseMeaning.m in Sources */,
 				84A3A83E19862CBC003594C7 /* main.m in Sources */,
+				84900624199CB59100272EB9 /* SettingsVC.m in Sources */,
 				84462EEC1993A6CC0072D773 /* ParseManager.m in Sources */,
 				849940A5198FA5AF0001C817 /* Database.m in Sources */,
 				84462EF01994B5820072D773 /* ParseWord.m in Sources */,

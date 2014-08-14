@@ -5,6 +5,7 @@
 #import "HelpVC.h"
 #import "LoginVC.h"
 #import "RecordsVC.h"
+#import "SettingsVC.h"
 
 static void *const context = (void *const) &context;
 
@@ -81,7 +82,7 @@ static void *const context = (void *const) &context;
 }
 
 - (IBAction)buttonSettingsTap:(UIButton *)sender {
-    [self userButtonTap:nil];
+    [self.navigationController pushViewController:[[SettingsVC alloc] init] animated:YES];
 }
 
 - (IBAction)buttonHowToPlay:(UIButton *)sender {
