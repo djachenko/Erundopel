@@ -1,6 +1,5 @@
 #import "MainMenuVC.h"
 #import "GameModeVC.h"
-#import "ParseManager.h"
 #import "AddContentChooseVC.h"
 #import "HelpVC.h"
 #import "LoginVC.h"
@@ -21,7 +20,6 @@ static void *const context = (void *const) &context;
 
 @property (nonatomic, strong) NSMutableArray *buttons;
 
-@property (nonatomic, strong) ParseManager *parseManager;
 @property (nonatomic, strong) UserManager *userManager;
 
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
@@ -35,7 +33,6 @@ static void *const context = (void *const) &context;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _buttons = [[NSMutableArray alloc] init];
-        _parseManager = [[ParseManager alloc] init];
         _userManager = [[UserManager alloc] init];
 
         _userManager.delegate = self;
@@ -95,9 +92,6 @@ static void *const context = (void *const) &context;
 }
 
 - (IBAction)buttonRecords:(UIButton *)sender {
-    NSLog(@"Records pressed");
-
-    [[[ParseManager alloc] init] downloadAll];
     [self presentViewController:[[RecordsVC alloc] initWithUsers:self.userManager.users] animated:YES
             completion:nil];
 }
