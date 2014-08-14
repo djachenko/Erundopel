@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsVC">
             <connections>
+                <outlet property="complexitySlider" destination="ass-Eg-YRI" id="3qO-jl-hvw"/>
                 <outlet property="contentView" destination="VC8-WD-Ywb" id="3iB-wL-amT"/>
                 <outlet property="scrollView" destination="acJ-hR-j8p" id="n9c-XD-ZIY"/>
+                <outlet property="synchronizationModeSwitch" destination="D2N-Hw-MvJ" id="MrP-nX-qpP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="XG6-DY-h62"/>
             </connections>
         </placeholder>
@@ -17,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="acJ-hR-j8p">
-                    <rect key="frame" x="20" y="118.99999933309482" width="280" height="429"/>
+                    <rect key="frame" x="20" y="119" width="280" height="428.99999864185008"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
                         <view opaque="NO" contentMode="scaleToFill" id="VC8-WD-Ywb">
@@ -39,6 +41,9 @@
                                             <rect key="frame" x="229" y="9" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="synchronizationModeSwitched:" destination="-1" eventType="valueChanged" id="SXK-O1-l3t"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -59,6 +64,9 @@
                                     <state key="highlighted">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="synchronizeNOW:" destination="-1" eventType="touchUpInside" id="gmh-FN-3AL"/>
+                                    </connections>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_line.png" id="sHn-aF-lOH">
                                     <rect key="frame" x="0.0" y="149" width="280" height="25"/>
@@ -77,6 +85,9 @@
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ass-Eg-YRI">
                                             <rect key="frame" x="0.0" y="58" width="280" height="31"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="setComplexity:" destination="-1" eventType="valueChanged" id="uEX-ra-Rhl"/>
+                                            </connections>
                                         </slider>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -108,6 +119,9 @@
                             <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="goBack" destination="-1" eventType="touchUpInside" id="441-Zc-d83"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
