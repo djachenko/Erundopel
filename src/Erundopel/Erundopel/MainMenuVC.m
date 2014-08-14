@@ -1,6 +1,5 @@
 #import "MainMenuVC.h"
 #import "GameModeVC.h"
-#import "ParseManager.h"
 #import "AddContentChooseVC.h"
 #import "HelpVC.h"
 #import "LoginVC.h"
@@ -34,7 +33,6 @@ static void *const context = (void *const) &context;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _buttons = [[NSMutableArray alloc] init];
-        [[ParseManager alloc] init];
         _userManager = [[UserManager alloc] init];
 
         _userManager.delegate = self;
