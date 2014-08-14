@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58603024DCBB015EE97C603F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586039690DD77B16ABB80842 /* Localizable.strings */; };
 		586030EF3938019B35F5933E /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603F06AD1F30B3A765EECE /* LoginVC.xib */; };
 		58603105A0809F8A5560C203 /* NSString+Hashable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603FE9EA63943D730ACED2 /* NSString+Hashable.m */; };
 		5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58603DEBB5141AA49F447E86 /* HelpVC.xib */; };
@@ -123,6 +124,7 @@
 		5860387E6B865E0B6ABA7086 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5860391E9CA6BBEFDF0D9494 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meaning.m; sourceTree = "<group>"; };
 		58603930732BCE7419615527 /* GameModeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameModeVC.xib; sourceTree = "<group>"; };
+		586039690DD77B16ABB80842 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		58603A69537D3461EB0E0D4E /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
 		58603A6FAC2E40FC0F3735C1 /* GameModeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModeVC.m; sourceTree = "<group>"; };
 		58603AC94CF7EF3A0BBF69B2 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				586033E2222DB33A58123231 /* Model */,
 				5860395D77DED98607B51368 /* Resources */,
 				5860305084161646998BB114 /* UtilCategories */,
+				586039690DD77B16ABB80842 /* Localizable.strings */,
 			);
 			path = Erundopel;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				5860378D39F20AF847CC42F5 /* black_line.png in Resources */,
 				58603EF2467690C25314E431 /* RecordsVC.xib in Resources */,
 				84900625199CB59100272EB9 /* SettingsVC.xib in Resources */,
+				58603024DCBB015EE97C603F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

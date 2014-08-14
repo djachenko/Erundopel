@@ -47,7 +47,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fw-76-S8U">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                     <state key="normal" title="Вы анон">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
