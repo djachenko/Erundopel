@@ -14,6 +14,8 @@
 @property CardAnswerVC *answerVC;
 @property CardQuestionVC *questionVC;
 
+@property NSArray *animations;
+
 @property (nonatomic, strong) CardGenerator *cardGenerator;
 
 @end
@@ -31,6 +33,11 @@
 
         _answerVC = [[CardAnswerVC alloc] init];
         _questionVC = [[CardQuestionVC alloc] init];
+
+        _animations = @[@(UIViewAnimationOptionTransitionFlipFromLeft),
+                @(UIViewAnimationOptionTransitionFlipFromRight),
+                @(UIViewAnimationOptionTransitionCurlUp),
+                @(UIViewAnimationOptionTransitionCurlDown)];
     }
 
     return self;
@@ -62,17 +69,20 @@
     self.questionVC.card = self.currentCard;
     self.answerVC.card = self.currentCard;
 
-    self.answerVC.view.hidden = YES;
-    self.questionVC.view.hidden = NO;
+    /*self.answerVC.view.hidden = YES;
+    self.questionVC.view.hidden = NO;*/
 
-    /*[UIView transitionWithView:self.view
-            duration:5.75
-            options:UIViewAnimationOptionTransitionCurlDown
+    UIViewAnimationOptions animation = (UIViewAnimationOptions) [(NSNumber *)self.animations[arc4random_uniform([self
+                .animations count])] unsignedIntegerValue];
+
+    [UIView transitionWithView:self.view
+            duration:0.75
+            options:animation
             animations:^{
                 self.answerVC.view.hidden = YES;
                 self.questionVC.view.hidden = NO;
             }
-            completion:nil];*/
+            completion:nil];
 }
 
 - (void)chosenCorrectOption:(BOOL)state
