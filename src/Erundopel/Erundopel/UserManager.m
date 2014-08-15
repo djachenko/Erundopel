@@ -40,7 +40,7 @@ User *_anon;
 - (NSMutableArray *)users
 {
     if (!_users) {
-        #warning get users from base
+        //get users from base
         NSData *usersData = [[NSUserDefaults standardUserDefaults] objectForKey:arrayKey];
 
         if (!usersData) {
@@ -132,7 +132,7 @@ User *_anon;
 
 - (void)synchronizeUsers
 {
-    #warning move users to SQLite
+    // move users to SQLite
     NSData *usersData = [NSKeyedArchiver archivedDataWithRootObject:self.users];
 
     [[NSUserDefaults standardUserDefaults] setObject:usersData forKey:arrayKey];
