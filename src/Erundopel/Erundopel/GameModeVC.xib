@@ -103,7 +103,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Fkf-cK-H56" secondAttribute="height" id="gmm-k6-R0k"/>
                     </constraints>
-                    <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
+                    <state key="normal" image="back-arrow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -134,7 +134,7 @@
         </view>
     </objects>
     <resources>
-        <image name="1407931660_icon-ios7-arrow-left.png" width="256" height="256"/>
-        <image name="black_line.png" width="20" height="2"/>
+        <image name="back-arrow.png" width="128" height="128"/>
+        <image name="black_line.png" width="40" height="4"/>
     </resources>
 </document>

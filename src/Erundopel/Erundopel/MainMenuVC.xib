@@ -63,7 +63,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="x7c-yp-S18" secondAttribute="height" id="nsB-8f-av2"/>
                                     </constraints>
-                                    <state key="normal" title="вон" image="1407947738_common_logout_signout_exit_.png">
+                                    <state key="normal" title="вон" image="logout.png">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -244,7 +244,7 @@
         </view>
     </objects>
     <resources>
-        <image name="1407947738_common_logout_signout_exit_.png" width="256" height="256"/>
-        <image name="black_line.png" width="20" height="2"/>
+        <image name="black_line.png" width="40" height="4"/>
+        <image name="logout.png" width="128" height="128"/>
     </resources>
 </document>

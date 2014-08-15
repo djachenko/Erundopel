@@ -32,7 +32,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2sf-xs-L3K">
                             <rect key="frame" x="5" y="43" width="64" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
+                            <state key="normal" image="back-arrow.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -103,7 +103,7 @@
         </view>
     </objects>
     <resources>
-        <image name="1407931660_icon-ios7-arrow-left.png" width="256" height="256"/>
-        <image name="black_line.png" width="20" height="2"/>
+        <image name="back-arrow.png" width="128" height="128"/>
+        <image name="black_line.png" width="40" height="4"/>
     </resources>
 </document>

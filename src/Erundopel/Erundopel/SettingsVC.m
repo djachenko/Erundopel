@@ -22,7 +22,7 @@ static NSString *const complexityIdentifier = @"erundopelComplexityIdentifier";
 
     self.scrollView.contentSize = self.contentView.frame.size;
 
-    NSLog(@"content %f", self.scrollView.contentSize.height);
+    //NSLog(@"content %f", self.scrollView.contentSize.height);
 
     BOOL automaticSynchronizationEnabled = [[NSUserDefaults standardUserDefaults]
             boolForKey:synchronizationModeIdentifier];
