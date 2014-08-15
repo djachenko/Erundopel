@@ -40,6 +40,9 @@
 		84381E89199A245A004EB0DC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E88199A245A004EB0DC /* Accounts.framework */; };
 		84381E8B199A2471004EB0DC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E8A199A2471004EB0DC /* Social.framework */; };
 		84381E8D199CB58A004EB0DC /* dbScheme.sql in Resources */ = {isa = PBXBuildFile; fileRef = 84381E8C199CB58A004EB0DC /* dbScheme.sql */; };
+		84381E91199DC790004EB0DC /* back-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84381E8E199DC790004EB0DC /* back-arrow@2x.png */; };
+		84381E92199DC790004EB0DC /* black_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84381E8F199DC790004EB0DC /* black_line@2x.png */; };
+		84381E93199DC790004EB0DC /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84381E90199DC790004EB0DC /* logout@2x.png */; };
 		84462ECC19937A280072D773 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECB19937A280072D773 /* Parse.framework */; };
 		84462ECE19937A5C0072D773 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECD19937A5C0072D773 /* AudioToolbox.framework */; };
 		84462ED019937A670072D773 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84462ECF19937A670072D773 /* CFNetwork.framework */; };
@@ -68,8 +71,8 @@
 		84462EF91994BCF10072D773 /* ParseCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 84462EF81994BCF10072D773 /* ParseCard.m */; };
 		84900624199CB59100272EB9 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84900622199CB59100272EB9 /* SettingsVC.m */; };
 		84900625199CB59100272EB9 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84900623199CB59100272EB9 /* SettingsVC.xib */; };
-		84900627199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */; };
-		84900629199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */; };
+		84900627199CB5A400272EB9 /* back-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900626199CB5A400272EB9 /* back-arrow.png */; };
+		84900629199CB5BA00272EB9 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900628199CB5BA00272EB9 /* logout.png */; };
 		8499407B198F96D40001C817 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8499407A198F96D40001C817 /* libsqlite3.dylib */; };
 		849940A5198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
 		849940A6198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
@@ -149,6 +152,9 @@
 		84381E88199A245A004EB0DC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84381E8A199A2471004EB0DC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84381E8C199CB58A004EB0DC /* dbScheme.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dbScheme.sql; sourceTree = "<group>"; };
+		84381E8E199DC790004EB0DC /* back-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow@2x.png"; sourceTree = "<group>"; };
+		84381E8F199DC790004EB0DC /* black_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_line@2x.png"; sourceTree = "<group>"; };
+		84381E90199DC790004EB0DC /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
 		84462ECB19937A280072D773 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		84462ECD19937A5C0072D773 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84462ECF19937A670072D773 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -172,8 +178,8 @@
 		84900621199CB59100272EB9 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
 		84900622199CB59100272EB9 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		84900623199CB59100272EB9 /* SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
-		84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
-		84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1407947738_common_logout_signout_exit_.png; sourceTree = "<group>"; };
+		84900626199CB5A400272EB9 /* back-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow.png"; sourceTree = "<group>"; };
+		84900628199CB5BA00272EB9 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		8499407A198F96D40001C817 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849940A3198FA5AF0001C817 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		849940A4198FA5AF0001C817 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
@@ -317,9 +323,12 @@
 		5860395D77DED98607B51368 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84381E8E199DC790004EB0DC /* back-arrow@2x.png */,
+				84381E8F199DC790004EB0DC /* black_line@2x.png */,
+				84381E90199DC790004EB0DC /* logout@2x.png */,
 				84381E8C199CB58A004EB0DC /* dbScheme.sql */,
-				84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */,
-				84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */,
+				84900628199CB5BA00272EB9 /* logout.png */,
+				84900626199CB5A400272EB9 /* back-arrow.png */,
 				58603103D649DC1E25EA5825 /* black_line.png */,
 			);
 			name = Resources;
@@ -514,17 +523,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84381E93199DC790004EB0DC /* logout@2x.png in Resources */,
 				84A3A83C19862CBC003594C7 /* InfoPlist.strings in Resources */,
 				84A3A84419862CBC003594C7 /* Images.xcassets in Resources */,
 				5860338AFEE77AB29C320D89 /* AddContentChooseVC.xib in Resources */,
 				58603F040817485DA21F65BB /* CardAnswerVC.xib in Resources */,
-				84900627199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png in Resources */,
+				84900627199CB5A400272EB9 /* back-arrow.png in Resources */,
 				58603C320E6A63D15B10205E /* CardQuestionVC.xib in Resources */,
 				84381E8D199CB58A004EB0DC /* dbScheme.sql in Resources */,
+				84381E91199DC790004EB0DC /* back-arrow@2x.png in Resources */,
 				58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */,
 				5860333EE55C14902C698CA3 /* GameVC.xib in Resources */,
+				84381E92199DC790004EB0DC /* black_line@2x.png in Resources */,
 				5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */,
-				84900629199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png in Resources */,
+				84900629199CB5BA00272EB9 /* logout.png in Resources */,
 				586030EF3938019B35F5933E /* LoginVC.xib in Resources */,
 				586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */,
 				5860378D39F20AF847CC42F5 /* black_line.png in Resources */,

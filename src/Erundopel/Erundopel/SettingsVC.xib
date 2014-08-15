@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="acJ-hR-j8p">
-                    <rect key="frame" x="20" y="119" width="280" height="429"/>
+                    <rect key="frame" x="20" y="119" width="280" height="428.99999933309482"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
                         <view opaque="NO" contentMode="scaleToFill" id="VC8-WD-Ywb">
@@ -116,7 +116,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2sf-xs-L3K">
                             <rect key="frame" x="5" y="13" width="64" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="1407931660_icon-ios7-arrow-left.png">
+                            <state key="normal" image="back-arrow.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -134,7 +134,7 @@
         </view>
     </objects>
     <resources>
-        <image name="1407931660_icon-ios7-arrow-left.png" width="256" height="256"/>
-        <image name="black_line.png" width="20" height="2"/>
+        <image name="back-arrow.png" width="128" height="128"/>
+        <image name="black_line.png" width="40" height="4"/>
     </resources>
 </document>
