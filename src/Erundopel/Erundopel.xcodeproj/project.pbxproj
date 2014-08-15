@@ -70,6 +70,10 @@
 		84900625199CB59100272EB9 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84900623199CB59100272EB9 /* SettingsVC.xib */; };
 		84900627199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */; };
 		84900629199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png in Resources */ = {isa = PBXBuildFile; fileRef = 84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */; };
+		8490062E199DC21F00272EB9 /* erundopel60.png in Resources */ = {isa = PBXBuildFile; fileRef = 8490062A199DC21F00272EB9 /* erundopel60.png */; };
+		8490062F199DC21F00272EB9 /* erundopel76.png in Resources */ = {isa = PBXBuildFile; fileRef = 8490062B199DC21F00272EB9 /* erundopel76.png */; };
+		84900630199DC21F00272EB9 /* erundopel120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8490062C199DC21F00272EB9 /* erundopel120.png */; };
+		84900631199DC21F00272EB9 /* erundopel152.png in Resources */ = {isa = PBXBuildFile; fileRef = 8490062D199DC21F00272EB9 /* erundopel152.png */; };
 		8499407B198F96D40001C817 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8499407A198F96D40001C817 /* libsqlite3.dylib */; };
 		849940A5198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
 		849940A6198FA5AF0001C817 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 849940A4198FA5AF0001C817 /* Database.m */; };
@@ -174,6 +178,10 @@
 		84900623199CB59100272EB9 /* SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1407931660_icon-ios7-arrow-left.png"; sourceTree = "<group>"; };
 		84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1407947738_common_logout_signout_exit_.png; sourceTree = "<group>"; };
+		8490062A199DC21F00272EB9 /* erundopel60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erundopel60.png; sourceTree = "<group>"; };
+		8490062B199DC21F00272EB9 /* erundopel76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erundopel76.png; sourceTree = "<group>"; };
+		8490062C199DC21F00272EB9 /* erundopel120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erundopel120.png; sourceTree = "<group>"; };
+		8490062D199DC21F00272EB9 /* erundopel152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erundopel152.png; sourceTree = "<group>"; };
 		8499407A198F96D40001C817 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849940A3198FA5AF0001C817 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		849940A4198FA5AF0001C817 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
@@ -317,6 +325,10 @@
 		5860395D77DED98607B51368 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8490062A199DC21F00272EB9 /* erundopel60.png */,
+				8490062B199DC21F00272EB9 /* erundopel76.png */,
+				8490062C199DC21F00272EB9 /* erundopel120.png */,
+				8490062D199DC21F00272EB9 /* erundopel152.png */,
 				84381E8C199CB58A004EB0DC /* dbScheme.sql */,
 				84900628199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png */,
 				84900626199CB5A400272EB9 /* 1407931660_icon-ios7-arrow-left.png */,
@@ -523,13 +535,17 @@
 				84381E8D199CB58A004EB0DC /* dbScheme.sql in Resources */,
 				58603E6C695BB7B4ED3183C4 /* GameModeVC.xib in Resources */,
 				5860333EE55C14902C698CA3 /* GameVC.xib in Resources */,
+				84900631199DC21F00272EB9 /* erundopel152.png in Resources */,
 				5860326E6FE8EF3975563C86 /* HelpVC.xib in Resources */,
 				84900629199CB5BA00272EB9 /* 1407947738_common_logout_signout_exit_.png in Resources */,
 				586030EF3938019B35F5933E /* LoginVC.xib in Resources */,
 				586039AD932ECBF0980A20AC /* MainMenuVC.xib in Resources */,
 				5860378D39F20AF847CC42F5 /* black_line.png in Resources */,
 				58603EF2467690C25314E431 /* RecordsVC.xib in Resources */,
+				8490062F199DC21F00272EB9 /* erundopel76.png in Resources */,
+				84900630199DC21F00272EB9 /* erundopel120.png in Resources */,
 				84900625199CB59100272EB9 /* SettingsVC.xib in Resources */,
+				8490062E199DC21F00272EB9 /* erundopel60.png in Resources */,
 				58603024DCBB015EE97C603F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
